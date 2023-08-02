@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 16-08-2021 14:22:23 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.grupobios.bioslis.entity.CfgDiagnosticos" table="CFG_DIAGNOSTICOS" schema="BIOSLIS">
+        <id name="cdIddiagnostico" type="short">
+            <column name="CD_IDDIAGNOSTICO" precision="4" scale="0" />
+            <generator class="sequence">
+                <param name="sequence">
+                    BIOSLIS.SEQ_CFG_DIAGNOSTICOS
+                </param>
+            </generator>
+        </id>
+        <many-to-one name="ldvCie10" class="com.grupobios.bioslis.entity.LdvCie10"   fetch="select">
+            <column name="CD_CODIGOCIE10" length="28" />
+        </many-to-one>
+        <property name="cdDescripcion" type="string">
+            <column name="CD_DESCRIPCION" length="600" />
+        </property>
+        <property name="cdSort" type="short">
+            <column name="CD_SORT" precision="4" scale="0" not-null="true" />
+        </property>
+        <property name="cdActivo" type="string">
+            <column name="CD_ACTIVO" length="4" />
+        </property>
+        <property name="cdHost" type="string">
+            <column name="CD_HOST" length="80" />
+        </property>
+        <set name="datosFichases" table="DATOS_FICHAS" inverse="true" lazy="false" fetch="select">
+            <key>
+                <column name="DF_IDDIAGNOSTICO" precision="3" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="com.grupobios.bioslis.entity.DatosFichas" />
+        </set>
+    </class>
+</hibernate-mapping>

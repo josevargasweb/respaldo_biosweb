@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 22-04-2020 16:13:30 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.grupobios.bioslis.entity.DatosPacientespatologias" table="DATOS_PACIENTESPATOLOGIAS" schema="BIOSLIS" optimistic-lock="version">
+        <id name="dppIdpacientepatologia" type="int">
+            <column name="DPP_IDPACIENTEPATOLOGIA" precision="10" scale="0" />
+        	<generator class="sequence">
+        		<param name="sequence">BIOSLIS.SEQ_DATOSPACIENTESPATOLOGIAS</param>
+        	</generator>
+        </id>
+        <many-to-one name="datosPacientes" class="com.grupobios.bioslis.entity.DatosPacientes" fetch="select">
+            <column name="DPP_IDPACIENTE" precision="10" scale="0" not-null="true" />
+        </many-to-one>
+        <many-to-one name="ldvPatologias" class="com.grupobios.bioslis.entity.LdvPatologias" fetch="select">
+            <column name="DPP_IDPATOLOGIA" precision="10" scale="0" not-null="true" />
+        </many-to-one>
+        <property name="dppObservacion" type="string">
+            <column name="DPP_OBSERVACION" length="800" />
+        </property>
+    </class>
+</hibernate-mapping>

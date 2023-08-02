@@ -1,0 +1,165 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 16-08-2021 14:22:23 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.grupobios.bioslis.entity.DatosFichasexamenestest" table="DATOS_FICHASEXAMENESTEST" schema="BIOSLIS">
+        <composite-id name="id" class="com.grupobios.bioslis.entity.DatosFichasexamenestestId">
+            <key-property name="dfetNorden" type="long">
+                <column name="DFET_NORDEN" precision="10" scale="0" />
+            </key-property>
+            <key-property name="dfetIdexamen" type="long">
+                <column name="DFET_IDEXAMEN" precision="10" scale="0" />
+            </key-property>
+            <key-property name="dfetIdtest" type="long">
+                <column name="DFET_IDTEST" precision="10" scale="0" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="datosFichas" class="com.grupobios.bioslis.entity.DatosFichas" update="false" insert="false" fetch="select">
+            <column name="DFET_NORDEN" precision="10" scale="0" not-null="true" />
+        </many-to-one>
+        <many-to-one name="datosFichasexamenes" class="com.grupobios.bioslis.entity.DatosFichasexamenes" update="false" insert="false" fetch="select">
+            <column name="DFET_NORDEN" precision="10" scale="0" not-null="true" />
+            <column name="DFET_IDEXAMEN" precision="10" scale="0" not-null="true" />
+        </many-to-one>
+        <many-to-one name="cfgExamenestest" class="com.grupobios.bioslis.entity.CfgExamenestest" update="false" insert="false" fetch="select" >
+            <column name="DFET_IDEXAMEN" precision="10" scale="0" not-null="true" />
+            <column name="DFET_IDTEST" precision="10" scale="0" not-null="true" />
+        </many-to-one>
+        <property name="dfetIdpaciente" type="long">
+            <column name="DFET_IDPACIENTE" precision="10" scale="0" not-null="true" />
+        </property>
+        <property name="dfetFechaorden" type="timestamp">
+            <column name="DFET_FECHAORDEN" length="7" not-null="true" />
+        </property>
+        <property name="dfetIdtipomuestra" type="java.lang.Short">
+            <column name="DFET_IDTIPOMUESTRA" precision="4" scale="0" />
+        </property>
+        <property name="dfetIdenvase" type="java.lang.Short">
+            <column name="DFET_IDENVASE" precision="3" scale="0" />
+        </property>
+        <property name="dfetIdseccion" type="java.lang.Short">
+            <column name="DFET_IDSECCION" precision="4" scale="0" />
+        </property>
+        <property name="dfetIdmuestra" type="java.lang.Long">
+            <column name="DFET_IDMUESTRA" precision="12" scale="0" />
+        </property>
+        <property name="dfetResultado" type="string">
+            <column name="DFET_RESULTADO" length="2000" />
+        </property>
+        <property name="dfetResultadonumerico" type="big_decimal">
+            <column name="DFET_RESULTADONUMERICO" precision="20" scale="5" />
+        </property>
+        <property name="dfetIdestadoresultadotest" type="short">
+            <column name="DFET_IDESTADORESULTADOTEST" precision="2" scale="0" />
+        </property>
+        <property name="dfetRcritico" type="string">
+            <column name="DFET_RCRITICO" length="2" />
+        </property>
+        <property name="dfetFechacreaciontest" type="timestamp">
+            <column name="DFET_FECHACREACIONTEST" length="7" />
+        </property>
+        <property name="dfetIdusuariocreacion" type="java.lang.Long">
+            <column name="DFET_IDUSUARIOCREACION" precision="10" scale="0" />
+        </property>
+        <property name="dfetAnalizadorcargaresultado" type="string">
+            <column name="DFET_ANALIZADORCARGARESULTADO" length="200" />
+        </property>
+        <property name="dfetFechaingresoresultado" type="timestamp">
+            <column name="DFET_FECHAINGRESORESULTADO" length="7" />
+        </property>
+        <property name="dfetIdusuariodigita" type="java.lang.Long">
+            <column name="DFET_IDUSUARIODIGITA" precision="10" scale="0" />
+        </property>
+        <property name="dfetFechabloqueotest" type="timestamp">
+            <column name="DFET_FECHABLOQUEOTEST" length="7" />
+        </property>
+        <property name="dfetIdusuariobloqueo" type="java.lang.Long">
+            <column name="DFET_IDUSUARIOBLOQUEO" precision="10" scale="0" />
+        </property>
+        <property name="dfetReferenciadesde" type="string">
+            <column name="DFET_REFERENCIADESDE" length="60" />
+        </property>
+        <property name="dfetReferenciahasta" type="string">
+            <column name="DFET_REFERENCIAHASTA" length="60" />
+        </property>
+        <property name="dfetReferenciatexto" type="string">
+            <column name="DFET_REFERENCIATEXTO" length="200" />
+        </property>
+        <property name="dfetIdunidaddemedida" type="java.lang.Short">
+            <column name="DFET_IDUNIDADDEMEDIDA" precision="4" scale="0" />
+        </property>
+        <property name="dfetValorcriticonotificado" type="string">
+            <column name="DFET_VALORCRITICONOTIFICADO" length="1" />
+        </property>
+        <property name="dfetNotavalorcritico" type="string">
+            <column name="DFET_NOTAVALORCRITICO" length="1000" />
+        </property>
+        <property name="dfetFechavalorcritico" type="timestamp">
+            <column name="DFET_FECHAVALORCRITICO" length="7" />
+        </property>
+        <property name="dfetIdusuarionotificacritico" type="java.lang.Long">
+            <column name="DFET_IDUSUARIONOTIFICACRITICO" precision="10" scale="0" />
+        </property>
+        <property name="dfetResultadoenviadohost" type="string">
+            <column name="DFET_RESULTADOENVIADOHOST" length="1" />
+        </property>
+        <property name="dfetValorcriticoanalizador" type="string">
+            <column name="DFET_VALORCRITICOANALIZADOR" length="1" />
+        </property>
+        <property name="dfetNotificado" type="string">
+            <column name="DFET_NOTIFICADOSIGMA" length="1" />
+        </property>
+        <property name="dfetValorcriticodesde" type="string">
+            <column name="DFET_VALORCRITICODESDE" length="200" />
+        </property>
+        <property name="dfetValorcriticohasta" type="string">
+            <column name="DFET_VALORCRITICOHASTA" length="200" />
+        </property>
+        <property name="dfetTiponotificacion" type="string">
+            <column name="DFET_TIPONOTIFICACION" length="200" />
+        </property>
+        <property name="dfetProfesionalnotificado" type="string">
+            <column name="DFET_PROFESIONALNOTIFICADO" length="200" />
+        </property>
+        <property name="dfetFechafirma" type="timestamp">
+            <column name="DFET_FECHAFIRMA" length="7" />
+        </property>
+        <property name="dfetIdusuariofirma" type="java.lang.Long">
+            <column name="DFET_IDUSUARIOFIRMA" precision="10" scale="0" />
+        </property>
+        <property name="dfetTestfirmado" type="string">
+            <column name="DFET_TESTFIRMADO" length="1" />
+        </property>
+        <property name="dfetComentarionadie" type="string">
+            <column name="DFET_COMENTARIONADIE" length="200" />
+        </property>
+        <property name="dfetComentariootro" type="string">
+            <column name="DFET_COMENTARIOOTRO" length="200" />
+        </property>
+        <!--
+        <property name="dfetComentariootro" type="string">
+            <column name="DFET_" length="200" />
+        </property>
+        -->
+        <!-- agregado por cristian 14-11 -->
+         <property name="dfetIdmetodo" type="big_decimal">
+            <column name="DFET_IDMETODO" precision="4" scale="0" />
+        </property>   
+        <property name="dfetidbacestadotest" type="big_decimal">
+            <column name="DFET_IDBACESTADOTEST" precision="10" scale="0" />
+        </property>     
+        <!-- agregado por cristian 20-02 -->
+        <property name="dfetUltimoresultadoant" type="string">
+            <column name="DFET_ULTIMORESULTADOANT" length="500" />
+        </property>
+        <property name="dfetfechaultimoresultado" type="timestamp">
+            <column name="DFET_FECHAULTIMORESULTADO" length="7" />
+        </property>
+        <property name="dfetidfichatestnotificacion" type="long">
+            <column name="DFET_IDFICHATESTNOTIFICACION" precision="10" scale="0" />
+        </property>     
+        
+        
+    </class>
+</hibernate-mapping>

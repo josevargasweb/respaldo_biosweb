@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 16-08-2021 14:22:23 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.grupobios.bioslis.entity.CfgGlosastest" table="CFG_GLOSASTEST" schema="BIOSLIS">
+        <id name="cgtIdglosatest" type="short">
+            <column name="CGT_IDGLOSATEST" precision="4" scale="0" />
+            <generator class="sequence">
+                <param name="sequence">
+                    BIOSLIS.SEQ_CFG_GLOSASTEST
+                </param>
+            </generator>
+        </id>
+        <many-to-one name="cfgGlosas" class="com.grupobios.bioslis.entity.CfgGlosas" fetch="select">
+            <column name="CGT_IDGLOSA" precision="4" scale="0" not-null="true" />
+        </many-to-one>
+        <many-to-one name="cfgTest" class="com.grupobios.bioslis.entity.CfgTest" fetch="select">
+            <column name="CGT_IDTEST" precision="10" scale="0" not-null="true" />
+        </many-to-one>
+        <property name="cgtEsglosacritica" type="string">
+            <column name="CGT_ESGLOSACRITICA" length="1" />
+        </property>
+        <property name="cgtSefirmaporlotes" type="string">
+            <column name="CGT_SEFIRMAPORLOTES" length="1" />
+        </property>
+    </class>
+</hibernate-mapping>

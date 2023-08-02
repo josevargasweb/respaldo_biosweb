@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 16-08-2021 14:22:23 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.grupobios.bioslis.entity.CfgAccionesdatos" table="CFG_ACCIONESDATOS" schema="BIOSLIS">
+        <id name="cadIdacciondato" type="boolean">
+            <column name="CAD_IDACCIONDATO" precision="1" scale="0" />
+            <generator class="assigned"></generator>
+        </id>
+        <property name="cadCodigoaccion" type="string">
+            <column name="CAD_CODIGOACCION" length="8" />
+        </property>
+        <property name="cadDescripcion" type="string">
+            <column name="CAD_DESCRIPCION" length="100" />
+        </property>
+        <set name="logCfgtablases" table="LOG_CFGTABLAS" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="LCT_IDACCIONDATO" precision="1" scale="0" />
+            </key>
+            <one-to-many class="com.grupobios.bioslis.entity.LogCfgtablas" />
+        </set>
+        <set name="logSistematablases" table="LOG_SISTEMATABLAS" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="LST_IDACCIONDATO" precision="1" scale="0" />
+            </key>
+            <one-to-many class="com.grupobios.bioslis.entity.LogSistematablas" />
+        </set>
+    </class>
+</hibernate-mapping>

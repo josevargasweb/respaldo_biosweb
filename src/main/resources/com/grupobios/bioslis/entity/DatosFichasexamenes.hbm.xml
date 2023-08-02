@@ -1,0 +1,193 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 16-08-2021 14:22:23 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.grupobios.bioslis.entity.DatosFichasexamenes" table="DATOS_FICHASEXAMENES" schema="BIOSLIS">
+        <composite-id name="IddatosFichasExamenes" class="com.grupobios.bioslis.entity.DatosFichasexamenesId">
+            <key-property name="dfeNorden" type="long">
+                <column name="DFE_NORDEN" precision="10" scale="0" />
+            </key-property>
+            <key-property name="dfeIdexamen" type="long">
+                <column name="DFE_IDEXAMEN" precision="10" scale="0" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="cfgBacestados" class="com.grupobios.bioslis.entity.CfgBacestados" fetch="select">
+            <column name="DFE_IDBACESTADO" precision="2" scale="0" />
+        </many-to-one>
+        <property name="dfeSort" type="java.lang.Byte">
+            <column name="DFE_SORT" precision="2" scale="0" />
+        </property>
+        <property name="dfeFechacreacion" type="timestamp">
+            <column name="DFE_FECHACREACION" length="7" not-null="true" />
+        </property>
+        <property name="dfeIdusuario" type="long">
+            <column name="DFE_IDUSUARIO" precision="10" scale="0" not-null="true" />
+        </property>
+        <property name="dfeCodigoestadoexamen" type="string">
+            <column name="DFE_CODIGOESTADOEXAMEN" length="1" />
+        </property>
+        <property name="dfeImpreso" type="string">
+            <column name="DFE_IMPRESO" length="1" />
+        </property>
+        <property name="dfeAutorizado" type="string">
+            <column name="DFE_AUTORIZADO" length="1" />
+        </property>
+        <property name="dfeListatrabajogenerada" type="string">
+            <column name="DFE_LISTATRABAJOGENERADA" length="1" />
+        </property>
+        <property name="dfeListatrabajonumero" type="java.lang.Long">
+            <column name="DFE_LISTATRABAJONUMERO" precision="18" scale="0" />
+        </property>
+        <property name="dfeListatrabajofecha" type="timestamp">
+            <column name="DFE_LISTATRABAJOFECHA" length="7" />
+        </property>
+        <property name="dfeIdusuariolistatrabajo" type="java.lang.Long">
+            <column name="DFE_IDUSUARIOLISTATRABAJO" precision="10" scale="0" />
+        </property>
+        <property name="dfeFechaentrega" type="timestamp">
+            <column name="DFE_FECHAENTREGA" length="7" />
+        </property>
+        <property name="dfeIdusuariofirma" type="java.lang.Long">
+            <column name="DFE_IDUSUARIOFIRMA" precision="10" scale="0" />
+        </property>
+        <property name="dfeFechafirma" type="timestamp">
+            <column name="DFE_FECHAFIRMA" length="7" />
+        </property>
+        <property name="dfeIdusuarioimprime" type="java.lang.Long">
+            <column name="DFE_IDUSUARIOIMPRIME" precision="10" scale="0" />
+        </property>
+        <property name="dfeFechaimpresion" type="timestamp">
+            <column name="DFE_FECHAIMPRESION" length="7" />
+        </property>
+        <property name="dfeNumerocopias" type="java.lang.Short">
+            <column name="DFE_NUMEROCOPIAS" precision="4" scale="0" />
+        </property>
+        <property name="dfeNotainterna" type="string">
+            <column name="DFE_NOTAINTERNA" length="1000" />
+        </property>
+        <property name="dfeNotaexamen" type="string">
+            <column name="DFE_NOTAEXAMEN" length="1000" />
+        </property>
+        <property name="dfeNotainforme" type="string">
+            <column name="DFE_NOTAINFORME" length="1000" />
+        </property>
+        <property name="dfeNota" type="string">
+            <column name="DFE_NOTA" length="2000" />
+        </property>
+        <property name="dfeBacfechainicio" type="timestamp">
+            <column name="DFE_BACFECHAINICIO" length="7">
+                <comment>Inicio del examen en bacterio</comment>
+            </column>
+        </property>
+                <property name="dfeBacfechainicio2" type="timestamp">
+            <column name="DFE_BACFECHAINICIO2" length="7">
+            </column>
+        </property>
+        <property name="dfeBacfecharesultado" type="timestamp">
+            <column name="DFE_BACFECHARESULTADO" length="7">
+                <comment>Fecha termino resultado bacterio</comment>
+            </column>
+        </property>
+        <property name="dfeBaclis" type="string">
+            <column name="DFE_BACLIS" length="1" />
+        </property>
+        <property name="dfeBaclisfecha" type="timestamp">
+            <column name="DFE_BACLISFECHA" length="7" />
+        </property>
+        <property name="dfeCantidad" type="java.lang.Byte">
+            <column name="DFE_CANTIDAD" precision="2" scale="0" />
+        </property>
+        <property name="dfeExamenretirado" type="string">
+            <column name="DFE_EXAMENRETIRADO" length="1" />
+        </property>
+        <property name="dfeRutretiraexamen" type="string">
+            <column name="DFE_RUTRETIRAEXAMEN" length="12" />
+        </property>
+        <property name="dfeNombreretiraexamen" type="string">
+            <column name="DFE_NOMBRERETIRAEXAMEN" length="440" />
+        </property>
+        <property name="dfeFecharetiraexamen" type="timestamp">
+            <column name="DFE_FECHARETIRAEXAMEN" length="7" />
+        </property>
+        <property name="dfeIdusuarioautoriza" type="java.lang.Long">
+            <column name="DFE_IDUSUARIOAUTORIZA" precision="10" scale="0" />
+        </property>
+        <property name="dfeFechaautoriza" type="timestamp">
+            <column name="DFE_FECHAAUTORIZA" length="7" />
+        </property>
+        <property name="dfeEnviadoporemail" type="string">
+            <column name="DFE_ENVIADOPOREMAIL" length="1" />
+        </property>
+        <property name="dfeIdusuarioemail" type="java.lang.Long">
+            <column name="DFE_IDUSUARIOEMAIL" precision="10" scale="0" />
+        </property>
+        <property name="dfeFechaemail" type="timestamp">
+            <column name="DFE_FECHAEMAIL" length="7" />
+        </property>
+        <property name="dfeIdderivador" type="java.lang.Short">
+            <column name="DFE_IDDERIVADOR" precision="4" scale="0" />
+        </property>
+        <property name="dfeEnviadoahost" type="string">
+            <column name="DFE_ENVIADOAHOST" length="1" />
+        </property>
+        <property name="dfeFechaenviadoahost" type="timestamp">
+            <column name="DFE_FECHAENVIADOAHOST" length="7" />
+        </property>
+        <property name="dfeWebdisponible" type="string">
+            <column name="DFE_WEBDISPONIBLE" length="1" />
+        </property>
+        <property name="dfeWebdisponiblefecha" type="timestamp">
+            <column name="DFE_WEBDISPONIBLEFECHA" length="7" />
+        </property>
+        <property name="dfePdfenviado" type="string">
+            <column name="DFE_PDFENVIADO" length="1" />
+        </property>
+        <property name="dfePdffechaenvio" type="timestamp">
+            <column name="DFE_PDFFECHAENVIO" length="7" />
+        </property>
+        <property name="dfeTienepreinforme" type="string">
+            <column name="DFE_TIENEPREINFORME" length="1" />
+        </property>
+        <property name="dfePdfenviareproceso" type="string">
+            <column name="DFE_PDFENVIAREPROCESO" length="1" />
+        </property>
+        <property name="dfeWebfechaimpresion" type="string">
+            <column name="DFE_WEBFECHAIMPRESION" length="1" />
+        </property>
+        <property name="dfeIdusuariodt" type="java.lang.Long">
+            <column name="DFE_IDUSUARIODT" precision="10" scale="0" />
+        </property>
+        <property name="dfeRechazoexamen" type="string">
+            <column name="DFE_RECHAZOEXAMEN" length="1" />
+        </property>
+        <property name="dfeIdusuariorechazo" type="java.lang.Long">
+            <column name="DFE_IDUSUARIORECHAZO" precision="10" scale="0" />
+        </property>
+        <property name="dfeExamenesurgente" type="string">
+            <column name="DFE_EXAMENESURGENTE"  />
+        </property>
+        <!--<one-to-one name="datosFichasexamenespesquisas" class="com.grupobios.bioslis.entity.DatosFichasexamenespesquisas"></one-to-one>-->
+        <set name="datosFichasexamenesarchivoses" table="DATOS_FICHASEXAMENESARCHIVOS" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="DFEA_NORDEN" precision="10" scale="0" not-null="true" />
+                <column name="DFEA_IDEXAMEN" precision="10" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="com.grupobios.bioslis.entity.DatosFichasexamenesarchivos" />
+        </set>
+        <!--<one-to-one name="datosFichasexamenesmicroorg" class="com.grupobios.bioslis.entity.DatosFichasexamenesmicroorg"></one-to-one>-->
+        <set name="datosFichasexamenestests" table="DATOS_FICHASEXAMENESTEST" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="DFET_NORDEN" precision="10" scale="0" not-null="true" />
+                <column name="DFET_IDEXAMEN" precision="10" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="com.grupobios.bioslis.entity.DatosFichasexamenestest" />
+        </set>
+        <property name="dfeExamenAnulado" type="string" insert="false">
+            <column name="DFE_EXAMENANULADO"  />
+        </property>
+         <property name="dfeIdusuarioAnula" type="java.lang.Long">
+            <column name="DFE_IDUSUARIOANULA" precision="10" scale="0" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 16-08-2021 14:22:23 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.grupobios.bioslis.entity.LdvTiposdatospesquisas" table="LDV_TIPOSDATOSPESQUISAS" schema="BIOSLIS">
+        <id name="ldvtdpIdtipodatopesquisa" type="boolean">
+            <column name="LDVTDP_IDTIPODATOPESQUISA" precision="1" scale="0" />
+            <generator class="assigned"></generator>
+        </id>
+        <property name="ldvtdpDescripcion" type="string">
+            <column name="LDVTDP_DESCRIPCION" length="60" />
+        </property>
+        <set name="cfgPesquisasformatoses" table="CFG_PESQUISASFORMATOS" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="CPF_IDTIPODATOPESQUISA" precision="1" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="com.grupobios.bioslis.entity.CfgPesquisasformatos" />
+        </set>
+    </class>
+</hibernate-mapping>

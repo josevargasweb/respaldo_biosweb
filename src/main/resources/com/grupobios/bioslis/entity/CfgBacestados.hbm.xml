@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 16-08-2021 14:22:23 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.grupobios.bioslis.entity.CfgBacestados" table="CFG_BACESTADOS" schema="BIOSLIS">
+        <id name="cbeIdbacestado" type="byte">
+            <column name="CBE_IDBACESTADO" precision="2" scale="0" />
+            <generator class="assigned"></generator>
+        </id>
+        <property name="cbeCodigo" type="string">
+            <column name="CBE_CODIGO" length="40" />
+        </property>
+        <property name="cbeDescripcion" type="string">
+            <column name="CBE_DESCRIPCION" length="120" />
+        </property>
+        <property name="cbeSort" type="java.lang.Byte">
+            <column name="CBE_SORT" precision="2" scale="0" />
+        </property>
+        <property name="cbeActivo" type="string">
+            <column name="CBE_ACTIVO" length="1" />
+        </property>
+        <property name="cbeParafirma" type="string">
+            <column name="CBE_PARAFIRMA" length="1" />
+        </property>
+        <set name="datosFichasexameneses" table="DATOS_FICHASEXAMENES" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="DFE_IDBACESTADO" precision="2" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="com.grupobios.bioslis.entity.DatosFichasexamenes" />
+        </set>
+    </class>
+</hibernate-mapping>

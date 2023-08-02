@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 16-08-2021 14:22:23 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.grupobios.bioslis.entity.CfgNotas" table="CFG_NOTAS" schema="BIOSLIS">
+        <id name="cnIdnota" type="short">
+            <column name="CN_IDNOTA" precision="3" scale="0" />
+            <generator class="assigned"></generator>
+        </id>
+        <property name="cnDescripcionnota" type="string">
+            <column name="CN_DESCRIPCIONNOTA" length="480">
+                <comment>DESCRIPCION DE LA NOTA</comment>
+            </column>
+        </property>
+        <property name="cnActiva" type="string">
+            <column name="CN_ACTIVA" length="1" />
+        </property>
+        <property name="cnSort" type="java.lang.Short">
+            <column name="CN_SORT" precision="3" scale="0" />
+        </property>
+        <set name="cfgTiposnotases" table="CFG_NOTAS_TIPOSNOTAS" inverse="false" lazy="true" fetch="select">
+            <key>
+                <column name="CNTN_IDNOTA" precision="3" scale="0" not-null="true" />
+            </key>
+            <many-to-many entity-name="com.grupobios.bioslis.entity.CfgTiposnotas">
+                <column name="CNTN_IDTIPONOTA" precision="2" scale="0" not-null="true" />
+            </many-to-many>
+        </set>
+    </class>
+</hibernate-mapping>

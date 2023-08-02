@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 16-08-2021 14:22:23 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.grupobios.bioslis.entity.CfgServicios" table="CFG_SERVICIOS" schema="BIOSLIS">
+
+        <id name="csIdservicio" type="int">
+            <column name="CS_IDSERVICIO" precision="4" scale="0" />
+            <generator class="sequence" >
+                <param name="sequence">
+                    BIOSLIS.SEQ_CFG_SERVICIOS
+                </param>
+            </generator>
+        </id>
+        <many-to-one name="cfgCentrosdesalud" class="com.grupobios.bioslis.entity.CfgCentrosdesalud" fetch="select">
+            <column name="CS_IDCENTRODESALUD" precision="2" scale="0" not-null="true" />
+        </many-to-one>
+        <property name="csCodigo" type="string">
+            <column name="CS_CODIGO" length="15" />
+        </property>
+        <property name="csDescripcion" type="string">
+            <column name="CS_DESCRIPCION" length="50" />
+        </property>
+        <property name="csEmail" type="string">
+            <column name="CS_EMAIL" length="50" />
+        </property>
+        <property name="csActivo" type="string">
+            <column name="CS_ACTIVO" length="1" not-null="true" />
+        </property>
+        <property name="csSort" type="int">
+            <column name="CS_SORT" precision="4" scale="0" not-null="true" />
+        </property>
+        <property name="csHost" type="string">
+            <column name="CS_HOST" length="20" />
+        </property>
+        <property name="csHostmicro" type="string">
+            <column name="CS_HOSTMICRO" length="20" />
+        </property>
+        <property name="csHost2" type="string">
+            <column name="CS_HOST2" length="20" />
+        </property>
+        <property name="csHost3" type="string">
+            <column name="CS_HOST3" length="20" />
+        </property>
+        <property name="csGrupo" type="string">
+            <column name="CS_GRUPO" length="50" />
+        </property>
+        <property name="csGrupo2" type="string">
+            <column name="CS_GRUPO2" length="50" />
+        </property>
+        <property name="csUrgente" type="string">
+            <column name="CS_URGENTE" length="1" />
+        </property>
+        <property name="csIndicador" type="string">
+            <column name="CS_INDICADOR" length="1" />
+        </property>
+        <property name="csImpresora" type="string">
+            <column name="CS_IMPRESORA" length="100" />
+        </property>
+        <property name="csImprimeconfidenciales" type="string">
+            <column name="CS_IMPRIMECONFIDENCIALES" length="1" />
+        </property>
+
+    </class>
+</hibernate-mapping>

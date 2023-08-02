@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 16-08-2021 14:22:23 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.grupobios.bioslis.entity.LdvViasnotificaciones" table="LDV_VIASNOTIFICACIONES" schema="BIOSLIS" optimistic-lock="version">
+        <id name="ldvnnIdvianotificacion" type="short">
+            <column name="LDVVN_IDVIANOTIFICACION" precision="1" scale="0" />
+        <generator class="sequence">
+            <param name="sequence">BIOSLIS.SEQ_LDV_VIASNOTIFICACIONES</param>
+          </generator>
+        </id>
+        <property name="ldvvnDescripcion" type="string">
+            <column name="LDVVN_DESCRIPCION" length="20" />
+        </property>
+    </class>
+</hibernate-mapping>

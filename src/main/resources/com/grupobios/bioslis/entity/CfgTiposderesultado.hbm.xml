@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 16-08-2021 14:22:23 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.grupobios.bioslis.entity.CfgTiposderesultado" table="CFG_TIPOSDERESULTADO" schema="BIOSLIS">
+
+        <id name="ctrIdtiporesultado" type="int">
+            <column name="CTR_IDTIPORESULTADO" precision="2" scale="0" />
+            <generator class="sequence"></generator>
+        </id>
+        <property name="ctrCodigo" type="string">
+            <column name="CTR_CODIGO" length="8" />
+        </property>
+        <property name="ctrDescripcion" type="string">
+            <column name="CTR_DESCRIPCION" length="100" />
+        </property>
+        <property name="ctrSort" type="int">
+            <column name="CTR_SORT" precision="2" scale="0" />
+        </property>
+        <set name="cfgTests" table="CFG_TEST" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="CT_IDTIPORESULTADO" precision="2" scale="0" />
+            </key>
+            <one-to-many class="com.grupobios.bioslis.entity.CfgTest" />
+        </set>
+    </class>
+</hibernate-mapping>

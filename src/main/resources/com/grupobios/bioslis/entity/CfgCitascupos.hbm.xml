@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 16-08-2021 14:22:23 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.grupobios.bioslis.entity.CfgCitascupos" table="CFG_CITASCUPOS" schema="BIOSLIS">
+        <id name="cccIdcitascupos" type="short">
+            <column name="CCC_IDCITASCUPOS" precision="4" scale="0" />
+            <generator class="assigned"></generator>
+        </id>
+        <many-to-one name="cfgProcedencias" class="com.grupobios.bioslis.entity.CfgProcedencias" fetch="select">
+            <column name="CCC_IDPROCEDENCIA" precision="5" scale="0" not-null="true" />
+        </many-to-one>
+        <property name="cccFecha" type="date">
+            <column name="CCC_FECHA" length="7" />
+        </property>
+        <property name="cccNrocupos" type="java.lang.Short">
+            <column name="CCC_NROCUPOS" precision="3" scale="0" />
+        </property>
+        <property name="cccMotivo" type="string">
+            <column name="CCC_MOTIVO" length="400" />
+        </property>
+    </class>
+</hibernate-mapping>

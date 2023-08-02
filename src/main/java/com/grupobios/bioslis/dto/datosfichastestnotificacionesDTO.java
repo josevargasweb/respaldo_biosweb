@@ -1,0 +1,180 @@
+package com.grupobios.bioslis.dto;
+
+import java.math.BigDecimal;
+import java.time.LocalDateTime;
+import java.util.Date;
+
+public class datosfichastestnotificacionesDTO {
+
+	private String NOTIFICACIONID;
+	private String NOTIFICACIONCONFIRM;
+	private String NOTIFICACIONDATE;
+	private String NOTIFICACIONMESAGE;
+	private String NOTIFICACIONNAME;
+	private String NOTIFICACIONNOTE;
+	private String NOTIFICACIONRECEPTOR;
+	private String NOTIFICACIONSENDTO;
+	private String NOTIFICACIONUSER;
+	private String NOTIFICACIONCHANNEL;
+	private String NOTIFICACIONTYPERROR;
+	private String NOTIFICACIONERRORNOTE;
+	
+	
+
+    public String getNOTIFICACIONID() {
+        return NOTIFICACIONID;
+    }
+
+
+
+    public void setNOTIFICACIONID(String nOTIFICACIONID) {
+        NOTIFICACIONID = nOTIFICACIONID;
+    }
+
+
+
+    public String getNOTIFICACIONCONFIRM() {
+        return NOTIFICACIONCONFIRM;
+    }
+
+
+
+    public void setNOTIFICACIONCONFIRM(String nOTIFICACIONCONFIRM) {
+        NOTIFICACIONCONFIRM = nOTIFICACIONCONFIRM;
+    }
+
+
+
+    public String getNOTIFICACIONDATE() {
+        return NOTIFICACIONDATE;
+    }
+
+
+
+    public void setNOTIFICACIONDATE(String nOTIFICACIONDATE) {
+        NOTIFICACIONDATE = nOTIFICACIONDATE;
+    }
+
+
+
+    public String getNOTIFICACIONMESAGE() {
+        return NOTIFICACIONMESAGE;
+    }
+
+
+
+    public void setNOTIFICACIONMESAGE(String nOTIFICACIONMESAGE) {
+        NOTIFICACIONMESAGE = nOTIFICACIONMESAGE;
+    }
+
+
+
+    public String getNOTIFICACIONNAME() {
+        return NOTIFICACIONNAME;
+    }
+
+
+
+    public void setNOTIFICACIONNAME(String nOTIFICACIONNAME) {
+        NOTIFICACIONNAME = nOTIFICACIONNAME;
+    }
+
+
+
+    public String getNOTIFICACIONNOTE() {
+        return NOTIFICACIONNOTE;
+    }
+
+
+
+    public void setNOTIFICACIONNOTE(String nOTIFICACIONNOTE) {
+        NOTIFICACIONNOTE = nOTIFICACIONNOTE;
+    }
+
+
+
+    public String getNOTIFICACIONRECEPTOR() {
+        return NOTIFICACIONRECEPTOR;
+    }
+
+
+
+    public void setNOTIFICACIONRECEPTOR(String nOTIFICACIONRECEPTOR) {
+        NOTIFICACIONRECEPTOR = nOTIFICACIONRECEPTOR;
+    }
+
+
+
+    public String getNOTIFICACIONSENDTO() {
+        return NOTIFICACIONSENDTO;
+    }
+
+
+
+    public void setNOTIFICACIONSENDTO(String nOTIFICACIONSENDTO) {
+        NOTIFICACIONSENDTO = nOTIFICACIONSENDTO;
+    }
+
+
+
+    public String getNOTIFICACIONUSER() {
+        return NOTIFICACIONUSER;
+    }
+
+
+
+    public void setNOTIFICACIONUSER(String nOTIFICACIONUSER) {
+        NOTIFICACIONUSER = nOTIFICACIONUSER;
+    }
+
+
+
+    public String getNOTIFICACIONCHANNEL() {
+        return NOTIFICACIONCHANNEL;
+    }
+
+
+
+    public void setNOTIFICACIONCHANNEL(String nOTIFICACIONCHANNEL) {
+        NOTIFICACIONCHANNEL = nOTIFICACIONCHANNEL;
+    }
+
+
+
+    public String getNOTIFICACIONTYPERROR() {
+        return NOTIFICACIONTYPERROR;
+    }
+
+
+
+    public void setNOTIFICACIONTYPERROR(String nOTIFICACIONTYPERROR) {
+        NOTIFICACIONTYPERROR = nOTIFICACIONTYPERROR;
+    }
+
+
+
+    public String getNOTIFICACIONERRORNOTE() {
+        return NOTIFICACIONERRORNOTE;
+    }
+
+
+
+    public void setNOTIFICACIONERRORNOTE(String nOTIFICACIONERRORNOTE) {
+        NOTIFICACIONERRORNOTE = nOTIFICACIONERRORNOTE;
+    }
+
+
+
+    @Override
+	public String toString() {
+		return "datosfichastestnotificacionesDTO [NOTIFICACIONID=" + NOTIFICACIONID + ", NOTIFICACIONCONFIRM="
+				+ NOTIFICACIONCONFIRM + ", NOTIFICACIONDATE=" + NOTIFICACIONDATE + ", NOTIFACIONMESSAGE="
+				+ NOTIFICACIONMESAGE + ", NOTIFICACIONNAME=" + NOTIFICACIONNAME + ", NOTIFICACIONNOTE="
+				+ NOTIFICACIONNOTE + ", NOTIFICACIONRECEPTOR=" + NOTIFICACIONRECEPTOR + ", NOTIFICACIONSENDTO="
+				+ NOTIFICACIONSENDTO + ", NOTIFICACIONUSER=" + NOTIFICACIONUSER + ", NOTIFICACIONCHANNEL="
+				+ NOTIFICACIONCHANNEL + ", NOTIFICACIONTYPERROR=" + NOTIFICACIONTYPERROR + ", NOTIFICACIONERRORNOTE="
+				+ NOTIFICACIONERRORNOTE + "]";
+	}
+
+  
+}

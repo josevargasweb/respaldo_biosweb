@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 16-08-2021 14:22:23 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.grupobios.bioslis.entity.DatosUsuarios" table="DATOS_USUARIOS" schema="BIOSLIS">
+        <id name="duIdusuario" type="long">
+            <column name="DU_IDUSUARIO" precision="10" scale="0" />
+            <generator class="sequence" >
+                <param name="sequence">
+                    BIOSLIS.SEQ_DATOS_USUARIOS
+                </param>
+            </generator>
+        </id>
+        <many-to-one name="ldvSexo" class="com.grupobios.bioslis.entity.LdvSexo" fetch="select">
+            <column name="DU_IDSEXO" precision="1" scale="0" />
+        </many-to-one>
+        <many-to-one name="ldvProfesionesusuarios" class="com.grupobios.bioslis.entity.LdvProfesionesusuarios" fetch="select">
+            <column name="DU_IDPROFESION" precision="2" scale="0" />
+        </many-to-one>
+        <many-to-one name="ldvCargosusuarios" class="com.grupobios.bioslis.entity.LdvCargosusuarios" fetch="select">
+            <column name="DU_IDCARGO" precision="4" scale="0" />
+        </many-to-one>
+        <property name="duUsuario" type="string">
+            <column name="DU_USUARIO" length="80" not-null="true" />
+        </property>
+        <property name="duRun" type="string">
+            <column name="DU_RUN" length="60" not-null="true" />
+        </property>
+        <property name="duNombres" type="string">
+            <column name="DU_NOMBRES" length="200" not-null="true" />
+        </property>
+        <property name="duPrimerapellido" type="string">
+            <column name="DU_PRIMERAPELLIDO" length="120" not-null="true" />
+        </property>
+        <property name="duSegundoapellido" type="string">
+            <column name="DU_SEGUNDOAPELLIDO" length="120" />
+        </property>
+        <property name="duActivo" type="string">
+            <column name="DU_ACTIVO" length="1" not-null="true" />
+        </property>
+        <property name="duFoto" type="blob">
+            <column name="DU_FOTO" />
+        </property>
+        <property name="duPassword" type="string">
+            <column name="DU_PASSWORD" length="120" />
+        </property>
+        <property name="duFechacaducapassword" type="timestamp">
+            <column name="DU_FECHACADUCAPASSWORD" length="7" />
+        </property>
+        <property name="duFechaultimaconexion" type="timestamp">
+            <column name="DU_FECHAULTIMACONEXION" length="7" />
+        </property>
+        <property name="duEmail" type="string">
+            <column name="DU_EMAIL" length="50" />
+        </property>
+        <property name="duPasswordexpira" type="string">
+            <column name="DU_PASSWORDEXPIRA" length="1" not-null="true" />
+        </property>
+        <set name="logPacientespatologiases" table="LOG_PACIENTESPATOLOGIAS" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="LPP_IDUSUARIO" precision="10" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="com.grupobios.bioslis.entity.LogPacientespatologias" />
+        </set>
+        <set name="logContactospacienteses" table="LOG_CONTACTOSPACIENTES" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="LCP_IDUSUARIO" precision="10" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="com.grupobios.bioslis.entity.LogContactospacientes" />
+        </set>
+    </class>
+</hibernate-mapping>

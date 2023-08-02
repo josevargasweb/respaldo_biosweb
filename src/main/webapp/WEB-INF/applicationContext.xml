@@ -1,0 +1,628 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+       http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+       http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
+        http://www.springframework.org/schema/beans     
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/mvc 
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd
+        http://www.springframework.org/schema/context 
+        http://www.springframework.org/schema/context/spring-context.xsd"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:context="http://www.springframework.org/schema/context">
+
+
+	<bean id="configPrefijos"
+		class="com.grupobios.bioslis.bs.ConfigPrefijosServiceImpl"
+		name="configPrefijos" />
+	<bean id="pdf" class="com.grupobios.bioslis.bs.PdfServiceImpl"
+		name="pdf" />
+	<bean name="pdfHelper"
+		class="com.grupobios.bioslis.bs.PdfServiceImpl" />
+
+	<bean id="informeResultadosService"
+		class="com.grupobios.bioslis.bs.InformeResultadosServiceImpl"
+		name="infResultados">
+		<property name="datosFichas_dao" ref="datosFichas_dao" />
+		<property name="ldvTiposdocumentos_dao"
+			ref="ldvTiposdocumentos_dao" />
+		<property name="cfgTipoAtencionDAO" ref="cfgTipoAtencionDAO" />
+		<property name="servicios_dao" ref="servicios_dao" />
+		<property name="bioslisMailS" ref="bioslisMailS" />
+		<property name="pdfHelper" ref="pdfHelper" />
+		<property name="datosFichasExamenesDAO"
+			ref="datosFichasExamenesDAO" />
+	</bean>
+
+
+	<bean id="ordenService"
+		class="com.grupobios.bioslis.bs.OrdenServiceImpl" name="ordenService">
+		<property name="capturaResultadosDAO"
+			ref="capturaResultadosDAO" />
+		<property name="datosFichas_dao" ref="datosFichas_dao" />
+		<property name="ordenExecutorFactory"
+			ref="ordenExecutorFactory" />
+		<property name="cfgLocalizacionesDAO"
+			ref="cfgLocalizacionesDAO" />
+		<property name="datosFichasDAO" ref="datosFichasDAO" />
+		<property name="pacienteService" ref="pacienteService" />
+		<property name="testService" ref="testService" />
+		<property name="examenService" ref="examenService" />
+		<property name="datosFichasExamenesTestDAO"
+			ref="datosFichasExamenesTestDAO" />
+
+
+	</bean>
+
+	<bean id="capturaResultadosService"
+		class="com.grupobios.bioslis.bs.CapturaResultadosServiceImpl"
+		name="capturaResultadosService">
+		<property name="capturaResultadosDAO"
+			ref="capturaResultadosDAO" />
+	</bean>
+
+	<bean id="pacienteService"
+		class="com.grupobios.bioslis.bs.PacienteServiceImpl"
+		name="pacienteService">
+		<property name="datosPacientesDAO" ref="datosPacientesDAO" />
+		<property name="ldvSexosDAO" ref="ldvSexosDAO" />
+		<property name="ldvTiposdocumentos_dao"
+			ref="ldvTiposdocumentos_dao" />
+		<property name="dppDAO" ref="dppDAO" />
+		<property name="dcDAO" ref="dcDAO" />
+		<property name="cfgaDAO" ref="cfgaDAO" />
+		<property name="dfaDAO" ref="dfaDAO" />
+		<property name="ldvPatologiasDAO" ref="ldvPatologiasDAO" />
+		<property name="cfgProcedenciasDAO" ref="cfgProcedenciasDAO" />
+		<property name="servicios_dao" ref="servicios_dao" />
+		<property name="datosFichasDAO" ref="datosFichasDAO" />
+		<property name="ordenService" ref="ordenService" />
+
+
+	</bean>
+
+	<bean id="tomaMuestrasService"
+		class="com.grupobios.bioslis.bs.TomaMuestrasServiceImpl"
+		name="tomaMuestrasService">
+		<property name="datosFichasDAO" ref="datosFichasDAO" />
+		<property name="datosFichasExamenesTestDAO"
+			ref="datosFichasExamenesTestDAO" />
+		<property name="cfgExamenesDAO" ref="cfgExamenesDAO" />
+		<property name="cfgMuestrasDAO" ref="cfgMuestrasDAO" />
+		<property name="datosFichasmuestrasDAO"
+			ref="datosFichasmuestrasDAO" />
+		<property name="datosUsuariosDAO" ref="datosUsuariosDAO" />
+		<property name="fichasEstadosTMDAO" ref="fichasEstadosTMDAO" />
+		<property name="datosPacientesDAO" ref="datosPacientesDAO" />
+	</bean>
+
+	<bean id="dominiosService"
+		class="com.grupobios.bioslis.bs.DominiosServiceImpl"
+		name="dominiosService">
+		<property name="servicios_dao" ref="servicios_dao" />
+		<property name="dominiosDAO" ref="dominiosDAO" />
+		<property name="cfgMuestrasDAO" ref="cfgMuestrasDAO" />
+		<property name="cfgSeccionesDAO" ref="cfgSeccionesDAO" />
+		<property name="cfgTipoAtencionDAO" ref="cfgTipoAtencionDAO" />
+		<property name="cfgProcedenciasDAO" ref="cfgProcedenciasDAO" />
+		<property name="cfgEnvasesDAO" ref="cfgEnvasesDAO" />
+		<property name="cfgEstadosexamenesDAO"
+			ref="cfgEstadosexamenesDAO" />
+		<property name="cfgExamenesDAO" ref="cfgExamenesDAO" />
+		<property name="cfgDerivadoresDAO" ref="cfgDerivadoresDAO" />
+		<property name="cfgPanelesExamenesDAO"
+			ref="cfgPanelesExamenesDAO" />
+		<property name="cfgPrioridadAtencionDAO"
+			ref="cfgPrioridadAtencionDAO" />
+		<property name="ldvTiposdocumentos_dao"
+			ref="ldvTiposdocumentos_dao" />
+		<property name="ldvSexosDAO" ref="ldvSexosDAO" />
+		<property name="ldvContactospacientesrelacionDAO"
+			ref="ldvContactospacientesrelacionDAO" />
+		<property name="ldvRegionesDAO" ref="ldvRegionesDAO" />
+		<property name="ldvPaisesDAO" ref="ldvPaisesDAO" />
+		<property name="ldvPatologiasDAO" ref="ldvPatologiasDAO" />
+		<property name="ldvEstadoscivilesDAO"
+			ref="ldvEstadoscivilesDAO" />
+		<property name="cfgMedicosDAO" ref="cfgMedicosDAO" />
+		<property name="cfgConvenioDAO" ref="cfgConvenioDAO" />
+		<property name="CfgDiagnosticosDAO" ref="CfgDiagnosticosDAO" />
+		<property name="ldvTiposreceptoresDAO"
+			ref="ldvTiposreceptoresDAO" />
+		<property name="ldvViasnotificacionesDAO"
+			ref="ldvViasnotificacionesDAO" />
+		<property name="cfgPesquisasDAO" ref="cfgPesquisasDAO" />
+		<property name="ldvLoincDAO" ref="ldvLoincDAO" />
+		<property name="ldvFormatosDAO" ref="ldvFormatosDAO" />
+		<property name="ldvGruposExamenesDAO"
+			ref="ldvGruposExamenesDAO" />
+		<property name="ldvIndicacionesTMDAO"
+			ref="ldvIndicacionesTMDAO" />
+		<property name="cfgaDAO" ref="cfgaDAO" />
+		<property name="cie10DAO" ref="cie10DAO" />
+	</bean>
+
+	<bean id="institucionesService"
+		class="com.grupobios.bioslis.bs.InstitucionesServiceImpl"
+		name="institucionesService">
+		<property name="cfgCentrosDeSaludDAO"
+			ref="cfgCentrosDeSaludDAO" />
+		<property name="cfgLaboratoriosDAO" ref="cfgLaboratoriosDAO" />
+		<property name="cfgSeccionesDAO" ref="cfgSeccionesDAO" />
+		<property name="cfgConvenioDAO" ref="cfgConvenioDAO" />
+		<property name="sistemaConfiguracionesDAO"
+			ref="sistemaConfiguracionesDAO" />
+		<property name="institucionesSaludDAO"
+			ref="institucionesSaludDAO" />
+	</bean>
+
+	<bean id="recepcionMuestrasService"
+		class="com.grupobios.bioslis.bs.RecepcionMuestrasServiceImpl"
+		name="recepcionMuestrasService">
+		<property name="datosFichasmuestrasDAO"
+			ref="datosFichasmuestrasDAO" />
+		<property name="datosFichasExamenesTestDAO"
+			ref="datosFichasExamenesTestDAO" />
+		<property name="cfgExamenesDAO" ref="cfgExamenesDAO" />
+		<property name="datosFichasExamenesDAO"
+			ref="datosFichasExamenesDAO" />
+		<property name="datosUsuariosDAO" ref="datosUsuariosDAO" />
+		<property name="datosFichasDAO" ref="datosFichasDAO" />
+	</bean>
+
+	<bean id="rechazoMuestrasService"
+		class="com.grupobios.bioslis.bs.RechazoMuestrasServiceImpl"
+		name="rechazoMuestrasService">
+		<property name="datosFichasmuestrasDAO"
+			ref="datosFichasmuestrasDAO" />
+		<property name="datosFichas_dao" ref="datosFichas_dao" />
+		<property name="datosMuestrasRechazadasDAO"
+			ref="datosMuestrasRechazadasDAO" />
+		<property name="cfgExamenesDAO" ref="cfgExamenesDAO" />
+		<property name="datosFichasExamenesDAO"
+			ref="datosFichasExamenesDAO" />
+		<property name="datosFichasExamenesTestDAO"
+			ref="datosFichasExamenesTestDAO" />
+	</bean>
+
+	<bean id="examenService"
+		class="com.grupobios.bioslis.bs.ExamenServiceImpl"
+		name="examenService">
+		<property name="datosFichasExamenesDAO"
+			ref="datosFichasExamenesDAO" />
+		<property name="datosFichasExamenesTestDAO"
+			ref="datosFichasExamenesTestDAO" />
+		<property name="datosFichasDAO" ref="datosFichasDAO" />
+		<property name="cfgExamenesDAO" ref="cfgExamenesDAO" />
+		<property name="actionExamenExecutorFactory"
+			ref="actionExamenExecutorFactory" />
+		<property name="cfgDerivadoresDAO" ref="cfgDerivadoresDAO" />
+		<property name="indicacionesExamenesDAO"
+			ref="indicacionesExamenesDAO" />
+		<property name="cfgMuestrasDAO" ref="cfgMuestrasDAO" />
+		<property name="cfgSeccionesDAO" ref="cfgSeccionesDAO" />
+		<property name="cfgPesquisasDAO" ref="cfgPesquisasDAO" />
+		<property name="ldvLoincDAO" ref="ldvLoincDAO" />
+		<property name="ldvFormatosDAO" ref="ldvFormatosDAO" />
+		<property name="ldvGruposExamenesDAO"
+			ref="ldvGruposExamenesDAO" />
+		<property name="cfgExamenesTestDAO" ref="cfgExamenesTestDAO" />
+		<property name="cfgGruposMuestrasExaDAO"
+			ref="cfgGruposMuestrasExaDAO" />
+		<property name="cfgExamenesIndicacionesTMDAO"
+			ref="cfgExamenesIndicacionesTMDAO" />
+		<property name="gruposExamenesFonasaDAO"
+			ref="gruposExamenesFonasaDAO" />
+		<property name="cfgMetodosDAO" ref="cfgMetodosDAO" />
+		<property name="cfgTestDAO" ref="cfgTestDAO" />
+		<property name="logCfgTablasDAO" ref="logCfgTablasDAO" />
+
+
+		<property name="tiposExamenesDAO" ref="tiposExamenesDAO" />
+		<property name="examenesConjuntosDAO"
+			ref="examenesConjuntosDAO" />
+		<property name="examenesConjuntosDetalleDAO"
+			ref="examenesConjuntosDetalleDAO" />
+		<property name="tablasreferenciasexamenesDAO"
+			ref="tablasreferenciasexamenesDAO" />
+	</bean>
+
+	<bean id="testService"
+		class="com.grupobios.bioslis.bs.TestServiceImpl" name="testService">
+		<property name="logEventosfichasDAO"
+			ref="logEventosfichasDAO" />
+		<property name="datosFichasExamenesTestDAO"
+			ref="datosFichasExamenesTestDAO" />
+		<property name="actionExecutorFactory"
+			ref="actionExecutorFactory" />
+		<property name="cfgTestDAO" ref="cfgTestDAO" />
+		<property name="capturaResultadosDAO"
+			ref="capturaResultadosDAO" />
+		<property name="fe" ref="fe" />
+		<property name="cfgCondicionesformulasDAO"
+			ref="cfgCondicionesformulasDAO" />
+		<property name="datosFichasExamenesDAO"
+			ref="datosFichasExamenesDAO" />
+
+	</bean>
+
+	<bean id="configuracionProcedenciasService"
+		class="com.grupobios.bioslis.bs.ConfiguracionProcedenciasServiceImpl"
+		name="configuracionProcedenciasService">
+		<property name="cfgProcedenciasDAO" ref="cfgProcedenciasDAO" />
+	</bean>
+	<bean id="usuarioService"
+		class="com.grupobios.bioslis.bs.UsuarioServiceImpl"
+		name="usuarioService">
+		<property name="datosUsuariosDAO" ref="datosUsuariosDAO" />
+	</bean>
+
+	<bean id="bioslisMailS"
+		class="com.grupobios.bioslis.common.BioslisMailSenderImpl"
+		name="bioslisMailS">
+		<property name="bioslisJavaMailSender"
+			ref="bioslisJavaMailSender" />
+	</bean>
+
+	<bean id="bioslisJavaMailSender"
+		class="org.springframework.mail.javamail.JavaMailSenderImpl">
+		<property name="host" value="smtp.sendgrid.net" />
+		<property name="port" value="587" />
+		<property name="username" value="apikey" />
+		<property name="password"
+			value="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" />
+		<property name="javaMailProperties">
+			<props>
+				<prop key="mail.transport.protocol">smtp</prop>
+				<prop key="mail.smtp.auth">true</prop>
+				<prop key="mail.smtp.starttls.enable">false</prop>
+				<prop key="mail.debug">true</prop>
+			</props>
+		</property>
+	</bean>
+
+	<bean id="registroUsuariosService"
+		class="com.grupobios.bioslis.bs.RegistroUsuariosServiceImpl"
+		name="registroUsuariosService">
+		<property name="datosUsuariosDAO" ref="datosUsuariosDAO" />
+		<property name="cfgPerfilesusuariosDAO"
+			ref="cfgPerfilesusuariosDAO" />
+	</bean>
+
+	<bean id="signExecutor"
+		class="com.grupobios.bioslis.common.SignExamenExecutor"
+		name="signExecutor">
+		<property name="examenService" ref="examenService" />
+		<property name="pdfHelper" ref="pdfHelper" />
+		<property name="datosFichasExamenesTestDAO"
+			ref="datosFichasExamenesTestDAO" />
+		<property name="bioslisMailS" ref="bioslisMailS" />
+		<property name="informeResultadosService"
+			ref="informeResultadosService" />
+		<property name="ordenService" ref="ordenService" />
+	</bean>
+
+	<bean id="unsignExecutor"
+		class="com.grupobios.bioslis.common.UnsignExamenExecutor"
+		name="unsignExecutor">
+		<property name="examenService" ref="examenService" />
+		<property name="pdfHelper" ref="pdfHelper" />
+		<property name="datosFichasExamenesTestDAO"
+			ref="datosFichasExamenesTestDAO" />
+		<property name="bioslisMailS" ref="bioslisMailS" />
+		<property name="informeResultadosService"
+			ref="informeResultadosService" />
+		<property name="ordenService" ref="ordenService" />
+	</bean>
+
+	<bean id="actionExecutorFactory"
+		class="com.grupobios.bioslis.common.ActionExecutorFactory"
+		name="actionExecutorFactory">
+		<property name="signExecutor" ref="signExecutor" />
+		<property name="unsignExecutor" ref="unsignExecutor" />
+		<property name="blockExecutor" ref="blockExecutor" />
+		<property name="blockTestExecutor" ref="blockTestExecutor" />
+		<property name="unBlockTestExecutor"
+			ref="unBlockTestExecutor" />
+	</bean>
+
+	<bean id="blockTestExecutor"
+		class="com.grupobios.bioslis.common.BloquearTestExecutor"
+		name="blockTestExecutor">
+	</bean>
+	<bean id="blockExecutor"
+		class="com.grupobios.bioslis.common.BloquearExamenExecutor"
+		name="blockExecutor">
+		<property name="examenService" ref="examenService" />
+
+
+	</bean>
+	<bean id="unBlockTestExecutor"
+		class="com.grupobios.bioslis.common.DesbloquearTestExecutor"
+		name="unBlockTestExecutor">
+	</bean>
+
+
+	<bean id="actionExamenExecutorFactory"
+		class="com.grupobios.bioslis.common.ActionExamenExecutorFactory"
+		name="actionExamenExecutorFactory">
+		<property name="signExecutor" ref="signExecutor" />
+		<property name="examenNoExecutor" ref="examenNoExecutor" />
+		<property name="autorizarExamenExecutor"
+			ref="autorizarExamenExecutor" />
+		<property name="desautorizarExamenExecutor"
+			ref="desautorizarExamenExecutor" />
+		<property name="unsignExecutor" ref="unsignExecutor" />
+	</bean>
+
+	<bean id="ordenExecutorFactory"
+		class="com.grupobios.bioslis.common.OrdenExecutorFactory"
+		name="ordenExecutorFactory">
+		<property name="signOrdenExecutor" ref="signOrdenExecutor" />
+	</bean>
+
+	<bean id="signOrdenExecutor"
+		class="com.grupobios.bioslis.common.SignOrdenExecutor"
+		name="signOrdenExecutor">
+		<property name="examenService" ref="examenService" />
+		<property name="ordenService" ref="ordenService" />
+	</bean>
+
+
+	<bean id="autorizarExamenExecutor"
+		class="com.grupobios.bioslis.common.AutorizarExamenExecutor"
+		name="autorizarExamenExecutor">
+		<property name="examenService" ref="examenService" />
+	</bean>
+
+	<bean id="desautorizarExamenExecutor"
+		class="com.grupobios.bioslis.common.DesautorizarExamenExecutor"
+		name="desautorizarExamenExecutor">
+		<property name="examenService" ref="examenService" />
+	</bean>
+
+	<bean id="examenNoExecutor"
+		class="com.grupobios.bioslis.common.ExamenNoExecutor"
+		name="examenNoExecutor">
+		<property name="examenService" ref="examenService" />
+	</bean>
+
+
+	<bean id="cargosModulosService"
+		class="com.grupobios.bioslis.bs.CargosModulosServiceImpl"
+		name="cargosModulosService">
+		<property name="ldvCargosUsuariosDAO"
+			ref="ldvCargosUsuariosDAO" />
+		<property name="cfgCargosmodulosblDAO"
+			ref="cfgCargosmodulosblDAO" />
+		<property name="cfgBioslismodulosDAO"
+			ref="cfgBioslismodulosDAO" />
+		<property name="cfgUsuariosModulosDAO"
+			ref="cfgUsuariosModulosDAO" />
+		<property name="datosUsuariosDAO" ref="datosUsuariosDAO" />
+	</bean>
+
+	<bean id="usuariosModulosService"
+		class="com.grupobios.bioslis.bs.UsuariosModulosServiceImpl"
+		name="usuariosModulosService">
+		<property name="cfgUsuariosModulosDAO"
+			ref="cfgUsuariosModulosDAO" />
+		<property name="datosUsuariosDAO" ref="datosUsuariosDAO" />
+		<property name="cfgBioslismodulosDAO"
+			ref="cfgBioslismodulosDAO" />
+		<property name="cfgPerfilesusuariosDAO"
+			ref="cfgPerfilesusuariosDAO" />
+
+	</bean>
+
+	<bean id="configuracionTestService"
+		class="com.grupobios.bioslis.bs.ConfiguracionTestServiceImpl"
+		name="configuracionTestService">
+		<property name="cfgTestDAO" ref="cfgTestDAO" />
+		<property name="cfgExamenesTestDAO" ref="cfgExamenesTestDAO" />
+		<property name="cfgMuestrasDAO" ref="cfgMuestrasDAO" />
+		<property name="cfgSeccionesDAO" ref="cfgSeccionesDAO" />
+		<property name="cfgEnvasesDAO" ref="cfgEnvasesDAO" />
+		<property name="cfgLaboratoriosDAO" ref="cfgLaboratoriosDAO" />
+		<property name="cfgTiposderesultadoDAO"
+			ref="cfgTiposderesultadoDAO" />
+		<property name="cfgBacgrupostestDAO"
+			ref="cfgBacgrupostestDAO" />
+		<property name="cfgaDAO" ref="cfgaDAO" />
+		<property name="cfgAntecedentestestDAO"
+			ref="cfgAntecedentestestDAO" />
+		<property name="cfgUnidadesdemedidaDAO"
+			ref="cfgUnidadesdemedidaDAO" />
+		<property name="gruposExamenesFonasaDAO"
+			ref="gruposExamenesFonasaDAO" />
+		<property name="cfgMetodosDAO" ref="cfgMetodosDAO" />
+		<property name="cfgMetodosTestDAO" ref="cfgMetodosTestDAO" />
+		<property name="cfgGlosasDAO" ref="cfgGlosasDAO" />
+		<property name="cfgGlosastestDAO" ref="cfgGlosastestDAO" />
+		<property name="cvrDAO" ref="cvrDAO" />
+		<property name="logCfgTablasDAO" ref="logCfgTablasDAO" />
+	</bean>
+
+	<bean id="registroDocumentosService"
+		class="com.grupobios.bioslis.bs.RegistroDocumentosServiceImpl"
+		name="registroDocumentosService">
+		<property name="documentosDAO" ref="documentosDAO" />
+		<property name="datosFichasDAO" ref="datosFichasDAO" />
+		<property name="datosFichasExamenesDAO"
+			ref="datosFichasExamenesDAO" />
+		<property name="tiposdocumentosanexosDAO"
+			ref="tiposdocumentosanexosDAO" />
+		<property name="datosFichasexamenesarchivosDAO"
+			ref="datosFichasexamenesarchivosDAO" />
+		<property name="tiposarchivosDAO" ref="tiposarchivosDAO" />
+	</bean>
+
+	<bean id="valoresReferenciaService"
+		class="com.grupobios.bioslis.bs.ValoresReferenciaServiceImpl"
+		name="valoresReferenciaService">
+		<property name="cvrDAO" ref="cvrDAO" />
+		<property name="logCfgTablasDAO" ref="logCfgTablasDAO" />
+	</bean>
+
+	<bean id="analizadoresService"
+		class="com.grupobios.bioslis.bs.AnalizadoresServiceImpl"
+		name="analizadoresService">
+		<property name="analizadoresDAO" ref="analizadoresDAO" />
+		<property name="sigmaImagenesDAO" ref="sigmaImagenesDAO" />
+	</bean>
+
+	<bean id="procesosService"
+		class="com.grupobios.bioslis.bs.ProcesosServiceImpl"
+		name="procesosService">
+		<property name="procesosDAO" ref="procesosDAO" />
+		<property name="procesosTestDAO" ref="procesosTestDAO" />
+		<property name="tipoComunicacionDAO"
+			ref="tipoComunicacionDAO" />
+		<property name="sigmaTiposMuestrasDAO"
+			ref="sigmaTiposMuestrasDAO" />
+		<property name="tiposCondicionDAO" ref="tiposCondicionDAO" />
+		<property name="operacionesMathDAO" ref="operacionesMathDAO" />
+		<property name="cfgTiposderesultadoDAO"
+			ref="cfgTiposderesultadoDAO" />
+		<property name="procesosTestConversionDAO"
+			ref="procesosTestConversionDAO" />
+		<property name="procesosAlarmasDAO" ref="procesosAlarmasDAO" />
+		<property name="muestrasPrefijosDAO"
+			ref="muestrasPrefijosDAO" />
+	</bean>
+	<bean id="configuracionEtiquetasService"
+		class="com.grupobios.bioslis.bs.ConfiguracionEtiquetasServiceImpl"
+		name="configuracionEtiquetasService">
+		<property name="cfgEtiquetaCodigoBarrasDAO"
+			ref="cfgEtiquetaCodigoBarrasDAO" />
+	</bean>
+	<bean id="microbiologiaService"
+		class="com.grupobios.bioslis.bs.MicrobiologiaServiceImpl"
+		name="microbiologiaService">
+		<property name="microbiologiaOrdenDAO"
+			ref="microbiologiaOrdenDAO" />
+	</bean>
+	<bean id="configuracionMuestrasService"
+		class="com.grupobios.bioslis.bs.ConfiguracionMuestrasServiceImpl"
+		name="configuracionMuestrasService">
+		<property name="cfgMuestrasDAO" ref="cfgMuestrasDAO" />
+	</bean>
+	<bean id="configuracionEnvasesService"
+		class="com.grupobios.bioslis.bs.ConfiguracionEnvasesServiceImpl"
+		name="configuracionEnvasesService">
+		<property name="cfgEnvasesDAO" ref="cfgEnvasesDAO" />
+	</bean>
+	<!-- creado por cristian para portal estadistica 22-11 -->
+	<bean id="estadisticaService"
+		class="com.grupobios.bioslis.bs.EstadisticaServiceImpl"
+		name="estadisticaService">
+		<property name="EstadisticaDAO" ref="estadisticaDAO" />
+	</bean>
+
+	<bean id="fe" class="com.grupobios.bioslis.bs.FormulaEvaluador"
+		name="fe">
+		<property name="datosFichasDAO" ref="datosFichasDAO" />
+		<property name="dfaDAO" ref="dfaDAO" />
+
+	</bean>
+
+	<bean id="unidadesMedidaService"
+		class="com.grupobios.bioslis.bs.UnidadesMedidaServiceImpl"
+		name="unidadesMedidaService">
+		<property name="cfgUnidadesdemedidaDAO"
+			ref="cfgUnidadesdemedidaDAO" />
+	</bean>
+	<bean id="configuracionGlosasService"
+		class="com.grupobios.bioslis.bs.ConfiguracionGlosasServiceImpl"
+		name="configuracionGlosasService">
+		<property name="cfgGlosasDAO" ref="cfgGlosasDAO" />
+	</bean>
+	<bean id="laboratoriosService"
+		class="com.grupobios.bioslis.bs.LaboratoriosServiceImpl"
+		name="laboratoriosService">
+		<property name="cfgLaboratoriosDAO" ref="cfgLaboratoriosDAO" />
+		<property name="cfgExamenesDAO" ref="cfgExamenesDAO" />
+	</bean>
+	<bean id="seccionesService"
+		class="com.grupobios.bioslis.bs.SeccionesServiceImpl"
+		name="seccionesService">
+		<property name="cfgSeccionesDAO" ref="cfgSeccionesDAO" />
+		<property name="cfgExamenesDAO" ref="cfgExamenesDAO" />
+	</bean>
+	<bean id="derivadoresService"
+		class="com.grupobios.bioslis.bs.DerivadoresServiceImpl"
+		name="derivadoresService">
+		<property name="cfgDerivadoresDAO" ref="cfgDerivadoresDAO" />
+	</bean>
+	<bean id="cfgServiciosService"
+		class="com.grupobios.bioslis.bs.ConfiguracionServiciosServiceImpl"
+		name="cfgServiciosService">
+		<property name="servicios_dao" ref="servicios_dao" />
+	</bean>
+	<bean id="prioridadAtencionService"
+		class="com.grupobios.bioslis.bs.PrioridadAtencionServiceImpl"
+		name="prioridadAtencionService">
+		<property name="cfgPrioridadAtencionDAO"
+			ref="cfgPrioridadAtencionDAO" />
+	</bean>
+	<bean id="diagnosticosService"
+		class="com.grupobios.bioslis.bs.DiagnosticosServiceImpl"
+		name="diagnosticosService">
+		<property name="CfgDiagnosticosDAO" ref="CfgDiagnosticosDAO" />
+	</bean>
+	<bean id="configuracionCentrosSaludService"
+		class="com.grupobios.bioslis.bs.ConfiguracionCentrosSaludServiceImpl"
+		name="configuracionCentrosSaludService">
+		<property name="cfgCentrosDeSaludDAO"
+			ref="cfgCentrosDeSaludDAO" />
+	</bean>
+	<bean id="metodosService"
+		class="com.grupobios.bioslis.bs.MetodosServiceImpl"
+		name="metodosService">
+		<property name="cfgMetodosDAO" ref="cfgMetodosDAO" />
+	</bean>
+	<bean id="localizacionesService"
+		class="com.grupobios.bioslis.bs.LocalizacionesServiceImpl"
+		name="localizacionesService">
+		<property name="servicios_dao" ref="servicios_dao" />
+		<property name="salasServiciosDAO" ref="salasServiciosDAO" />
+		<property name="camasSalasDAO" ref="camasSalasDAO" />
+	</bean>
+	<bean id="transporteMuestrasService"
+		class="com.grupobios.bioslis.bs.TransporteMuestrasImpl"
+		name="transporteMuestrasService">
+		<property name="datosFichasmuestrasDAO" ref="datosFichasmuestrasDAO" />
+	</bean>
+	<bean id="configuracionMedicosService"
+		class="com.grupobios.bioslis.bs.ConfiguracionMedicosServiceImpl"
+		name="configuracionMedicosService">
+		<property name="cfgMedicosDAO" ref="cfgMedicosDAO" />
+
+
+
+	</bean>
+
+
+
+	<!-- <bean id="sessionService" class="com.grupobios.bioslis.bs.SessionServiceImpl" 
+		name="sessionService"> <property name="clabDAO" ref="cfgLaboratoriosDAO" 
+		/> <property name="cproceDao" ref="cfgProcedenciasDAO" /> <property name="cseccDao" 
+		ref="cfgSeccionesDAO" /> <property name="cumodDAO" ref="cfgUsuariosModulosDAO" 
+		/> </bean> -->
+
+
+
+	<import resource="biosdaos.xml" />
+
+	<mvc:cors>
+
+		<mvc:mapping path="/*"
+			allowed-methods="GET, PUT, OPTIONS, POST" allowed-headers="*"
+			allowed-origins="*" />
+
+	</mvc:cors>
+</beans>

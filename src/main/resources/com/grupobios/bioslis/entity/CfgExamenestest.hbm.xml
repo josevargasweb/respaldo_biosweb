@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 16-08-2021 14:22:23 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.grupobios.bioslis.entity.CfgExamenestest" table="CFG_EXAMENESTEST" schema="BIOSLIS">
+        <composite-id name="id" class="com.grupobios.bioslis.entity.CfgExamenestestId">
+            <key-property name="cetIdexamen" type="int">
+                <column name="CET_IDEXAMEN" precision="10" scale="0" />
+            </key-property>
+            <key-property name="cetIdtest" type="int">
+                <column name="CET_IDTEST" precision="10" scale="0" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="cfgTest" class="com.grupobios.bioslis.entity.CfgTest" update="false" insert="false" fetch="select">
+            <column name="CET_IDTEST" precision="10" scale="0" not-null="true" />
+        </many-to-one>
+        <many-to-one name="cfgEnvases" class="com.grupobios.bioslis.entity.CfgEnvases" fetch="select">
+            <column name="CET_IDENVASE" precision="3" scale="0" />
+        </many-to-one>
+        <property name="cetPosicion" type="java.lang.Short">
+            <column name="CET_POSICION" precision="3" scale="0" />
+        </property>
+        <set name="datosFichasexamenestests" table="DATOS_FICHASEXAMENESTEST" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="DFET_IDEXAMEN" precision="10" scale="0" not-null="true" />
+                <column name="DFET_IDTEST" precision="10" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="com.grupobios.bioslis.entity.DatosFichasexamenestest" />
+        </set>
+    </class>
+</hibernate-mapping>

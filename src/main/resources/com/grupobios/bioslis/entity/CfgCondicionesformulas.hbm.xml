@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 16-08-2021 14:22:23 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.grupobios.bioslis.entity.CfgCondicionesformulas" table="CFG_CONDICIONESFORMULAS" schema="BIOSLIS">
+        <composite-id name="id" class="com.grupobios.bioslis.entity.CfgCondicionesformulasId">
+            <key-property name="ccfIdtest" type="long">
+                <column name="CCF_IDTEST" precision="10" scale="0" />
+            </key-property>
+            <key-property name="ccfNumerocondicion" type="byte">
+                <column name="CCF_NUMEROCONDICION" precision="1" scale="0" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="cfgTest" class="com.grupobios.bioslis.entity.CfgTest" update="false" insert="false" fetch="select">
+            <column name="CCF_IDTEST" precision="10" scale="0" not-null="true" />
+        </many-to-one>
+        <property name="ccfTestoantecedente" type="string">
+            <column name="CCF_TESTOANTECEDENTE" length="1" />
+        </property>
+        <property name="ccfCondicionvar1" type="java.lang.Long">
+            <column name="CCF_CONDICIONVAR1" precision="10" scale="0" />
+        </property>
+        <property name="ccfCondicionoperador" type="string">
+            <column name="CCF_CONDICIONOPERADOR" length="8" />
+        </property>
+        <property name="ccfCondicionvar2" type="big_decimal">
+            <column name="CCF_CONDICIONVAR2" precision="4" scale="1" />
+        </property>
+        <property name="ccfFallaresultado" type="string">
+            <column name="CCF_FALLARESULTADO" length="400" />
+        </property>
+        <property name="ccfFallaestado" type="string">
+            <column name="CCF_FALLAESTADO" length="1" />
+        </property>
+        <property name="ccfFallanota" type="string">
+            <column name="CCF_FALLANOTA" length="400" />
+        </property>
+        <property name="ccfNrcondicionanidada" type="byte">
+            <column name="CCF_NRCONDICIONANIDADA" />
+        </property>
+    </class>
+</hibernate-mapping>

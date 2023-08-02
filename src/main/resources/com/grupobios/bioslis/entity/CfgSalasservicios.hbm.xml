@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 16-08-2021 14:22:23 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.grupobios.bioslis.entity.CfgSalasservicios" table="CFG_SALASSERVICIOS" schema="BIOSLIS">
+        <id name="cssIdsalaservicio" type="int">
+            <column name="CSS_IDSALASERVICIO" precision="4" scale="0" />
+            <generator class="sequence">
+                <param name="sequence">
+                    BIOSLIS.SEQ_CFG_SALASSERVICIOS
+                </param>
+            </generator>
+        </id>
+        <many-to-one name="cfgServicios" class="com.grupobios.bioslis.entity.CfgServicios" fetch="select">
+            <column name="CSS_IDSERVICIO" precision="4" scale="0" not-null="true" />
+        </many-to-one>
+        <property name="cssCodigosala" type="string">
+            <column name="CSS_CODIGOSALA" length="60" />
+        </property>
+        <property name="cssDescripcion" type="string">
+            <column name="CSS_DESCRIPCION" length="200" />
+        </property>
+        <set name="cfgCamassalases" table="CFG_CAMASSALAS" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="CCS_IDSALASERVICIO" precision="4" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="com.grupobios.bioslis.entity.CfgCamassalas" />
+        </set>
+    </class>
+</hibernate-mapping>

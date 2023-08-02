@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 16-08-2021 14:22:23 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.grupobios.bioslis.entity.DatosContactos" table="DATOS_CONTACTOS" schema="BIOSLIS">
+        <id name="dcIdcontacto" type="int">
+            <column name="DC_IDCONTACTO" precision="10" scale="0" />
+        	<generator class="sequence">
+        		<param name="sequence">BIOSLIS.SEQ_DATOS_CONTACTOS</param>
+        	</generator>
+                    </id>
+
+        <many-to-one name="datosPacientes" class="com.grupobios.bioslis.entity.DatosPacientes" fetch="select">
+            <column name="DC_IDPACIENTE" precision="10" scale="0" not-null="true" />
+        </many-to-one>
+        <!-- 
+        <many-to-one name="ldvSexo" class="com.grupobios.bioslis.entity.LdvSexo" fetch="select">
+            <column name="DC_IDSEXO" precision="1" scale="0" />
+        </many-to-one>
+         -->
+        <many-to-one name="ldvContactospacientesrelacion" class="com.grupobios.bioslis.entity.LdvContactospacientesrelacion" fetch="select">
+            <column name="DC_IDCONTACTOPACIENTEREL" precision="2" scale="0" />
+        </many-to-one>
+        <property name="dcIdsexo" type="int">
+            <column name="DC_IDSEXO" />
+        </property>       
+         <property name="dcNombre" type="string">
+            <column name="DC_NOMBRE" length="200" />
+        </property>
+        <property name="dcTelefono" type="string">
+            <column name="DC_TELEFONO" length="80" />
+        </property>
+    </class>
+</hibernate-mapping>

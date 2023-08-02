@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 16-08-2021 14:22:23 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.grupobios.bioslis.entity.LogContactospacientes" table="LOG_CONTACTOSPACIENTES" schema="BIOSLIS">
+        <id name="lcpIdlogcontactopaciente" type="long">
+            <column name="LCP_IDLOGCONTACTOPACIENTE" precision="10" scale="0" />
+            <generator class="assigned"></generator>
+        </id>
+        <many-to-one name="datosPacientes" class="com.grupobios.bioslis.entity.DatosPacientes" fetch="select">
+            <column name="LCP_IDPACIENTE" precision="10" scale="0" not-null="true" />
+        </many-to-one>
+        <many-to-one name="datosContactos" class="com.grupobios.bioslis.entity.DatosContactos" fetch="select">
+            <column name="LCP_IDCONTACTO" precision="10" scale="0" not-null="true" unique="true" />
+        </many-to-one>
+        <many-to-one name="cfgAccionesdatos" class="com.grupobios.bioslis.entity.CfgAccionesdatos" fetch="select">
+            <column name="LCP_IDACCIONDATO" precision="1" scale="0" not-null="true" />
+        </many-to-one>
+        <many-to-one name="datosUsuarios" class="com.grupobios.bioslis.entity.DatosUsuarios" fetch="select">
+            <column name="LCP_IDUSUARIO" precision="10" scale="0" not-null="true" />
+        </many-to-one>
+        <property name="lcpFechamodificacion" type="timestamp">
+            <column name="LCP_FECHAMODIFICACION" length="7" not-null="true" />
+        </property>
+        <property name="lcpValoranterior" type="string">
+            <column name="LCP_VALORANTERIOR" length="1000" />
+        </property>
+        <property name="lcpValornuevo" type="string">
+            <column name="LCP_VALORNUEVO" length="1000" />
+        </property>
+        <property name="lcpCampomodificado" type="string">
+            <column name="LCP_CAMPOMODIFICADO" length="120" />
+        </property>
+        <property name="lcpIpusuario" type="string">
+            <column name="LCP_IPUSUARIO" length="20" />
+        </property>
+        <property name="lcpNombreequipo" type="string">
+            <column name="LCP_NOMBREEQUIPO" length="25" />
+        </property>
+    </class>
+</hibernate-mapping>

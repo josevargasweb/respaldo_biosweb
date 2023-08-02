@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 16-08-2021 14:22:23 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.grupobios.bioslis.entity.LdvTiposreceptores" table="LDV_TIPOSRECEPTORES" schema="BIOSLIS" optimistic-lock="version">
+        <id name="ldvtrIdtiporeceptor" type="short">
+            <column name="LDVTR_IDTIPORECEPTOR" precision="2" scale="0" />
+        <generator class="sequence">
+          </generator>
+        </id>
+        <property name="ldvtrDescripcion" type="string">
+            <column name="LDVTR_DESCRIPCION" length="20" />
+        </property>
+    </class>
+</hibernate-mapping>

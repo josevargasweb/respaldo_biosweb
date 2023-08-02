@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 16-08-2021 14:22:23 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.grupobios.bioslis.entity.LogEventosusuarios" table="LOG_EVENTOSUSUARIOS" schema="BIOSLIS">
+        <id name="leuIdeventousuario" type="long">
+            <column name="LEU_IDEVENTOUSUARIO" precision="15" scale="0" />
+            <generator class="assigned"></generator>
+        </id>
+        <many-to-one name="datosUsuarios" class="com.grupobios.bioslis.entity.DatosUsuarios" fetch="select">
+            <column name="LEU_IDUSUARIO" precision="10" scale="0" not-null="true" />
+        </many-to-one>
+        <many-to-one name="cfgEventos" class="com.grupobios.bioslis.entity.CfgEventos" fetch="select">
+            <column name="LEU_IDEVENTO" precision="2" scale="0" not-null="true" />
+        </many-to-one>
+        <property name="leuIdestacion" type="java.lang.Short">
+            <column name="LEU_IDESTACION" precision="4" scale="0" />
+        </property>
+        <property name="leuFechaevento" type="timestamp">
+            <column name="LEU_FECHAEVENTO" length="7" />
+        </property>
+        <property name="leuIdacciondato" type="java.lang.Boolean">
+            <column name="LEU_IDACCIONDATO" precision="1" scale="0" />
+        </property>
+        <property name="leuNombretabla" type="string">
+            <column name="LEU_NOMBRETABLA" length="120" />
+        </property>
+        <property name="leuNombrecampo" type="string">
+            <column name="LEU_NOMBRECAMPO" length="120" />
+        </property>
+        <property name="leuValoranterior" type="string">
+            <column name="LEU_VALORANTERIOR" length="400" />
+        </property>
+        <property name="leuValornuevo" type="string">
+            <column name="LEU_VALORNUEVO" length="400" />
+        </property>
+    </class>
+</hibernate-mapping>

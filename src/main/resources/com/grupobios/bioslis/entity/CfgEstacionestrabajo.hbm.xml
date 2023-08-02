@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 16-08-2021 14:22:23 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.grupobios.bioslis.entity.CfgEstacionestrabajo" table="CFG_ESTACIONESTRABAJO" schema="BIOSLIS">
+        <id name="cestIdestacion" type="short">
+            <column name="CEST_IDESTACION" precision="4" scale="0" />
+            <generator class="assigned"></generator>
+        </id>
+        <many-to-one name="datosUsuarios" class="com.grupobios.bioslis.entity.DatosUsuarios" fetch="select">
+            <column name="CEST_IDUSUARIO" precision="10" scale="0" not-null="true" />
+        </many-to-one>
+        <property name="cestUbicacion" type="string">
+            <column name="CEST_UBICACION" length="200" />
+        </property>
+        <property name="cestFechaingreso" type="date">
+            <column name="CEST_FECHAINGRESO" length="7" />
+        </property>
+        <property name="cestActivo" type="string">
+            <column name="CEST_ACTIVO" length="1" />
+        </property>
+        <property name="cestHostname" type="string">
+            <column name="CEST_HOSTNAME" length="200" />
+        </property>
+        <property name="cestIpestacion" type="string">
+            <column name="CEST_IPESTACION" length="20" />
+        </property>
+        <property name="cestVersionbioslis" type="string">
+            <column name="CEST_VERSIONBIOSLIS" length="20" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 16-08-2021 14:22:23 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.grupobios.bioslis.entity.LogCfgtablas" table="LOG_CFGTABLAS" schema="BIOSLIS">
+        <id name="lctIdlogcfg" type="int">
+            <column name="LCT_IDLOGCFG" precision="10" scale="0" />
+          <generator class="sequence">
+            <param name="sequence">BIOSLIS.SEQ_LOG_CFGTABLAS</param>
+          </generator>
+        </id>
+        <property name="cfgAccionesdatos" type="int">
+            <column name="LCT_IDACCIONDATO" precision="8" scale="0" />
+        </property>
+        <property name="lctNombretabla" type="string">
+            <column name="LCT_NOMBRETABLA" length="120" />
+        </property>
+        <property name="lctNombrecampo" type="string">
+            <column name="LCT_NOMBRECAMPO" length="120" />
+        </property>
+        <property name="lctValoranterior" type="string">
+            <column name="LCT_VALORANTERIOR" length="400"  />
+        </property>
+        <property name="lctValornuevo" type="string">
+            <column name="LCT_VALORNUEVO" length="400"  />
+        </property>
+        <property name="lctIdusuario" type="int">
+            <column name="LCT_IDUSUARIO" precision="10" scale="0" />
+        </property>
+        <property name="lctFechamodificacion" type="timestamp">
+            <column name="LCT_FECHAMODIFICACION" length="20" />
+        </property>
+        <property name="lctIpusuario" type="string">
+            <column name="LCT_IPUSUARIO" length="20" />
+        </property>
+        <property name="lctNombreequipo" type="string">
+            <column name="LCT_NOMBREEQUIPO" length="100" />
+        </property>
+        <property name="lctIdtabla" type="int">
+            <column name="LCT_IDTABLA" precision="8" scale="0" />
+        </property>
+         <property name="lctDescripcion" type="string">
+            <column name="LCT_DESCRIPCION" length="250" />
+        </property>
+    </class>
+</hibernate-mapping>

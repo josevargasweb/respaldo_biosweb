@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 08-11-2022 1:16:05 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.grupobios.bioslis.entity.SigmaProcesostest" table="SIGMA_PROCESOSTEST" schema="BIOSLIS" optimistic-lock="version">
+        <composite-id name="id" class="com.grupobios.bioslis.entity.SigmaProcesostestId">
+            <key-property name="sptIdproceso" type="short">
+                <column name="SPT_IDPROCESO" precision="4" scale="0" />
+            </key-property>
+            <key-property name="sptIdtest" type="long">
+                <column name="SPT_IDTEST" precision="10" scale="0" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="sigmaTiposmuestras" class="com.grupobios.bioslis.entity.SigmaTiposmuestras" fetch="select">
+            <column name="SPT_IDSIGMATIPOMUESTRA" precision="2" scale="0" />
+        </many-to-one>
+        <many-to-one name="cfgTiposderesultado" class="com.grupobios.bioslis.entity.CfgTiposderesultado" fetch="select">
+            <column name="SPT_IDTIPORESULTADO" precision="2" scale="0" />
+        </many-to-one>
+        <many-to-one name="cfgTest" class="com.grupobios.bioslis.entity.CfgTest" update="false" insert="false" fetch="select">
+            <column name="SPT_IDTEST" precision="10" scale="0" not-null="true" />
+        </many-to-one>
+        <many-to-one name="cfgMuestrasprefijos" class="com.grupobios.bioslis.entity.CfgMuestrasprefijos" fetch="select">
+            <column name="SPT_PREFIJOTIPOMUESTRA" length="2" />
+        </many-to-one>
+        <many-to-one name="sigmaProcesos" class="com.grupobios.bioslis.entity.SigmaProcesos" fetch="select">
+            <column name="SPT_CODIGOPROCESO" length="48" not-null="true" />
+        </many-to-one>
+        <property name="sptCodigorecepcion" type="string">
+            <column name="SPT_CODIGORECEPCION" length="140" />
+        </property>
+        <property name="sptCodigoenvio" type="string">
+            <column name="SPT_CODIGOENVIO" length="140" />
+        </property>
+        <property name="sptActivo" type="string">
+            <column name="SPT_ACTIVO" length="1" />
+        </property>
+        <property name="sptConversion" type="string">
+            <column name="SPT_CONVERSION" length="1" />
+        </property>
+        <set name="sigmaProcesotestconversions" table="SIGMA_PROCESOTESTCONVERSION" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="SPTC_IDPROCESO" precision="4" scale="0" not-null="true" />
+                <column name="SPTC_IDTEST" precision="10" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="com.grupobios.bioslis.entity.SigmaProcesotestconversion" />
+        </set>
+    </class>
+</hibernate-mapping>

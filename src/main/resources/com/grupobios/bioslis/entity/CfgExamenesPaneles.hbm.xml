@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 16-08-2021 14:22:23 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.grupobios.bioslis.entity.CfgExamenesPaneles" table="CFG_EXAMENESPANELES" schema="BIOSLIS">
+        <composite-id name="cfgExamenesPanelesId" class="com.grupobios.bioslis.entity.CfgExamenesPanelesId">
+            <key-property name="cepIdpanelexamenes" type="short">
+                <column name="CEP_IDPANELEXAMENES" precision="3" scale="0" />
+            </key-property>
+            <key-property name="cepIdexamen" type="long">
+                <column name="CEP_IDEXAMEN" precision="10" scale="0" />
+            </key-property>
+        </composite-id>
+        <property name="cepSort" type="short">
+            <column name="CEP_SORT" length="50" />
+        </property>
+        <many-to-one name="cfgExamenes" class="com.grupobios.bioslis.entity.CfgExamenes" update="false" insert="false" fetch="select">
+            <column name="CEP_IDEXAMEN" precision="10" scale="0" not-null="true" />
+        </many-to-one>
+        <many-to-one name="cfgPanelesExamenes" class="com.grupobios.bioslis.entity.CfgPanelesExamenes" update="false" insert="false" fetch="select">
+            <column name="CEP_IDPANELEXAMENES" precision="3" scale="0" not-null="true" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 16-08-2021 14:22:23 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.grupobios.bioslis.entity.CfgCausasrechazosmuestras" table="CFG_CAUSASRECHAZOSMUESTRAS" schema="BIOSLIS">
+        <id name="ccrmIdcausarechazo" type="short">
+            <column name="CCRM_IDCAUSARECHAZO" precision="2" scale="0" />
+            <generator class="sequence">
+                <param name="sequence">BIOSLIS.SEQ_CFG_CAUSASRECHAZOSMUE</param>
+            </generator>
+        </id>
+        <property name="ccrmCodigo" type="string">
+            <column name="CCRM_CODIGO" length="60" not-null="true" />
+        </property>
+        <property name="ccrmDescripcion" type="string">
+            <column name="CCRM_DESCRIPCION" length="200" />
+        </property>
+        <property name="ccrmActivo" type="string">
+            <column name="CCRM_ACTIVO" length="1" />
+        </property>
+        <property name="ccrmSort" type="java.lang.Byte">
+            <column name="CCRM_SORT" precision="2" scale="0" />
+        </property>
+        <set name="datosMuestrasrechazadases" table="DATOS_MUESTRASRECHAZADAS" inverse="true" lazy="false" fetch="select">
+            <key>
+                <column name="DMR_IDCAUSARECHAZO" precision="2" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="com.grupobios.bioslis.entity.DatosMuestrasrechazadas" />
+        </set>
+    </class>
+</hibernate-mapping>

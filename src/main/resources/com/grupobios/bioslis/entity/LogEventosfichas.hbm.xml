@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 16-08-2021 14:22:23 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.grupobios.bioslis.entity.LogEventosfichas" table="LOG_EVENTOSFICHAS" schema="BIOSLIS" optimistic-lock="version">
+        <id name="lefIdlogeventoficha" type="long"  >
+        	<column name="LEF_IDLOGEVENTOFICHA" precision="20" scale="0" />
+        	<generator class="sequence">
+        		<param name="sequence">BIOSLIS.SEQ_LOG_EVENTOSFICHAS</param>
+        	</generator>
+        </id>
+
+        <property name="datosFichas" type="int">
+            <column name="LEF_NORDEN" precision="10" scale="0" />
+        </property>
+        <property name="cfgEventos" type="int">
+            <column name="LEF_IDEVENTO" precision="10" scale="0" />
+        </property>
+        <property name="lefFechaorden" type="timestamp">
+            <column name="LEF_FECHAORDEN" length="7" />
+        </property>
+        <property name="lefIdpaciente" type="int">
+            <column name="LEF_IDPACIENTE" precision="10" scale="0" />
+        </property>
+        <property name="lefIdexamen" type="int">
+            <column name="LEF_IDEXAMEN" precision="10" scale="0" />
+        </property>
+        <property name="lefIdtest" type="int">
+            <column name="LEF_IDTEST" precision="12" scale="0" />
+        </property>
+        <property name="lefIdmuestra" type="int">
+            <column name="LEF_IDMUESTRA" precision="10" scale="0" />
+        </property>
+        <property name="lefNombretabla" type="string">
+            <column name="LEF_NOMBRETABLA" length="120" />
+        </property>
+        <property name="lefNombrecampo" type="string">
+            <column name="LEF_NOMBRECAMPO" length="120" />
+        </property>
+        <property name="lefValoranterior" type="string">
+            <column name="LEF_VALORANTERIOR" length="2000" />
+        </property>
+        <property name="lefValornuevo" type="string">
+            <column name="LEF_VALORNUEVO" length="2000" />
+        </property>
+        <property name="lefCodigobarra" type="string">
+            <column name="LEF_CODIGOBARRA" length="48" />
+        </property>
+        <property name="lefFecharegistro" type="timestamp">
+            <column name="LEF_FECHAREGISTRO" length="7" />
+        </property>
+        <property name="lefIdestacion" type="java.lang.Short">
+            <column name="LEF_IDESTACION" precision="4" scale="0" />
+        </property>
+        <property name="lefIpestacion" type="string">
+            <column name="LEF_IPESTACION" length="20" />
+        </property>
+        <property name="lefIdusuario" type="int">
+            <column name="LEF_IDUSUARIO" precision="10" scale="0" />
+        </property>
+        <property name="lefNombreequipo" type="string">
+            <column name="LEF_NOMBREEQUIPO" length="50" />
+        </property>
+    </class>
+</hibernate-mapping>

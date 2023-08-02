@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 16-08-2021 14:22:23 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.grupobios.bioslis.entity.CfgPesquisasinfo" table="CFG_PESQUISASINFO" schema="BIOSLIS">
+        <composite-id name="id" class="com.grupobios.bioslis.entity.CfgPesquisasinfoId">
+            <key-property name="cpiIdpesquisa" type="short">
+                <column name="CPI_IDPESQUISA" precision="3" scale="0" />
+            </key-property>
+            <key-property name="cpiIddato" type="byte">
+                <column name="CPI_IDDATO" precision="2" scale="0" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="cfgPesquisas" class="com.grupobios.bioslis.entity.CfgPesquisas" update="false" insert="false" fetch="select">
+            <column name="CPI_IDPESQUISA" precision="3" scale="0" not-null="true" />
+        </many-to-one>
+        <property name="cpiCodigo" type="string">
+            <column name="CPI_CODIGO" length="80" />
+        </property>
+        <property name="cpiDescripcion" type="string">
+            <column name="CPI_DESCRIPCION" length="200" />
+        </property>
+        <property name="cpiEsopcional" type="string">
+            <column name="CPI_ESOPCIONAL" length="1" />
+        </property>
+        <property name="cpiSort" type="java.lang.Short">
+            <column name="CPI_SORT" precision="3" scale="0" />
+        </property>
+        <property name="cpiActiva" type="string">
+            <column name="CPI_ACTIVA" length="1" />
+        </property>
+        <set name="cfgPesquisasformatoses" table="CFG_PESQUISASFORMATOS" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="CPF_IDPESQUISA" precision="3" scale="0" not-null="true" />
+                <column name="CPF_IDDATO" precision="2" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="com.grupobios.bioslis.entity.CfgPesquisasformatos" />
+        </set>
+    </class>
+</hibernate-mapping>

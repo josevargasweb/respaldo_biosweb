@@ -1,0 +1,544 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+       http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+       http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
+        http://www.springframework.org/schema/beans     
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/mvc 
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd
+        http://www.springframework.org/schema/context 
+        http://www.springframework.org/schema/context/spring-context.xsd"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:context="http://www.springframework.org/schema/context">
+
+	<!-- Most controllers will use the ControllerClassNameHandlerMapping above, 
+		but for the index controller we are using ParameterizableViewController, 
+		so we must define an explicit mapping for it. -->
+	<bean id="urlMapping"
+		class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+		<property name="mappings">
+			<props>
+				<prop key="/ConfiguracionEtiquetas">configuracionEtiquetas</prop>
+				<prop key="/OrdenBuscador">ordenBuscador</prop>
+				<prop key="/CausasRechazoMuestras">causasRechazoMuestras</prop>
+				<prop key="/CapturaResultados">capturaResultados</prop>
+				<prop key="/ConfiguracionFormulas">configuracionFormulas</prop>
+				<prop key="/ConfiguracionNotas">configuracionNotas</prop>
+				<prop key="/ConfiguracionMuestras">configuracionMuestras</prop>
+				<prop key="/ConfiguracionMetodos">configuracionMetodos</prop>
+				<prop key="/ConfiguracionGlosas">configuracionGlosas</prop>
+				<prop key="/ConfiguracionUnidadesMedidas">configuracionUnidadesMedidas</prop>
+				<prop key="/ConfiguracionEnvases">configuracionEnvases</prop>
+				<prop key="/ConfiguracionValoresReferencias">configuracionValoresReferencias</prop>
+				<prop key="/ConfiguracionPrioridadAtencion">configuracionPrioridadAtencion</prop>
+				<prop key="/ConfiguracionExamen">configuracionExamen</prop>
+				<prop key="/ConfiguracionSecciones">configuracionSecciones</prop>
+				<prop key="/ConfiguracionServicios">configuracionServicios</prop>
+				<prop key="/ConfiguracionLaboratorios">configuracionLaboratorios</prop>
+				<prop key="/EdicionOrdenes">edicionOrdenes</prop>
+				<prop key="/Home">home</prop>
+				<prop key="/Estilos">def</prop>
+				<prop key="/Indicaciones">indicacionesController</prop>
+				<prop key="/IndicacionesTM">indicacionesController</prop>
+				<prop key="/InformeResultados">informeResultados</prop>
+				<prop key="/LocalizacionSalasCamas">localizacionSalasCamas</prop>
+				<prop key="/Login">login</prop>
+				<prop key="/Logout">logout</prop>
+				<prop key="/Microbiologia">microbiologia</prop>
+				<prop key="/Microbiologia/api">microbiologiaApi</prop>
+				<prop key="/Orden">orden</prop>
+				<prop key="/OrdenTabla">ordenTabla</prop>
+				<prop key="/Orden">configuracionTest</prop>
+				<prop key="/MicrobiologiaMantenedoresMicroorganismos">microbiologiaMantenedoresMicroorganismos</prop>
+				<prop key="/MicrobiologiaMantenedoresAntibioticos">microbiologiaMantenedoresAntibioticos</prop>
+				<prop key="/MicrobiologiaMantenedoresMediosCultivo">microbiologiaMantenedoresMediosCultivo</prop>
+				<prop key="/MicrobiologiaMantenedoresMetodosResistencia">microbiologiaMantenedoresMetodosResistencia</prop>
+				<prop key="/MicrobiologiaMantenedoresPruebasManuales">microbiologiaMantenedoresPruebasManuales</prop>
+				<prop key="/MicrobiologiaMantenedoresZonasCuerpo">microbiologiaMantenedoresZonasCuerpo</prop>
+				<prop key="/MicrobiologiaMantenedoresRecuentoColonias">microbiologiaMantenedoresRecuentoColonias</prop>
+				<prop key="/MicrobiologiaMantenedoresAntibiogramas">microbiologiaMantenedoresAntibiogramas</prop>
+				<prop key="/Microbiologia/Mantenedores/api">microbiologiaMantenedoresApi</prop>
+				<prop key="/MicrobiologiaTareas">microbiologiaTareas</prop>
+				<prop key="/MicrobiologiaTareasPendientes">microbiologiaTareasPendientes</prop>
+				<prop key="/PdfInformeResultados">pdfInformeResultados</prop>
+				<prop key="/RegistroPaciente">registroPaciente</prop>
+				<prop key="/RegistroMedico">registroMedico</prop>
+				<prop key="/ReasignacionOrdenes">reasignacionOrdenes</prop>
+				<prop key="/CambioPassword">cambioPassword</prop>
+				<prop key="/RecepcionMuestras">recepcionMuestras</prop>
+				<prop key="/RechazoMuestras">rechazoMuestras</prop>
+				<prop key="/TomaMuestras">tomaMuestras</prop>
+				<prop key="/TransporteMuestras">transporteMuestras</prop>
+				<prop key="/ConfiguracionPanelesExamenes">configuracionPanelesExamenes</prop>
+				<prop key="/ConfiguracionDerivadores">configuracionDerivadores</prop>
+				<prop key="/ConfiguracionProcedencias">configuracionProcedencias</prop>
+				<prop key="/ConfiguracionCentrosDeSalud">configuracionCentrosDeSalud</prop>
+				<prop key="/RegistroUsuarios">registroUsuarios</prop>
+				<prop key="/ConfiguracionPermisos">configuracionPermisos</prop>
+				<prop key="/RegistroDocumentos">registroDocumentos</prop>
+				<prop key="/ImpresionEtiquetas">impresionEtiquetas</prop>
+				<prop key="/ConfiguracionAnalizadores">configuracionAnalizadores</prop>
+				<prop key="/ConfiguracionProcesos">configuracionProcesos</prop>
+				<prop key="/FirmaMasivaResultados">firmaMasivaResultados</prop>
+				<prop key="/ConfiguracionDiagnosticos">configuracionDiagnosticos</prop>
+				<prop key="/AccionesUsuarios">trazabilidad</prop>
+				<prop key="/AccionesOrdenes">trazabilidad</prop>
+			</props>
+		</property>
+	</bean>
+
+	<bean id="viewResolver"
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver"
+		p:prefix="/WEB-INF/jsp/" p:suffix=".jsp" />
+
+	<bean name="indexController"
+		class="org.springframework.web.servlet.mvc.ParameterizableViewController"
+		p:viewName="index" />
+
+	<bean id="filterMultipartResolver"
+
+		class="org.springframework.web.multipart.support.StandardServletMultipartResolver"
+		/>
+
+	<bean id="multipartResolver"
+	
+		class="org.springframework.web.multipart.support.StandardServletMultipartResolver"
+
+		
+		
+		/>
+
+<!-- 
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver" 
+
+ -->
+	<bean name="microbiologia"
+		class="com.grupobios.bioslis.microbiologia.controller.MicrobiologiaController" />
+	<bean name="microbiologiaApi"
+		class="com.grupobios.bioslis.microbiologia.rest.MicrobiologiaApiController" />
+	<bean name="microbiologiaMantenedoresMicroorganismos"
+		class="com.grupobios.bioslis.microbiologia.controller.MicrobiologiaMantenedoresMicroorganismosController" />
+	<bean name="microbiologiaMantenedoresApi"
+		class="com.grupobios.bioslis.microbiologia.controller.MicrobiologiaMantenedoresApiController" />
+	<bean name="microbiologiaMantenedoresAntibioticos"
+		class="com.grupobios.bioslis.microbiologia.controller.MicrobiologiaMantenedoresAntibioticosController" />
+	<bean name="microbiologiaMantenedoresMediosCultivo"
+		class="com.grupobios.bioslis.microbiologia.controller.MicrobiologiaMantenedoresMediosCultivoController" />
+	<bean name="microbiologiaMantenedoresMetodosResistencia"
+		class="com.grupobios.bioslis.microbiologia.controller.MicrobiologiaMantenedoresMetodosResistenciaController" />
+	<bean name="microbiologiaMantenedoresPruebasManuales"
+		class="com.grupobios.bioslis.microbiologia.controller.MicrobiologiaMantenedoresPruebasManualesController" />
+	<bean name="microbiologiaMantenedoresZonasCuerpo"
+		class="com.grupobios.bioslis.microbiologia.controller.MicrobiologiaMantenedoresZonasCuerpoController" />
+	<bean name="microbiologiaMantenedoresRecuentoColonias"
+		class="com.grupobios.bioslis.microbiologia.controller.MicrobiologiaMantenedoresRecuentoColoniasController" />
+	<bean name="microbiologiaMantenedoresAntibiogramas"
+		class="com.grupobios.bioslis.microbiologia.controller.MicrobiologiaMantenedoresAntibiogramasController" />
+	<bean name="microbiologiaTareas"
+		class="com.grupobios.bioslis.microbiologia.controller.MicrobiologiaTareasController" />
+	<bean name="microbiologiaTareasPendientes"
+		class="com.grupobios.bioslis.microbiologia.controller.MicrobiologiaTareasPendientesController" />
+	<bean name="pdfHelper"
+		class="com.grupobios.bioslis.bs.PdfServiceImpl" />
+
+	<bean name="registroPaciente"
+		class="com.grupobios.bioslis.front.RegistroPacienteController">
+		<property name="pacienteService" ref="pacienteService" />
+	</bean>
+
+	<bean name="registroMedico"
+		class="com.grupobios.bioslis.front.RegistroMedicoController" />
+	<bean name="orden"
+		class="com.grupobios.bioslis.front.OrdenController">
+		<property name="datosFichasDAO" ref="datosFichasDAO" />
+		<property name="cfgLocalizacionesDAO"
+			ref="cfgLocalizacionesDAO" />
+		<property name="examenService" ref="examenService" />
+
+	</bean>
+	<bean name="ordenTabla"
+		class="com.grupobios.bioslis.front.OrdenTablaController">
+		<property name="datosFichasDAO" ref="datosFichasDAO" />
+		<property name="cfgLocalizacionesDAO"
+			ref="cfgLocalizacionesDAO" />
+	</bean>
+	<bean name="configuracionTest"
+		class="com.grupobios.bioslis.front.ConfiguracionTestController" />
+	<bean name="configuracionMetodos"
+		class="com.grupobios.bioslis.front.ConfiguracionMetodosController" />
+	<bean name="configuracionGlosas"
+		class="com.grupobios.bioslis.front.ConfiguracionGlosasController" />
+	<bean name="configuracionUnidadesMedidas"
+		class="com.grupobios.bioslis.front.ConfiguracionUnidadesMedidasController" />
+	<bean name="configuracionEnvases"
+		class="com.grupobios.bioslis.front.ConfiguracionEnvasesController" />
+	<bean name="configuracionValoresReferencias"
+		class="com.grupobios.bioslis.front.ConfiguracionValoresReferenciasController" />
+	<bean name="reasignacionOrdenes"
+		class="com.grupobios.bioslis.front.ReasignacionOrdenesController" />
+	<bean name="edicionOrdenes"
+		class="com.grupobios.bioslis.front.EdicionOrdenesController" />
+	<bean name="configuracionPrioridadAtencion"
+		class="com.grupobios.bioslis.front.ConfiguracionPrioridadAtencionController" />
+
+	<bean
+		class="com.grupobios.bioslis.front.ConfiguracionExamenController"
+		name="configuracionExamen" />
+	<bean
+		class="com.grupobios.bioslis.front.ConfiguracionSeccionesController"
+		name="configuracionSecciones" />
+	<bean
+		class="com.grupobios.bioslis.front.ConfiguracionServiciosController"
+		name="configuracionServicios" />
+	<bean
+		class="com.grupobios.bioslis.front.ConfiguracionLaboratoriosController"
+		name="configuracionLaboratorios" />
+	<bean name="tomaMuestras"
+		class="com.grupobios.bioslis.front.TomaMuestrasController" />
+	<bean name="recepcionMuestras"
+		class="com.grupobios.bioslis.front.RecepcionMuestrasController">
+	</bean>
+	<bean name="rechazoMuestras"
+		class="com.grupobios.bioslis.front.RechazoMuestrasController" />
+	<bean name="indicacionesController"
+		class="com.grupobios.bioslis.front.IndicacionesController" />
+	<bean name="configuracionFormulas"
+		class="com.grupobios.bioslis.front.ConfiguracionFormulasController" >
+        <property name="cfgaDAO" ref="cfgaDAO" />
+        <property name="cfgEstadosresultadostestDAO" ref="cfgEstadosresultadostestDAO" />
+		    
+	</bean>	
+	<bean name="configuracionNotas"
+		class="com.grupobios.bioslis.front.ConfiguracionNotasController" />
+	<bean name="localizacionSalasCamas"
+		class="com.grupobios.bioslis.front.LocalizacionSalasCamasController" />
+	<bean name="home"
+		class="com.grupobios.bioslis.front.HomeController">
+	</bean>
+	<bean name="login"
+		class="com.grupobios.bioslis.front.LoginController" />
+	<bean name="logout"
+		class="com.grupobios.bioslis.front.LogoutController" />
+
+	<bean name="def"
+		class="com.grupobios.bioslis.front.DefController" />
+	<bean name="informeResultados"
+		class="com.grupobios.bioslis.front.InformeResultadosController">
+		<property name="infResultados" ref="infResultados" />
+	</bean>
+	<bean name="configuracionAnalizadores"
+		class="com.grupobios.bioslis.front.ConfiguracionAnalizadoresController">
+	</bean>
+	<bean name="configuracionProcesos"
+		class="com.grupobios.bioslis.front.ConfiguracionProcesosController">
+	</bean>
+	<bean name="informeRestResultados"
+		class="com.grupobios.bioslis.back.api.InformeResultadosRestController">
+		<property name="informeResultadosService"
+			ref="informeResultadosService" />
+	</bean>
+	<bean name="pacienteRestController"
+		class="com.grupobios.bioslis.back.api.PacienteRestController">
+		<property name="pacienteService" ref="pacienteService" />
+	</bean>
+	<bean name="tomaMuestrasRestController"
+		class="com.grupobios.bioslis.back.api.TomaMuestrasRestController">
+		<property name="tomaMuestrasService"
+			ref="tomaMuestrasService" />
+	</bean>
+	<bean name="recepcionMuestrasRestController"
+		class="com.grupobios.bioslis.back.api.RecepcionMuestrasRestController">
+		<property name="recepcionMuestrasService"
+			ref="recepcionMuestrasService" />
+	</bean>
+	<bean name="rechazoMuestrasRestController"
+		class="com.grupobios.bioslis.back.api.RechazoMuestrasRestController">
+		<property name="rechazoMuestrasService"
+			ref="rechazoMuestrasService" />
+	</bean>
+
+	<bean name="ordenRestController"
+		class="com.grupobios.bioslis.back.api.OrdenRestController">
+		<property name="informeResultadosService"
+			ref="informeResultadosService" />
+		<property name="ordenService" ref="ordenService" />
+		<property name="examenService" ref="examenService" />
+
+	</bean>
+
+	<bean name="dominiosRestController"
+		class="com.grupobios.bioslis.back.api.DominiosRestController">
+		<property name="dominiosService" ref="dominiosService" />
+	</bean>
+
+	<bean name="capturaResultados"
+		class="com.grupobios.bioslis.front.CapturaResultadosController">
+		<property name="capturaResultadosService"
+			ref="capturaResultadosService" />
+		<property name="usuariosModulosService"
+			ref="usuariosModulosService" />
+		<property name="dominiosService" ref="dominiosService" />
+
+	</bean>
+
+	<bean name="capturaResultadosRest"
+		class="com.grupobios.bioslis.back.api.CapturaResultadosRestController">
+		<property name="ordenService" ref="ordenService" />
+		<property name="bioslisMailS" ref="bioslisMailS" />
+		<property name="pacienteService" ref="pacienteService" />
+		<property name="testService" ref="testService" />
+	</bean>
+
+	<bean name="examenesRest"
+		class="com.grupobios.bioslis.back.api.ExamenRestController">
+		<property name="examenService" ref="examenService" />
+		<property name="bioslisMailS" ref="bioslisMailS" />
+		<property name="datosFichasDAO" ref="datosFichasDAO" />
+	</bean>
+
+	<bean name="testRest"
+		class="com.grupobios.bioslis.back.api.TestRestController">
+		<property name="testService" ref="testService" />
+		<property name="bioslisMailS" ref="bioslisMailS" />
+
+	</bean>
+	<bean name="institucionesRestController"
+		class="com.grupobios.bioslis.back.api.InstitucionesRestController">
+		<property name="institucionesService"
+			ref="institucionesService" />
+	</bean>
+
+	<bean name="pdfInformeResultados"
+		class="com.grupobios.bioslis.front.ReportController">
+		<property name="pdfHelper" ref="pdfHelper" />
+	</bean>
+	<bean name="causasRechazoMuestras"
+		class="com.grupobios.bioslis.front.CausasRechazoMuestrasController" />
+	<bean name="configuracionMuestras"
+		class="com.grupobios.bioslis.front.ConfiguracionMuestrasController" />
+	<bean name="configuracionPanelesExamenes"
+		class="com.grupobios.bioslis.front.ConfiguracionPanelesExamenesController" />
+	<bean name="configuracionDerivadores"
+		class="com.grupobios.bioslis.front.ConfiguracionDerivadoresController" />
+	<bean name="configuracionProcedencias"
+		class="com.grupobios.bioslis.front.ConfiguracionProcedenciasController" />
+	<bean name="configuracionCentrosDeSalud"
+		class="com.grupobios.bioslis.front.ConfiguracionCentrosDeSaludController" />
+	<bean name="registroUsuarios"
+		class="com.grupobios.bioslis.front.RegistroUsuariosController" />
+
+	<bean name="registroUsuariosRestController"
+		class="com.grupobios.bioslis.back.api.RegistroUsuariosRestController">
+		<property name="registroUsuariosService"
+			ref="registroUsuariosService" />
+		<property name="usuariosModulosService"
+			ref="usuariosModulosService" />
+	</bean>
+
+	<bean name="permisosRestController"
+		class="com.grupobios.bioslis.back.api.PermisosRestController">
+		<property name="cargosModulosService"
+			ref="cargosModulosService" />
+		<property name="usuariosModulosService"
+			ref="usuariosModulosService" />
+	</bean>
+
+	<bean name="configuracionTestRestController"
+		class="com.grupobios.bioslis.back.api.ConfiguracionTestRestController">
+		<property name="configuracionTestService"
+			ref="configuracionTestService" />
+	</bean>
+
+	<bean name="registroDocumentosRestController"
+		class="com.grupobios.bioslis.back.api.RegistroDocumentosRestController">
+		<property name="registroDocumentosService"
+			ref="registroDocumentosService" />
+	</bean>
+
+	<bean name="valoresReferenciaRestController"
+		class="com.grupobios.bioslis.back.api.ValoresReferenciaRestController">
+		<property name="valoresReferenciaService"
+			ref="valoresReferenciaService" />
+	</bean>
+
+	<bean name="ordenBuscador"
+		class="com.grupobios.bioslis.front.OrdenBuscadorController" />
+
+	<bean name="configuracionEtiquetas"
+		class="com.grupobios.bioslis.front.ConfiguracionEtiquetasController" />
+
+	<bean name="firmaMasivaResultados"
+		class="com.grupobios.bioslis.front.FirmaMasivaResultadosController">
+	</bean>
+
+	<bean name="impresionEtiquetas"
+		class="com.grupobios.bioslis.front.ImpresionEtiquetasController">
+	</bean>
+
+	<bean name="registroDocumentos"
+		class="com.grupobios.bioslis.front.RegistroDocumentosController">
+	</bean>
+
+	<bean name="portalPacientesRest"
+		class="com.grupobios.bioslis.back.api.PortalPacientesRestController">
+		<property name="dominiosService" ref="dominiosService" />
+		<property name="pacienteService" ref="pacienteService" />
+	</bean>
+
+	<bean name="cambioPassword"
+		class="com.grupobios.bioslis.front.CambioPasswordController" />
+	<bean name="configuracionPermisos"
+		class="com.grupobios.bioslis.front.ConfiguracionPermisosController" />
+
+	<bean name="utilityRestController"
+		class="com.grupobios.bioslis.back.api.UtilityRestController">
+	</bean>
+
+	<bean name="analizadores"
+		class="com.grupobios.bioslis.back.api.AnalizadoresRestController">
+		<property name="analizadoresService"
+			ref="analizadoresService" />
+	</bean>
+
+	<bean name="procesos"
+		class="com.grupobios.bioslis.back.api.ProcesosRestController">
+		<property name="procesosService" ref="procesosService" />
+	</bean>
+
+
+	<bean name="configuracionEtiquetasRestController"
+		class="com.grupobios.bioslis.back.api.ConfiguracionEtiquetasRestController">
+		<property name="configuracionEtiquetasService"
+			ref="configuracionEtiquetasService" />
+	</bean>
+
+	<bean name="microbiologiaRest"
+		class="com.grupobios.bioslis.microbiologia.rest.MicrobiologiaRestController">
+		<property name="microbiologiaService"
+			ref="microbiologiaService" />
+		<property name="testService"
+			ref="testService" />
+			<property name="examenService"
+			ref="examenService" />
+	</bean>
+
+	<bean name="muestrasRest"
+		class="com.grupobios.bioslis.back.api.ConfiguracionMuestrasRestController">
+		<property name="configuracionMuestrasService"
+			ref="configuracionMuestrasService" />
+	</bean>
+
+	<bean name="envasesRest"
+		class="com.grupobios.bioslis.back.api.ConfiguracionEnvasesRestController">
+		<property name="configuracionEnvasesService"
+			ref="configuracionEnvasesService" />
+	</bean>
+	<!-- creado por cristian para portal estadistica 22-11 *************** -->
+	<bean name="estadisticaRest"
+		class="com.grupobios.bioslis.back.api.EstadisticaRestController">
+		<property name="estadisticaService" ref="estadisticaService" />
+	</bean> 
+        
+        <bean name="unidadesMedida"
+		class="com.grupobios.bioslis.back.api.UnidadesMedidaRestController">		
+		<property name="unidadesMedidaService" ref="unidadesMedidaService" />
+	</bean> 
+        
+        <bean name="glosas"
+		class="com.grupobios.bioslis.back.api.ConfiguracionGlosasRestController">		
+		<property name="configuracionGlosasService" ref="configuracionGlosasService" />
+	</bean> 
+        
+        <bean name="laboratorios"
+		class="com.grupobios.bioslis.back.api.LaboratoriosRestController">		
+		<property name="laboratoriosService" ref="laboratoriosService" />
+	</bean> 
+        
+	<bean name="configuracionFormulasRestController"
+		class="com.grupobios.bioslis.back.api.ConfiguracionFormulasRestController">
+		<property name="testService"
+			ref="testService" />
+	</bean>
+        
+        <bean name="secciones"
+		class="com.grupobios.bioslis.back.api.SeccionesRestController">		
+		<property name="seccionesService" ref="seccionesService" />
+	</bean> 
+        
+        <bean name="derivadores"
+		class="com.grupobios.bioslis.back.api.DerivadoresRestController">		
+		<property name="derivadoresService" ref="derivadoresService" />
+	</bean> 
+        
+        <bean name="procedencias"
+		class="com.grupobios.bioslis.back.api.ConfiguracionProcedenciasRestController">		
+		<property name="configuracionProcedenciasService" ref="configuracionProcedenciasService" />
+	</bean> 
+	
+        <bean name="servicios"
+		class="com.grupobios.bioslis.back.api.ConfiguracionServiciosRestController">		
+		<property name="cfgServiciosService" ref="cfgServiciosService" />
+	</bean> 
+	
+        <bean name="prioridadAtencion"
+		class="com.grupobios.bioslis.back.api.PrioridadAtencionRestController">		
+		<property name="prioridadAtencionService" ref="prioridadAtencionService" />
+	</bean> 
+
+	<bean name="configuracionDiagnosticos"
+		class="com.grupobios.bioslis.front.ConfiguracionDiagnosticosController">
+	</bean>
+
+	<bean name="trazabilidad"
+		class="com.grupobios.bioslis.front.TrazabilidadController">
+	</bean>
+	<bean name="diagnosticos"
+		class="com.grupobios.bioslis.back.api.DiagnosticosRestController">	
+		<property name="diagnosticosService" ref="diagnosticosService" />
+	</bean>
+        <bean name="ldvIndicacionesRestController"
+		class="com.grupobios.bioslis.back.api.LdvIndicacionesRestController">
+	</bean>
+     <bean name="ConfiguracionCentrosSaludRestController"
+		class="com.grupobios.bioslis.back.api.ConfiguracionCentrosSaludRestController">
+		<property name="configuracionCentrosSaludService" ref="configuracionCentrosSaludService" />
+	</bean>
+     <bean name="ConfiguracionMetodosRestController"
+		class="com.grupobios.bioslis.back.api.ConfiguracionMetodosRestController">
+		<property name="metodosService" ref="metodosService" />
+	</bean>
+     <bean name="localizacionesRestController"
+		class="com.grupobios.bioslis.back.api.LocalizacionesRestController">
+		<property name="localizacionesService" ref="localizacionesService" />
+     </bean>
+     <bean name="ConfiguracionMedicosRestController"
+		class="com.grupobios.bioslis.back.api.ConfiguracionMedicosRestController">
+		<property name="configuracionMedicosService" ref="configuracionMedicosService" />
+	</bean>
+	<bean name="loginRestController"
+		class="com.grupobios.bioslis.back.api.LoginRestController">
+		<property name="usuarioService"
+			ref="usuarioService" />
+	</bean>
+	<bean name="transporteMuestrasRestController"
+		class="com.grupobios.bioslis.back.api.TransporteMuestrasRestController">
+		<property name="transporteMuestrasService"
+			ref="transporteMuestrasService" />
+	</bean>
+
+	<bean name="transporteMuestras"
+		class="com.grupobios.bioslis.front.TransporteMuestrasController" />
+	<!-- ****************************************************************** -->
+	<mvc:resources mapping="/resources/**"
+		location="/resources/" />
+	<mvc:annotation-driven />
+
+<mvc:cors>
+    <mvc:mapping path="/**" />
+</mvc:cors>
+
+</beans>

@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 16-08-2021 14:22:23 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.grupobios.bioslis.entity.CfgEstadosexamenes" table="CFG_ESTADOSEXAMENES" schema="BIOSLIS">
+        <id name="ceeIdestadoexamen" type="int">
+            <column name="CEE_IDESTADOEXAMEN" precision="1" scale="0" />
+            <generator class="assigned"></generator>
+        </id>
+        <property name="ceeCodigoestadoexamen" type="string">
+            <column name="CEE_CODIGOESTADOEXAMEN" length="1" />
+        </property>
+        <property name="ceeDescripcionestadoexamen" type="string">
+            <column name="CEE_DESCRIPCIONESTADOEXAMEN" length="100" />
+        </property>
+    </class>
+</hibernate-mapping>

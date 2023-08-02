@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 16-08-2021 14:22:23 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+	<class name="com.grupobios.bioslis.entity.CfgGlosas"
+		table="CFG_GLOSAS" schema="BIOSLIS">
+		<id name="cgIdglosa" type="int">
+			<column name="CG_IDGLOSA" precision="4" scale="0" />
+			<generator class="sequence">
+				<param name="sequence">
+					BIOSLIS.SEQ_CFG_GLOSAS
+				</param>
+			</generator>
+		</id>
+		<property name="cgCodigoglosa" type="string">
+			<column name="CG_CODIGOGLOSA" length="80" not-null="true" />
+		</property>
+		<property name="cgDescripcion" type="string">
+			<column name="CG_DESCRIPCION" length="1000" />
+		</property>
+		<property name="cgSort" type="int">
+			<column name="CG_SORT" precision="4" scale="0" />
+		</property>
+		<property name="cgActivo" type="string">
+			<column name="CG_ACTIVO" length="1" />
+		</property>
+		<property name="cgIdSeccion" type="int">
+			<column name="CG_IDSECCION" precision="4" scale="0" />
+		</property>
+		<property name="cgHost" type="string">
+			<column name="CG_HOST" length="120" />
+		</property>
+	</class>
+</hibernate-mapping>

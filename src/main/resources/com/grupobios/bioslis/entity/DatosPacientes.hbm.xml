@@ -1,0 +1,190 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 30-03-2020 9:50:11 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.grupobios.bioslis.entity.DatosPacientes" table="DATOS_PACIENTES" schema="BIOSLIS" optimistic-lock="version">
+        <id name="dpIdpaciente" type="int">
+            <column name="DP_IDPACIENTE" precision="10" scale="0" />
+        	<generator class="sequence">
+        		<param name="sequence">BIOSLIS.SEQ_DATOSPACIENTES</param>
+        	</generator>
+            
+        </id>
+        <!--
+        <many-to-one name="datosPacientes" class="com.grupobios.bioslis.entity.DatosPacientes" fetch="select">
+            <column name="DP_IDMADRE" precision="10" scale="0">
+                <comment>Rh type</comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="ldvComunas" class="com.grupobios.bioslis.entity.LdvComunas" fetch="select">
+            <column name="DP_IDCOMUNA" precision="3" scale="0" />
+        </many-to-one>
+        <many-to-one name="ldvTiposdocumentos" class="com.grupobios.bioslis.entity.LdvTiposdocumentos" fetch="select">
+            <column name="DP_IDTIPODOCUMENTO" precision="2" scale="0" not-null="true" />
+        </many-to-one>
+        <many-to-one name="ldvEstadosciviles" class="com.grupobios.bioslis.entity.LdvEstadosciviles" fetch="select">
+            <column name="DP_IDESTADOCIVIL" precision="1" scale="0" />
+        </many-to-one>
+        <many-to-one name="ldvSexo" class="com.grupobios.bioslis.entity.LdvSexo" fetch="select">
+            <column name="DP_IDSEXO" precision="1" scale="0" not-null="true" />
+        </many-to-one>
+        <many-to-one name="ldvPaises" class="com.grupobios.bioslis.entity.LdvPaises" fetch="select">
+            <column name="DP_IDPAIS" precision="3" scale="0" />
+        </many-to-one>
+        <many-to-one name="ldvRegiones" class="com.grupobios.bioslis.entity.LdvRegiones" fetch="select">
+            <column name="DP_IDREGION" precision="2" scale="0" />
+        </many-to-one>
+        -->
+        <property name="dpIdmadre" type="integer">
+            <column name="DP_IDMADRE" precision="8" scale="0" />
+        </property>
+        <property name="ldvComunas" type="integer">
+            <column name="DP_IDCOMUNA" precision="8" scale="0" />
+        </property>
+        <property name="ldvTiposdocumentos" type="integer">
+            <column name="DP_IDTIPODOCUMENTO" precision="8" scale="0" />
+        </property>
+        <property name="ldvEstadosciviles" type="integer">
+            <column name="DP_IDESTADOCIVIL" precision="8" scale="0" />
+        </property>
+        <property name="ldvSexo" type="integer">
+            <column name="DP_IDSEXO" precision="8" scale="0" />
+        </property>        
+        <property name="ldvPaises" type="integer">
+            <column name="DP_IDPAIS" precision="8" scale="0" />
+        </property> 
+        <property name="ldvRegiones" type="integer">
+            <column name="DP_IDREGION" precision="8" scale="0" />
+        </property> 
+        <property name="dpNombres" type="string">
+            <column name="DP_NOMBRES" length="50" not-null="true" />
+        </property>
+        <property name="dpPrimerapellido" type="string">
+            <column name="DP_PRIMERAPELLIDO" length="30" not-null="true" />
+        </property>
+        <property name="dpSegundoapellido" type="string">
+            <column name="DP_SEGUNDOAPELLIDO" length="30" />
+        </property>
+        <property name="dpNombresocial" type="string">
+            <column name="DP_NOMBRESOCIAL" length="110" />
+        </property>
+        <property name="dpRun" type="string">
+            <column name="DP_RUN" length="12" />
+        </property>
+        <property name="dpNrodocumento" type="string">
+            <column name="DP_NRODOCUMENTO" length="40" not-null="true" />
+        </property>
+        <!-- ENV: Revisar -->
+        <property name="dpFnacimiento" type="date">
+            <column name="DP_FNACIMIENTO"  />
+        </property>
+        
+        <property name="dpDireccion" type="string">
+            <column name="DP_DIRECCION" length="50" />
+        </property>
+        <property name="dpDireccodpostal" type="string">
+            <column name="DP_DIRECCODPOSTAL" length="10" />
+        </property>
+        <property name="dpTelefono" type="string">
+            <column name="DP_TELEFONO" length="30" />
+        </property>
+        <property name="dpEmail" type="string">
+            <column name="DP_EMAIL" length="50" />
+        </property>
+        <property name="dpObservacion" type="string">
+            <column name="DP_OBSERVACION" length="250" />
+        </property>
+        <property name="dpExitus" type="string">
+            <column name="DP_EXITUS" length="1" />
+        </property>
+        <property name="dpAbo" type="string">
+            <column name="DP_ABO" length="3" />
+        </property>
+        <property name="dpRh" type="string">
+            <column name="DP_RH" length="1">
+                <comment>ABO type</comment>
+            </column>
+        </property>
+        <property name="dpReciennacido" type="string">
+            <column name="DP_RECIENNACIDO" length="1" />
+        </property>
+        <property name="dpRnpartomultiple" type="string">
+            <column name="DP_RNPARTOMULTIPLE" length="1" />
+        </property>
+        <property name="dpRnnumero" type="int">
+            <column name="DP_RNNUMERO" precision="1" scale="0" />
+        </property>
+        <property name="dpEsvip" type="string">
+            <column name="DP_ESVIP" length="5" />
+        </property>
+        <property name="dpEsafroamericano" type="string">
+            <column name="DP_ESAFROAMERICANO" length="1" />
+        </property>
+        <property name="dpNombreencriptado" type="string">
+            <column name="DP_NOMBREENCRIPTADO" length="20" />
+        </property>
+        <property name="dpCampolibre1" type="string">
+            <column name="DP_CAMPOLIBRE1" length="50" />
+        </property>
+        <property name="dpCampolibre2" type="string">
+            <column name="DP_CAMPOLIBRE2" length="50" />
+        </property>
+        <property name="dpNombresB" type="string">
+            <column name="DP_NOMBRES_B" length="50" />
+        </property>
+        <property name="dpPrimerapellidoB" type="string">
+            <column name="DP_PRIMERAPELLIDO_B" length="50" />
+        </property>
+        <property name="dpSegundoapellidoB" type="string">
+            <column name="DP_SEGUNDOAPELLIDO_B" length="50" />
+        </property>
+        <property name="dpFechacreacion" type="timestamp">
+            <column name="DP_FECHACREACION" />
+        </property>
+        
+        <!--
+        <set name="logPacienteses" table="LOG_PACIENTES" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="LP_IDPACIENTE" precision="10" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="com.grupobios.bioslis.entity.LogPacientes" />
+        </set>
+        -->
+        <!--
+<set name="datosPacienteses" table="DATOS_PACIENTES" inverse="true" lazy="true" fetch="select">
+    <key>
+        <column name="DP_IDMADRE" precision="10" scale="0">
+            <comment>Rh type</comment>
+        </column>
+    </key>
+    <one-to-many class="com.grupobios.bioslis.entity.DatosPacientes" />
+</set>
+
+<set name="datosFichasmuestrases" table="DATOS_FICHASMUESTRAS" inverse="true" lazy="true" fetch="select">
+    <key>
+        <column name="DFM_IDPACIENTE" precision="10" scale="0" />
+    </key>
+    <one-to-many class="com.grupobios.bioslis.entity.DatosFichasmuestras" />
+</set>
+<set name="datosPacientespatologiases" table="DATOS_PACIENTESPATOLOGIAS" inverse="true" lazy="true" fetch="select">
+    <key>
+        <column name="DPP_IDPACIENTE" precision="10" scale="0" not-null="true" />
+    </key>
+    <one-to-many class="com.grupobios.bioslis.entity.DatosPacientespatologias" />
+</set>
+<set name="datosContactoses" table="DATOS_CONTACTOS" inverse="true" lazy="true" fetch="select">
+    <key>
+        <column name="DC_IDPACIENTE" precision="10" scale="0" not-null="true" />
+    </key>
+    <one-to-many class="com.grupobios.bioslis.entity.DatosContactos" />
+</set>
+<set name="datosFichases" table="DATOS_FICHAS" inverse="true" lazy="true" fetch="select">
+    <key>
+        <column name="DF_IDPACIENTE" precision="10" scale="0" not-null="true" />
+    </key>
+    <one-to-many class="com.grupobios.bioslis.entity.DatosFichas" />
+</set>
+        -->
+    </class>
+</hibernate-mapping>

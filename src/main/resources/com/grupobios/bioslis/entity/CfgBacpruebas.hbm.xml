@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 16-08-2021 14:22:23 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.grupobios.bioslis.bs.CfgBacpruebas" table="CFG_BACPRUEBAS" schema="BIOSLIS" optimistic-lock="version">
+        <id name="cbpIdprueba" type="short">
+            <column name="CBP_IDPRUEBA" precision="3" scale="0" />
+        	<generator class="sequence">
+        		<param name="sequence">BIOSLIS.SEQ_BACPRUEBAS</param>
+        	</generator>
+        </id>
+        <property name="cbpCodigo" type="string">
+            <column name="CBP_CODIGO" length="60" />
+        </property>
+        <property name="cbpDescripcion" type="string">
+            <column name="CBP_DESCRIPCION" length="240" />
+        </property>
+        <property name="cbpTipo" type="string">
+            <column name="CBP_TIPO" length="4" />
+        </property>
+        <property name="cbpActivo" type="string">
+            <column name="CBP_ACTIVO" length="1" />
+        </property>
+        <property name="cbpSort" type="java.lang.Short">
+            <column name="CBP_SORT" precision="3" scale="0" />
+        </property>
+    </class>
+</hibernate-mapping>

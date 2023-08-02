@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 16-08-2021 14:22:23 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.grupobios.bioslis.entity.LdvProfesionesusuarios" table="LDV_PROFESIONESUSUARIOS" schema="BIOSLIS">
+        <id name="ldvpuIdprofesion" type="byte">
+            <column name="LDVPU_IDPROFESION" precision="2" scale="0" />
+            <generator class="assigned"></generator>
+        </id>
+        <property name="ldvpuDescripcion" type="string">
+            <column name="LDVPU_DESCRIPCION" length="100" />
+        </property>
+        <set name="datosUsuarioses" table="DATOS_USUARIOS" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="DU_IDPROFESION" precision="2" scale="0" />
+            </key>
+            <one-to-many class="com.grupobios.bioslis.entity.DatosUsuarios" />
+        </set>
+    </class>
+</hibernate-mapping>

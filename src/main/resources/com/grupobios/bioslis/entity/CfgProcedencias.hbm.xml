@@ -1,0 +1,117 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 16-08-2021 14:22:23 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.grupobios.bioslis.entity.CfgProcedencias" table="CFG_PROCEDENCIAS" schema="BIOSLIS">
+        <id name="cpIdprocedencia" type="int">
+            <column name="CP_IDPROCEDENCIA" precision="5" scale="0" />
+            <generator class="sequence" >
+                <param name="sequence">
+                    BIOSLIS.SEQ_CFG_PROCEDENCIAS
+                </param>
+            </generator>
+        </id>
+        <many-to-one name="cfgCentroDeSalud" class="com.grupobios.bioslis.entity.CfgCentrosdesalud" fetch="select">
+            <column name="CP_IDCENTRODESALUD" precision="2" scale="0" />
+        </many-to-one>
+        <many-to-one name="cfgConvenios" class="com.grupobios.bioslis.entity.CfgConvenios" fetch="select">
+            <column name="CP_IDCONVENIO" precision="3" scale="0" />
+        </many-to-one>
+        <property name="cpCodigo" type="string">
+            <column name="CP_CODIGO" length="60" />
+        </property>
+        <property name="cpDescripcion" type="string">
+            <column name="CP_DESCRIPCION" length="200" />
+        </property>
+        <property name="cpSort" type="java.lang.Integer">
+            <column name="CP_SORT" precision="5" scale="0" />
+        </property>
+        <property name="cpActivo" type="string">
+            <column name="CP_ACTIVO" length="1" />
+        </property>
+        <property name="cpTextoInforme" type="string">
+            <column name="CP_TEXTOINFORME" length="1600" />
+        </property>
+        <property name="cpCodigoGrupo" type="string">
+            <column name="CP_CODIGOGRUPO" length="10" />
+        </property>
+        <property name="cpTomamuestraautomatica" type="string">
+            <column name="CP_TOMAMUESTRAAUTOMATICA" length="1" />
+        </property>
+        <property name="cpMembrete" type="string">
+            <column name="CP_MEMBRETE" length="1" />
+        </property>
+        <property name="cpIdtipoconexionhost" type="java.lang.Short">
+            <column name="CP_IDTIPOCONEXIONHOST" precision="3" scale="0" />
+        </property>
+        <property name="cpProcedenciarestringida" type="string">
+            <column name="CP_PROCEDENCIARESTRINGIDA" length="1" />
+        </property>
+        <property name="cpHost" type="string">
+            <column name="CP_HOST" length="80" />
+        </property>
+        <property name="cpHost2" type="string">
+            <column name="CP_HOST2" length="80" />
+        </property>
+        <property name="cpHost3" type="string">
+            <column name="CP_HOST3" length="80" />
+        </property>
+        <property name="cpVentabonos" type="string">
+            <column name="CP_VENTABONOS" length="60" />
+        </property>
+        <property name="cpActivarcuposcitas" type="string">
+            <column name="CP_ACTIVARCUPOSCITAS" length="1" />
+        </property>
+        <property name="cpCitascuposlunes" type="java.lang.Short">
+            <column name="CP_CITASCUPOSLUNES" precision="3" scale="0" />
+        </property>
+        <property name="cpCitascuposmartes" type="java.lang.Short">
+            <column name="CP_CITASCUPOSMARTES" precision="3" scale="0" />
+        </property>
+        <property name="cpCitascuposmiercoles" type="java.lang.Short">
+            <column name="CP_CITASCUPOSMIERCOLES" precision="3" scale="0" />
+        </property>
+        <property name="cpCitascuposjueves" type="java.lang.Short">
+            <column name="CP_CITASCUPOSJUEVES" precision="3" scale="0" />
+        </property>
+        <property name="cpCitascuposviernes" type="java.lang.Short">
+            <column name="CP_CITASCUPOSVIERNES" precision="3" scale="0" />
+        </property>
+        <property name="cpCitascupossabado" type="java.lang.Short">
+            <column name="CP_CITASCUPOSSABADO" precision="3" scale="0" />
+        </property>
+        <property name="cpCitascuposdomingo" type="java.lang.Short">
+            <column name="CP_CITASCUPOSDOMINGO" precision="3" scale="0" />
+        </property>
+        <property name="cpEmail" type="string">
+            <column name="CP_EMAIL" length="200" />
+        </property>
+        <set name="cfgProgramasdesaluds" table="CFG_PROGRAMASDESALUD" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="CPDS_IDPROCEDENCIA" precision="5" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="com.grupobios.bioslis.entity.CfgProgramasdesalud" />
+        </set>
+        <set name="datosFichases" table="DATOS_FICHAS" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="DF_IDPROCEDENCIA" precision="10" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="com.grupobios.bioslis.entity.DatosFichas" />
+        </set>
+        <set name="cfgCitascuposes" table="CFG_CITASCUPOS" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="CCC_IDPROCEDENCIA" precision="5" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="com.grupobios.bioslis.entity.CfgCitascupos" />
+        </set>
+        <!-- 
+        <set name="cfgServicioses" table="CFG_SERVICIOS" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="CS_IDPROCEDENCIA" precision="5" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="com.grupobios.bioslis.entity.CfgServicios" />
+        </set>
+         -->
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 16-08-2021 14:22:23 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.grupobios.bioslis.entity.DatosMuestrasrechazadas" table="DATOS_MUESTRASRECHAZADAS" schema="BIOSLIS" optimistic-lock="version">
+        <id name="dmrIdmuestra" type="long">
+            <column name="DMR_IDMUESTRA" precision="12" scale="0" />
+            <generator class="foreign">
+                <param name="property">datosFichasmuestras</param>
+            </generator>
+        </id>
+        <one-to-one name="datosFichasmuestras" class="com.grupobios.bioslis.entity.DatosFichasmuestras" constrained="true"></one-to-one>
+        <many-to-one name="cfgCausasrechazosmuestras" class="com.grupobios.bioslis.entity.CfgCausasrechazosmuestras" fetch="select">
+            <column name="DMR_IDCAUSARECHAZO" precision="2" scale="0" not-null="true" />
+        </many-to-one>
+        <property name="dmrRechazoparcialototal" type="string">
+            <column name="DMR_RECHAZOPARCIALOTOTAL" length="1" />
+        </property>
+        <property name="dmrCodigobarra" type="string">
+            <column name="DMR_CODIGOBARRA" length="48" />
+        </property>
+        <property name="dmrNota" type="string">
+            <column name="DMR_NOTA" length="1000" />
+        </property>
+        <property name="dmrIdusuariorechazo" type="java.lang.Long">
+            <column name="DMR_IDUSUARIORECHAZO" precision="10" scale="0" />
+        </property>
+        <property name="dmrFecharechazo" type="timestamp">
+            <column name="DMR_FECHARECHAZO" length="7" />
+        </property>
+        <property name="dmrIdnuevamuestra" type="java.lang.Long">
+            <column name="DMR_IDNUEVAMUESTRA" precision="10" scale="0" />
+        </property>
+    </class>
+</hibernate-mapping>

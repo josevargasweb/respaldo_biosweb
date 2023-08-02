@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 16-08-2021 14:22:23 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.grupobios.bioslis.entity.SigmaPrefijostest" table="SIGMA_PREFIJOSTEST" schema="BIOSLIS">
+        <id name="sptIdprefijostest" type="int">
+            <column name="SPT_IDPREFIJOSTEST" precision="5" scale="0" />
+            <generator class="assigned"></generator>
+        </id>
+        <property name="sptPrefijotest" type="string">
+            <column name="SPT_PREFIJOTEST" length="16" not-null="true" />
+        </property>
+        <set name="sigmaProcesosanalizadorestests" table="SIGMA_PROCESOSANALIZADORESTEST" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="SPAT_IDPREFIJOTEST" precision="5" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="com.grupobios.bioslis.entity.SigmaProcesosanalizadorestest" />
+        </set>
+    </class>
+</hibernate-mapping>

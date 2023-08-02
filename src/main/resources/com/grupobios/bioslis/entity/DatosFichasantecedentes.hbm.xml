@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 16-08-2021 14:22:23 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.grupobios.bioslis.entity.DatosFichasantecedentes" table="DATOS_FICHASANTECEDENTES" schema="BIOSLIS">
+        <composite-id name="id" class="com.grupobios.bioslis.entity.DatosFichasantecedentesId">
+            <key-property name="dfaNorden" type="long">
+                <column name="DFA_NORDEN" precision="10" scale="0" />
+            </key-property>
+            <key-property name="dfaIdantecedente" type="short">
+                <column name="DFA_IDANTECEDENTE" precision="3" scale="0" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="cfgAntecedentes" class="com.grupobios.bioslis.entity.CfgAntecedentes" update="false" insert="false" fetch="select">
+            <column name="DFA_IDANTECEDENTE" precision="3" scale="0" not-null="true" />
+        </many-to-one>
+        <property name="dfaValorantecedente" type="string">
+            <column name="DFA_VALORANTECEDENTE" length="400" />
+        </property>
+    </class>
+</hibernate-mapping>

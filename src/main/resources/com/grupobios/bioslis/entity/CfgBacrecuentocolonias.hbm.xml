@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 16-08-2021 14:22:23 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.grupobios.bioslis.entity.CfgBacrecuentocolonias" table="CFG_BACRECUENTOCOLONIAS" schema="BIOSLIS">
+        <id name="cbrcIdbacrecuentocolonia" type="int">
+            <column name="CBRC_IDBACRECUENTOCOLONIA" precision="5" scale="0" />
+            <generator class="assigned"></generator>
+        </id>
+        <property name="cbrcCodigo" type="string">
+            <column name="CBRC_CODIGO" length="120" />
+        </property>
+        <property name="cbrcDescripcion" type="string">
+            <column name="CBRC_DESCRIPCION" length="100" />
+        </property>
+        <property name="cbrcSort" type="java.lang.Integer">
+            <column name="CBRC_SORT" precision="5" scale="0" />
+        </property>
+        <property name="cbrcActivo" type="string">
+            <column name="CBRC_ACTIVO" length="1" />
+        </property>
+        <property name="cbrcHost" type="string">
+            <column name="CBRC_HOST" length="80" />
+        </property>
+        <!-- 
+        <set name="datosFichasexamenesmicroorgs" table="DATOS_FICHASEXAMENESMICROORG" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="DFEMO_IDBACRECUENTOCOLONIAS" precision="2" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="com.grupobios.bioslis.entity.DatosFichasexamenesmicroorg" />
+        </set>
+         -->
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 16-08-2021 14:22:23 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.grupobios.bioslis.entity.CfgBacantibioticos" table="CFG_BACANTIBIOTICOS" schema="BIOSLIS">
+        <id name="cbaIdbacantibiotico" type="short">
+            <column name="CBA_IDBACANTIBIOTICO" precision="3" scale="0" />
+            <generator class="assigned"></generator>
+        </id>
+        <property name="cbaCodigo" type="string">
+            <column name="CBA_CODIGO" length="40" not-null="true" unique="true" />
+        </property>
+        <property name="cbaDescripcion" type="string">
+            <column name="CBA_DESCRIPCION" length="200" />
+        </property>
+        <property name="cbaActivo" type="string">
+            <column name="CBA_ACTIVO" length="1" />
+        </property>
+        <property name="cbaSort" type="java.lang.Short">
+            <column name="CBA_SORT" precision="3" scale="0" />
+        </property>
+        <property name="cbaHost" type="string">
+            <column name="CBA_HOST" length="80" />
+        </property>
+        <set name="cfgBacantibiogramasantibiots" table="CFG_BACANTIBIOGRAMASANTIBIOT" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="CBAD_IDBACANTIBIOTICO" precision="3" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="com.grupobios.bioslis.entity.CfgBacantibiogramasantibiot" />
+        </set>
+    </class>
+</hibernate-mapping>

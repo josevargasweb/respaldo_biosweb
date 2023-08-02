@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 16-08-2021 14:22:23 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.grupobios.bioslis.entity.CfgAntecedentes" table="CFG_ANTECEDENTES" schema="BIOSLIS">
+        <id name="caIdantecedente" type="int">
+            <column name="CA_IDANTECEDENTE" precision="4" scale="0" />
+            <generator class="assigned"></generator>
+        </id>
+        <property name="caCodigoantecedente" type="string">
+            <column name="CA_CODIGOANTECEDENTE" length="60" />
+        </property>
+        <property name="caDescripcion" type="string">
+            <column name="CA_DESCRIPCION" length="200" />
+        </property>
+        <property name="caActivo" type="string">
+            <column name="CA_ACTIVO" length="1" />
+        </property>
+        <property name="caObligatorio" type="string">
+            <column name="CA_OBLIGATORIO" length="1" />
+        </property>
+        <property name="caOrdenamiento" type="java.lang.Short">
+            <column name="CA_ORDENAMIENTO" precision="4" scale="0" />
+        </property>
+        <property name="caCodigoum" type="string">
+            <column name="CA_CODIGOUM" length="100" />
+        </property>
+        <property name="caFormatoum" type="string">
+            <column name="CA_FORMATOUM" length="80" />
+        </property>
+        <property name="caSolicitartm" type="string">
+            <column name="CA_SOLICITARTM" length="1" />
+        </property>
+        <property name="caValidaresnumerico" type="string">
+            <column name="CA_VALIDARESNUMERICO" length="1" />
+        </property>
+        <set name="datosFichasantecedenteses" table="DATOS_FICHASANTECEDENTES" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="DFA_IDANTECEDENTE" precision="3" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="com.grupobios.bioslis.entity.DatosFichasantecedentes" />
+        </set>
+        <set name="cfgAntecedentestests" table="CFG_ANTECEDENTESTEST" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="CAT_IDANTECEDENTE" precision="4" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="com.grupobios.bioslis.entity.CfgAntecedentestest" />
+        </set>
+    </class>
+</hibernate-mapping>

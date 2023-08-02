@@ -1,0 +1,293 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 16-08-2021 14:22:23 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+	<class name="com.grupobios.bioslis.entity.CfgExamenes"
+		table="CFG_EXAMENES" schema="BIOSLIS">
+
+		<id name="ceIdexamen" type="long">
+			<column name="CE_IDEXAMEN" precision="10" scale="0" />
+			<generator class="sequence">
+				<param name="sequence">
+					BIOSLIS.SEQ_CFG_EXAMENES
+				</param>
+			</generator>
+		</id>
+	<many-to-one name="cfgGruposmuestras" class="com.grupobios.bioslis.entity.CfgGruposmuestras" fetch="select" not-null="false">
+	    <column name="CE_IDGRUPOMUESTRA" precision="4" scale="0" />
+	</many-to-one>
+		<many-to-one name="cfgGruposexamenesfonasa"
+			class="com.grupobios.bioslis.entity.CfgGruposexamenesfonasa"
+			fetch="select">
+			<column name="CE_IDGRUPOEXAMENFONASA" precision="2" scale="0" />
+		</many-to-one>
+		<many-to-one name="cfgMuestras"
+			class="com.grupobios.bioslis.entity.CfgMuestras" fetch="select">
+			<column name="CE_IDTIPOMUESTRA" precision="4" scale="0"
+				not-null="true" />
+		</many-to-one>
+		<many-to-one name="ldvGruposexamenes"
+			class="com.grupobios.bioslis.entity.LdvGruposexamenes" fetch="select">
+			<column name="CE_IDGRUPOEXAMEN" precision="2" scale="0" />
+		</many-to-one>
+		<many-to-one name="cfgPesquisas"
+			class="com.grupobios.bioslis.entity.CfgPesquisas" fetch="select">
+			<column name="CE_IDPESQUISA" precision="10" scale="0" />
+		</many-to-one>
+		<many-to-one name="cfgDerivadores"
+			class="com.grupobios.bioslis.entity.CfgDerivadores" fetch="select">
+			<column name="CE_IDDERIVADOR" precision="3" scale="0"
+				not-null="true" />
+		</many-to-one>
+		<many-to-one name="ldvTiposexamenes"
+			class="com.grupobios.bioslis.entity.LdvTiposexamenes" fetch="select">
+			<column name="CE_IDTIPOEXAMEN" precision="1" scale="0">
+				<comment>Tipo examen seg&#250;n formulario solicitud de
+					ex&#225;menes</comment>
+			</column>
+		</many-to-one>
+		<many-to-one name="cfgSecciones"
+			class="com.grupobios.bioslis.entity.CfgSecciones" fetch="select">
+			<column name="CE_IDSECCION" precision="4" scale="0"
+				not-null="true" />
+		</many-to-one>
+		<many-to-one name="ldvFormatos"
+			class="com.grupobios.bioslis.entity.LdvFormatos" fetch="select">
+			<column name="CE_IDFORMATO" precision="2" scale="0" />
+		</many-to-one>
+		<many-to-one name="cfgExamenesconjuntos"
+			class="com.grupobios.bioslis.entity.CfgExamenesconjuntos"
+			fetch="select">
+			<column name="CE_IDEXAMENESCONJUNTOS" precision="10" scale="0" />
+		</many-to-one>
+		<many-to-one name="ldvIndicacionesexamenes"
+			class="com.grupobios.bioslis.entity.LdvIndicacionesexamenes"
+			fetch="select">
+			<column name="CE_IDINDICACIONEXAMEN" precision="2" scale="0" />
+		</many-to-one>
+		<many-to-one name="cfgMetodos"
+			class="com.grupobios.bioslis.entity.CfgMetodos" fetch="select">
+			<column name="CE_IDMETODO" precision="4" scale="0" />
+		</many-to-one>
+		<property name="ceCodigoexamen" type="string">
+			<column name="CE_CODIGOEXAMEN" length="15" not-null="true" />
+		</property>
+		<property name="ceDescripcion" type="string">
+			<column name="CE_DESCRIPCION" length="80" />
+		</property>
+		<property name="ceAbreviado" type="string">
+			<column name="CE_ABREVIADO" length="50" />
+		</property>
+		<property name="ceAbreviado2" type="string">
+			<column name="CE_ABREVIADO2" length="10" />
+		</property>
+		<property name="ceActivo" type="string">
+			<column name="CE_ACTIVO" length="1" />
+		</property>
+		<property name="ceImprimirseparado" type="string">
+			<column name="CE_IMPRIMIRSEPARADO" length="1">
+				<comment>Si imprimie en hoja separado de cualquier otro examen</comment>
+			</column>
+		</property>
+		<property name="ceImprimirdescripcion" type="string">
+			<column name="CE_IMPRIMIRDESCRIPCION" length="1">
+				<comment>En la impresion del reporte de resultados siu imprime se
+					descripcion de examen.</comment>
+			</column>
+		</property>
+		<property name="ceImprimirporseccion" type="string">
+			<column name="CE_IMPRIMIRPORSECCION" length="1">
+				<comment>Imprime los informes separados por secci&#243;n</comment>
+			</column>
+		</property>
+		<property name="ceImprimirtabla" type="string">
+			<column name="CE_IMPRIMIRTABLA" length="1" />
+		</property>
+		<property name="ceMultiformato" type="string">
+			<column name="CE_MULTIFORMATO" length="1" />
+		</property>
+		<property name="ceTipoexamensort" type="byte">
+			<column name="CE_TIPOEXAMENSORT" precision="1" scale="0" />
+		</property>
+		<property name="ceIdtablareferenciaexamen"
+			type="java.lang.Short">
+			<column name="CE_IDTABLAREFERENCIAEXAMEN" precision="4"
+				scale="0" />
+		</property>
+		<property name="ceSeleccionable" type="string">
+			<column name="CE_SELECCIONABLE" length="1" />
+		</property>
+		<property name="ceHost" type="string">
+			<column name="CE_HOST" length="80" />
+		</property>
+		<property name="ceHostmicro" type="string">
+			<column name="CE_HOSTMICRO" length="80" />
+		</property>
+		<property name="ceHost2" type="string">
+			<column name="CE_HOST2" length="80" />
+		</property>
+		<property name="ceHost3" type="string">
+			<column name="CE_HOST3" length="80" />
+		</property>
+		<property name="ceCodigofonasa" type="string">
+			<column name="CE_CODIGOFONASA" length="20" />
+		</property>
+		<property name="ceSortseccion" type="java.lang.Short">
+			<column name="CE_SORTSECCION" precision="4" scale="0" />
+		</property>
+		<property name="ceEstadisticas" type="string">
+			<column name="CE_ESTADISTICAS" length="1" />
+		</property>
+		<property name="ceNota" type="string">
+			<column name="CE_NOTA" length="2000">
+				<comment>Nota del examen en general</comment>
+			</column>
+		</property>
+		<property name="ceEspesquisa" type="string">
+			<column name="CE_ESPESQUISA" length="1">
+				<comment>Obliga a pedir datos como peso, estatura, diuresis, FUR</comment>
+			</column>
+		</property>
+		<property name="cePesquisaobligatoria" type="string">
+			<column name="CE_PESQUISAOBLIGATORIA" length="1" />
+		</property>
+		<property name="ceDatosmuestra" type="string">
+			<column name="CE_DATOSMUESTRA" length="1" default='N'>
+				<comment>SI TIENE TIPOS DE MUESTRA ADICIONALES S/N</comment>
+			</column>
+		</property>
+		<property name="ceTiempoentreganormal"
+			type="java.lang.Integer">
+			<column name="CE_TIEMPOENTREGANORMAL" precision="6" scale="0" />
+		</property>
+		<property name="ceTiempoentregaurgente"
+			type="java.lang.Integer">
+			<column name="CE_TIEMPOENTREGAURGENTE" precision="6" scale="0" />
+		</property>
+		<property name="ceTiempoentregahospitalizado"
+			type="java.lang.Integer">
+			<column name="CE_TIEMPOENTREGAHOSPITALIZADO" precision="6"
+				scale="0" />
+		</property>
+		<property name="ceDiaprocesolunes" type="string">
+			<column name="CE_DIAPROCESOLUNES" length="1" />
+		</property>
+		<property name="ceDiaprocesomartes" type="string">
+			<column name="CE_DIAPROCESOMARTES" length="1" />
+		</property>
+		<property name="ceDiaprocesomiercoles" type="string">
+			<column name="CE_DIAPROCESOMIERCOLES" length="1" />
+		</property>
+		<property name="ceDiaprocesojueves" type="string">
+			<column name="CE_DIAPROCESOJUEVES" length="1" />
+		</property>
+		<property name="ceDiaprocesoviernes" type="string">
+			<column name="CE_DIAPROCESOVIERNES" length="1" />
+		</property>
+		<property name="ceDiaprocesosabado" type="string">
+			<column name="CE_DIAPROCESOSABADO" length="1" />
+		</property>
+		<property name="ceDiaprocesodomingo" type="string">
+			<column name="CE_DIAPROCESODOMINGO" length="1" />
+		</property>
+		<property name="ceVolumenmuestraadulto" type="float">
+			<column name="CE_VOLUMENMUESTRAADULTO" precision="5" scale="0">
+				<comment>EN ML</comment>
+			</column>
+		</property>
+		<property name="ceVolumenmuestrapediatrica" type="float">
+			<column name="CE_VOLUMENMUESTRAPEDIATRICA" precision="5"
+				scale="0">
+				<comment>EN ML</comment>
+			</column>
+		</property>
+		<property name="ceEstabilidadambiental" type="string">
+			<column name="CE_ESTABILIDADAMBIENTAL" length="80" />
+		</property>
+		<property name="ceEstabilidadrefrigerado" type="string">
+			<column name="CE_ESTABILIDADREFRIGERADO" length="80" />
+		</property>
+		<property name="ceEstabilidadcongelado" type="string">
+			<column name="CE_ESTABILIDADCONGELADO" length="80" />
+		</property>
+		<property name="ceContablecantidad" type="java.lang.Short">
+			<column name="CE_CONTABLECANTIDAD" precision="3" scale="0" />
+		</property>
+		<property name="ceEsexamen" type="string">
+			<column name="CE_ESEXAMEN" length="1">
+				<comment>Si prestacion es examen y aparece en gestion de resultados</comment>
+			</column>
+		</property>
+		<property name="ceTienetestopcionales" type="string">
+			<column name="CE_TIENETESTOPCIONALES" length="1" />
+		</property>
+		<property name="ceEsurgente" type="string">
+			<column name="CE_ESURGENTE" length="1" />
+		</property>
+		<property name="ceEscultivo" type="string">
+			<column name="CE_ESCULTIVO" length="1" />
+		</property>
+		<property name="ceNumerodeetiquetas" type="java.lang.Byte">
+			<column name="CE_NUMERODEETIQUETAS" precision="2" scale="0" />
+		</property>
+		<property name="ceEsconfidencial" type="string">
+			<column name="CE_ESCONFIDENCIAL" length="1" />
+		</property>
+		<property name="ceEsindicador" type="string">
+			<column name="CE_ESINDICADOR" length="1" />
+		</property>
+		<property name="ceNombreweb" type="string">
+			<column name="CE_NOMBREWEB" length="200" />
+		</property>
+		<property name="ceDisponibleweb" type="string">
+			<column name="CE_DISPONIBLEWEB" length="1" />
+		</property>
+		<property name="ceDiagnosticoobligatorio" type="string">
+			<column name="CE_DIAGNOSTICOOBLIGATORIO" length="1" />
+		</property>
+		<property name="ceHojatrabajo" type="string">
+			<column name="CE_HOJATRABAJO" length="1" />
+		</property>
+		<property name="ceEscurvatolerancia" type="string">
+			<column name="CE_ESCURVATOLERANCIA" length="1" />
+		</property>
+		<property name="cePlanillahistorica" type="string">
+			<column name="CE_PLANILLAHISTORICA" length="1" />
+		</property>
+		<property name="ceDiasdevalidez" type="int">
+			<column name="CE_DIASDEVALIDEZ" />
+		</property>
+		<property name="ceDiasvalidezhospitalizado" type="short">
+			<column name="CE_DIASVALIDEZHOSPITALIZADO" />
+		</property>
+		<property name="ceDiasvalidezambulatorioblq" type="string">
+			<column name="CE_DIASVALIDEZAMBULATORIOBLQ" length="1" />
+		</property>
+		<property name="ceDiasvalidezhospitalizadoblq" type="string">
+			<column name="CE_DIASVALIDEZHOSPITALIZADOBLQ" length="1" />
+		</property>
+		<property name="ceEsexamenmultiseccion" type="string">
+			<column name="CE_ESEXAMENMULTISECCION" length="1" />
+		</property>
+		<property name="ceAutovalidar" type="string">
+			<column name="CE_AUTOVALIDAR" length="1" />
+		</property>
+		<property name="ceCompartemuestra" type="string">
+			<column name="CE_COMPARTEMUESTRA" length="1" />
+		</property>
+		<property name="ceTienegrupomuestra" type="string">
+			<column name="CE_TIENEGRUPOMUESTRA" length="1" not-null="true" />
+		</property>
+		<property name="ceCellcounter" type="string">
+			<column name="CE_CELLCOUNTER" length="1" not-null="true" />
+		</property>
+		<!--<one-to-one name="cfgExamenesindicacionestm" class="com.grupobios.bioslis.entity.CfgExamenesindicacionestm"></one-to-one> -->
+
+		<!-- <set name="cfgSeccionesexamenes" table="CFG_SECCIONESEXAMENES" inverse="true" 
+			fetch="select"> <set name="cfgSeccionesexameneses" table="CFG_SECCIONESEXAMENES" 
+			inverse="true" fetch="select"> <key> <column name="CSE_IDEXAMEN" precision="10" 
+			scale="0" not-null="true" /> </key> <one-to-many class="com.grupobios.bioslis.entity.CfgSeccionesexamenes" 
+			/> </set> -->
+	</class>
+</hibernate-mapping>

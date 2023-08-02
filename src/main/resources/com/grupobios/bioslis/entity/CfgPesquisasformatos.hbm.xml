@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 16-08-2021 14:22:23 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.grupobios.bioslis.entity.CfgPesquisasformatos" table="CFG_PESQUISASFORMATOS" schema="BIOSLIS">
+        <composite-id name="id" class="com.grupobios.bioslis.entity.CfgPesquisasformatosId">
+            <key-property name="cpfIdpesquisa" type="short">
+                <column name="CPF_IDPESQUISA" precision="3" scale="0" />
+            </key-property>
+            <key-property name="cpfIddato" type="byte">
+                <column name="CPF_IDDATO" precision="2" scale="0" />
+            </key-property>
+            <key-property name="cpfIdpesquisaformato" type="byte">
+                <column name="CPF_IDPESQUISAFORMATO" precision="2" scale="0" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="cfgPesquisasinfo" class="com.grupobios.bioslis.entity.CfgPesquisasinfo" update="false" insert="false" fetch="select">
+            <column name="CPF_IDPESQUISA" precision="3" scale="0" not-null="true" />
+            <column name="CPF_IDDATO" precision="2" scale="0" not-null="true" />
+        </many-to-one>
+        <many-to-one name="ldvTiposdatospesquisas" class="com.grupobios.bioslis.entity.LdvTiposdatospesquisas" fetch="select">
+            <column name="CPF_IDTIPODATOPESQUISA" precision="1" scale="0" not-null="true" />
+        </many-to-one>
+        <property name="cpfDescripcion" type="string">
+            <column name="CPF_DESCRIPCION" length="280" />
+        </property>
+        <property name="cpfValor" type="string">
+            <column name="CPF_VALOR" length="200" />
+        </property>
+        <property name="cpfPosicionx" type="java.lang.Short">
+            <column name="CPF_POSICIONX" precision="4" scale="0" />
+        </property>
+        <property name="cpfPosiciony" type="java.lang.Short">
+            <column name="CPF_POSICIONY" precision="4" scale="0" />
+        </property>
+        <property name="cpfAncho" type="java.lang.Short">
+            <column name="CPF_ANCHO" precision="4" scale="0" />
+        </property>
+        <property name="cpfAlto" type="java.lang.Short">
+            <column name="CPF_ALTO" precision="4" scale="0" />
+        </property>
+        <property name="cpfTamanofuente" type="java.lang.Byte">
+            <column name="CPF_TAMANOFUENTE" precision="2" scale="0" />
+        </property>
+    </class>
+</hibernate-mapping>

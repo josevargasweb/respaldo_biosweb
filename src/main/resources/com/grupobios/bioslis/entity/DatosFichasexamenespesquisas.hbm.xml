@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 16-08-2021 14:22:23 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.grupobios.bioslis.entity.DatosFichasexamenespesquisas" table="DATOS_FICHASEXAMENESPESQUISAS" schema="BIOSLIS">
+        <composite-id name="id" class="com.grupobios.bioslis.entity.DatosFichasexamenesId">
+            <key-property name="dfeNorden" type="long">
+                <column name="DFEP_NORDEN" precision="10" scale="0" />
+            </key-property>
+            <key-property name="dfeIdexamen" type="long">
+                <column name="DFEP_IDEXAMEN" precision="10" scale="0" />
+            </key-property>
+        </composite-id>
+        <!-- 
+        <one-to-one name="datosFichasexamenes" class="com.grupobios.bioslis.entity.DatosFichasexamenes" constrained="true"></one-to-one>
+         -->
+        <property name="dfepIdpesquisa" type="java.lang.Short">
+            <column name="DFEP_IDPESQUISA" precision="3" scale="0" />
+        </property>
+        <property name="dfepIddato" type="java.lang.Byte">
+            <column name="DFEP_IDDATO" precision="2" scale="0" />
+        </property>
+        <property name="dfepResultadocheck" type="string">
+            <column name="DFEP_RESULTADOCHECK" length="1" />
+        </property>
+        <property name="dfepResultadotexto" type="string">
+            <column name="DFEP_RESULTADOTEXTO" length="1000" />
+        </property>
+    </class>
+</hibernate-mapping>

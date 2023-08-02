@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 21-10-2022 12:21:11 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.grupobios.bioslis.entity.CfgExamenesindicacionestm" table="CFG_EXAMENESINDICACIONESTM" schema="BIOSLIS" optimistic-lock="version">
+        <composite-id name="id" class="com.grupobios.bioslis.entity.CfgExamenesindicacionestmId">
+            <key-property name="ceitmIdexamen" type="long">
+                <column name="CEITM_IDEXAMEN" precision="10" scale="0" />
+            </key-property>
+            <key-property name="ceitmIdindicaciontm" type="short">
+                <column name="CEITM_IDINDICACIONTM" precision="4" scale="0" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="ldvIndicacionestm" class="com.grupobios.bioslis.entity.LdvIndicacionestm" update="false" insert="false" fetch="select">
+            <column name="CEITM_IDINDICACIONTM" precision="4" scale="0" not-null="true" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

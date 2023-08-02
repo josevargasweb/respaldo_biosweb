@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 16-08-2021 14:22:23 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.grupobios.bioslis.entity.CfgGruposmuestras" table="CFG_GRUPOSMUESTRAS" schema="BIOSLIS">
+        <id name="cgmIdgrupomuestra" type="short">
+            <column name="CGM_IDGRUPOMUESTRA" precision="4" scale="0" />
+            <generator class="assigned"></generator>
+        </id>
+        <property name="cgmDescripcion" type="string">
+            <column name="CGM_DESCRIPCION" length="200" />
+        </property>
+        <property name="cgmActivo" type="string">
+            <column name="CGM_ACTIVO" length="1" />
+        </property>
+        <set name="cfgMuestrases" table="CFG_MUESTRAS" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="CMUE_IDGRUPOMUESTRA" precision="4" scale="0" />
+            </key>
+            <one-to-many class="com.grupobios.bioslis.entity.CfgMuestras" />
+        </set>
+        <set name="cfgExameneses" table="CFG_EXAMENES" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="CE_IDGRUPOMUESTRA" precision="4" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="com.grupobios.bioslis.entity.CfgExamenes" />
+        </set>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 16-08-2021 14:22:23 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.grupobios.bioslis.entity.CfgAntecedentestest" table="CFG_ANTECEDENTESTEST" schema="BIOSLIS">
+        <composite-id name="id" class="com.grupobios.bioslis.entity.CfgAntecedentestestId">
+            <key-property name="catIdtest" type="int">
+                <column name="CAT_IDTEST" precision="10" scale="0" />
+            </key-property>
+            <key-property name="catIdantecedente" type="int">
+                <column name="CAT_IDANTECEDENTE" precision="4" scale="0" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="cfgAntecedentes" class="com.grupobios.bioslis.entity.CfgAntecedentes" update="false" insert="false" fetch="select">
+            <column name="CAT_IDANTECEDENTE" precision="4" scale="0" not-null="true" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

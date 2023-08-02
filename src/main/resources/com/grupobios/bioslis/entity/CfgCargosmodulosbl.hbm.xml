@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 16-08-2021 14:22:23 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.grupobios.bioslis.entity.CfgCargosmodulosbl" table="CFG_CARGOSMODULOSBL" schema="BIOSLIS">
+        <composite-id name="id" class="com.grupobios.bioslis.entity.CfgCargosmodulosblId">
+            <key-property name="ccmIdcargo" type="short">
+                <column name="CCM_IDCARGO" precision="4" scale="0" />
+            </key-property>
+            <key-property name="ccmIdbioslismodulo" type="short">
+                <column name="CCM_IDBIOSLISMODULO" precision="3" scale="0" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="ldvCargosusuarios" class="com.grupobios.bioslis.entity.LdvCargosusuarios" update="false" insert="false" fetch="select">
+            <column name="CCM_IDCARGO" precision="4" scale="0" not-null="true" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

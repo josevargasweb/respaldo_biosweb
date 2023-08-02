@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 16-08-2021 14:22:23 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+	<class name="com.grupobios.bioslis.entity.CfgSecciones"
+		table="CFG_SECCIONES" schema="BIOSLIS">
+
+		<id name="csecIdseccion" type="int">
+			<column name="CSEC_IDSECCION" precision="4" scale="0" />
+			<generator class="sequence">
+				<param name="sequence">BIOSLIS.SEQ_CFG_SECCIONES</param>
+			</generator>
+		</id>
+		<!-- <property name="cfgLaboratorio"> <column name="CSEC_IDLABORATORIO" 
+			precision="4" scale="0" not-null="true" /> </property> -->
+
+		<many-to-one name="cfgLaboratorios"
+			class="com.grupobios.bioslis.entity.CfgLaboratorios" update="true" 
+			insert="false" fetch="join">
+			<column name="CSEC_IDLABORATORIO" precision="4" scale="0" 
+				not-null="true" />
+		</many-to-one>
+
+		<property name="csecCodigo" type="string">
+			<column name="CSEC_CODIGO" length="40" />
+		</property>
+		<property name="csecDescripcion" type="string">
+			<column name="CSEC_DESCRIPCION" length="200" />
+		</property>
+		<property name="csecActiva" type="string">
+			<column name="CSEC_ACTIVA" length="1" />
+		</property>
+		<property name="csecSort" type="short">
+			<column name="CSEC_SORT" precision="4" scale="0"
+				not-null="true" />
+		</property>
+		<property name="csecColor" type="string">
+			<column name="CSEC_COLOR" length="7" />
+		</property>
+		<set name="cfgTests" table="CFG_TEST" inverse="true" lazy="false"
+			fetch="select">
+			<key>
+				<column name="CT_IDSECCION" precision="4" scale="0" />
+			</key>
+			<one-to-many class="com.grupobios.bioslis.entity.CfgTest" />
+		</set>
+		<set name="cfgSeccionesexameneses" table="CFG_SECCIONESEXAMENES"
+			inverse="true" lazy="true" fetch="select">
+			<key>
+				<column name="CSE_IDSECCION" precision="4" scale="0"
+					not-null="true" />
+			</key>
+			<one-to-many
+				class="com.grupobios.bioslis.entity.CfgSeccionesexamenes" />
+		</set>
+		<set name="cfgSeccionestests" table="CFG_SECCIONESTEST"
+			inverse="true" lazy="true" fetch="select">
+			<key>
+				<column name="CST_IDSECCION" precision="4" scale="0" />
+			</key>
+			<one-to-many
+				class="com.grupobios.bioslis.entity.CfgSeccionestest" />
+		</set>
+		<set name="cfgExamenes" table="CFG_EXAMENES" inverse="true"
+			lazy="false" fetch="select">
+			<key>
+				<column name="CE_IDSECCION" precision="4" scale="0"
+					not-null="true" />
+			</key>
+			<one-to-many
+				class="com.grupobios.bioslis.entity.CfgExamenes" />
+		</set>
+		<property name="csecEsMicrobiologia" type="string">
+			<column name="CSEC_ESMICROBIOLOGIA" length="2" />
+		</property>
+	</class>
+</hibernate-mapping>

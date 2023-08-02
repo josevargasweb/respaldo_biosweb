@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 16-08-2021 14:22:23 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.grupobios.bioslis.entity.CfgBaczonacuerpo" table="CFG_BACZONACUERPO" schema="BIOSLIS">
+        <id name="cbzcIdzonacuerpo" type="short">
+            <column name="CBZC_IDZONACUERPO" precision="3" scale="0" />
+            <generator class="assigned"></generator>
+        </id>
+        <property name="cbzcDescripcion" type="string">
+            <column name="CBZC_DESCRIPCION" length="200" />
+        </property>
+        <property name="cbzcActivo" type="string">
+            <column name="CBZC_ACTIVO" length="1" />
+        </property>
+        <property name="cbzcSort" type="java.lang.Short">
+            <column name="CBZC_SORT" precision="3" scale="0" />
+        </property>
+        <property name="cbzcHost" type="string">
+            <column name="CBZC_HOST" length="80" />
+        </property>
+        <set name="datosFichasmuestrases" table="DATOS_FICHASMUESTRAS" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="DFM_IDZONACUERPO" precision="3" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="com.grupobios.bioslis.entity.DatosFichasmuestras" />
+        </set>
+    </class>
+</hibernate-mapping>

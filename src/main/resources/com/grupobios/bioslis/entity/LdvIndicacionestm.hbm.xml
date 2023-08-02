@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 21-10-2022 12:21:11 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.grupobios.bioslis.entity.LdvIndicacionestm" table="LDV_INDICACIONESTM" schema="BIOSLIS" optimistic-lock="version">
+        <id name="ldvitmIdindicacionestm" type="short">
+            <column name="LDVITM_IDINDICACIONESTM" precision="4" scale="0" />
+           	<generator class="sequence">
+        		<param name="sequence">BIOSLIS.SEQ_LDV_INDICACIONESTM</param>
+        	</generator>
+        </id>
+        <property name="ldvitmDescripcionindicacion" type="string">
+            <column name="LDVITM_DESCRIPCIONINDICACION" length="250" />
+        </property>
+        <set name="cfgExamenesindicacionestms" table="CFG_EXAMENESINDICACIONESTM" inverse="true" lazy="false" fetch="select">
+            <key>
+                <column name="CEITM_IDINDICACIONTM" precision="4" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="com.grupobios.bioslis.entity.CfgExamenesindicacionestm" />
+        </set>
+    </class>
+</hibernate-mapping>

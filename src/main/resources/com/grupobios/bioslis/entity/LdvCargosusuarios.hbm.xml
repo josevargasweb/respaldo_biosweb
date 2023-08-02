@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 16-08-2021 14:22:23 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.grupobios.bioslis.entity.LdvCargosusuarios" table="LDV_CARGOSUSUARIOS" schema="BIOSLIS">
+        <id name="ldvcuIdcargo" type="short">
+            <column name="LDVCU_IDCARGO" precision="4" scale="0" />
+            <generator class="sequence">
+                <param name="sequence">BIOSLIS.SEQ_LDV_CARGOSUSUARIOS</param>
+            </generator>
+        </id>
+        <property name="ldvcuDescripcion" type="string">
+            <column name="LDVCU_DESCRIPCION" length="100" />
+        </property>
+        <set name="datosUsuarioses" table="DATOS_USUARIOS" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="DU_IDCARGO" precision="4" scale="0" />
+            </key>
+            <one-to-many class="com.grupobios.bioslis.entity.DatosUsuarios" />
+        </set>
+    </class>
+</hibernate-mapping>

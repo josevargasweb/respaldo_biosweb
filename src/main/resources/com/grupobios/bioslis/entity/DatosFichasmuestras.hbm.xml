@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 16-08-2021 14:22:23 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.grupobios.bioslis.entity.DatosFichasmuestras" table="DATOS_FICHASMUESTRAS" schema="BIOSLIS">
+        <id name="dfmIdmuestra" type="long">
+            <column name="DFM_IDMUESTRA" precision="10" scale="0" />
+            <generator class="sequence" >
+                <param name="sequence">
+                    BIOSLIS.SEQ_DATOSFICHASMUESTRAS
+                </param>
+            </generator>
+        </id>
+        <many-to-one name="datosPacientes" class="com.grupobios.bioslis.entity.DatosPacientes" fetch="select">
+            <column name="DFM_IDPACIENTE" precision="10" scale="0" />
+        </many-to-one>
+        <many-to-one name="cfgBaczonacuerpo" class="com.grupobios.bioslis.entity.CfgBaczonacuerpo" fetch="select">
+            <column name="DFM_IDZONACUERPO" precision="3" scale="0" />
+        </many-to-one>
+        <property name="dfmNorden" type="long">
+            <column name="DFM_NORDEN" precision="10" scale="0" not-null="true" />
+        </property>
+        <property name="dfmPrefijotipomuestra" type="string">
+            <column name="DFM_PREFIJOTIPOMUESTRA" length="2" />
+        </property>
+        <property name="dfmCodigobarra" type="string">
+            <column name="DFM_CODIGOBARRA" length="48" />
+        </property>
+        <property name="dfmFechacreacion" type="timestamp">
+            <column name="DFM_FECHACREACION" length="7" />
+        </property>
+        <property name="dfmEstadotm" type="string">
+            <column name="DFM_ESTADOTM" length="1" />
+        </property>
+        <property name="dfmIdusuariotm" type="long">
+            <column name="DFM_IDUSUARIOTM" precision="10" scale="0" not-null="true" />
+        </property>
+        <property name="dfmFechatm" type="timestamp">
+            <column name="DFM_FECHATM" length="7" />
+        </property>
+        <property name="dfmidcajatransporte" type="big_decimal">
+            <column name="DFM_IDCAJATRANSPORTE" precision="20" scale="0" />
+        </property>
+
+        <property name="dfmEstadorm" type="string">
+            <column name="DFM_ESTADORM" length="1" />
+        </property>
+        <property name="dfmIdusuariorm" type="long">
+            <column name="DFM_IDUSUARIORM" precision="10" scale="0" not-null="true" />
+        </property>
+        <property name="dfmFecharm" type="timestamp">
+            <column name="DFM_FECHARM" length="7" />
+        </property>
+        <property name="dfmTmobservacion" type="string">
+            <column name="DFM_TMOBSERVACION" length="200" />
+        </property>
+        <property name="dfmRecepcionobs" type="string">
+            <column name="DFM_RECEPCIONOBS" length="100" />
+        </property>
+        <property name="dfmNrovecestomada" type="java.lang.Byte">
+            <column name="DFM_NROVECESTOMADA" precision="1" scale="0"/>
+        </property>
+        <one-to-one name="datosMuestrasrechazadas" class="com.grupobios.bioslis.entity.DatosMuestrasrechazadas"></one-to-one>
+    </class>
+</hibernate-mapping>

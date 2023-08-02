@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 16-08-2021 14:22:23 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.grupobios.bioslis.entity.LdvContactospacientesrelacion" table="LDV_CONTACTOSPACIENTESRELACION" schema="BIOSLIS">
+        <id name="ldvcprIdcontactopacienterel" type="int">
+            <column name="LDVCPR_IDCONTACTOPACIENTEREL" precision="2" scale="0" />
+            <generator class="assigned"></generator>
+        </id>
+        <property name="ldvcprDescripcion" type="string">
+            <column name="LDVCPR_DESCRIPCION" length="100" />
+        </property>
+        <set name="datosContactoses" table="DATOS_CONTACTOS" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="DC_IDCONTACTOPACIENTEREL" precision="2" scale="0" />
+            </key>
+            <one-to-many class="com.grupobios.bioslis.entity.DatosContactos" />
+        </set>
+    </class>
+</hibernate-mapping>

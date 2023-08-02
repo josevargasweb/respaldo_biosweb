@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 17-10-2022 22:44:36 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.grupobios.bioslis.entity.SigmaProcesotestconversion" table="SIGMA_PROCESOTESTCONVERSION" schema="BIOSLIS" optimistic-lock="version">
+        <composite-id name="id" class="com.grupobios.bioslis.entity.SigmaProcesotestconversionId">
+            <key-property name="sptcIdproceso" type="short">
+                <column name="SPTC_IDPROCESO" precision="4" scale="0" />
+            </key-property>
+            <key-property name="sptcIdtest" type="long">
+                <column name="SPTC_IDTEST" precision="10" scale="0" />
+            </key-property>
+            <key-property name="sptcNumerocondicion" type="byte">
+                <column name="SPTC_NUMEROCONDICION" precision="2" scale="0" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="sigmaProcesostest" class="com.grupobios.bioslis.entity.SigmaProcesostest" update="false" insert="false" fetch="select">
+            <column name="SPTC_IDPROCESO" precision="4" scale="0" not-null="true" />
+            <column name="SPTC_IDTEST" precision="10" scale="0" not-null="true" />
+        </many-to-one>
+        <many-to-one name="ldvTiposcondicion" class="com.grupobios.bioslis.entity.LdvTiposcondicion" fetch="select">
+            <column name="SPTC_IDTIPOCONDICION" precision="2" scale="0" />
+        </many-to-one>
+        <many-to-one name="ldvOperacionesmath" class="com.grupobios.bioslis.entity.LdvOperacionesmath" fetch="select">
+            <column name="SPTC_IDOPERADORMATH" precision="2" scale="0" />
+        </many-to-one>
+        <property name="sptcValorentrada" type="string">
+            <column name="SPTC_VALORENTRADA" length="100" />
+        </property>
+        <property name="sptcValorsalida" type="string">
+            <column name="SPTC_VALORSALIDA" length="100" />
+        </property>
+        <property name="sptcCriticosn" type="string">
+            <column name="SPTC_CRITICOSN" length="1" />
+        </property>
+        <property name="sptcReprocesarsn" type="string">
+            <column name="SPTC_REPROCESARSN" length="1" />
+        </property>
+        <property name="sptcBloquearsn" type="string">
+            <column name="SPTC_BLOQUEARSN" length="1" />
+        </property>
+        <property name="sptcFirmarsn" type="string">
+            <column name="SPTC_FIRMARSN" length="1" />
+        </property>
+        <property name="sptcCondicionalsn" type="string">
+            <column name="SPTC_CONDICIONALSN" length="1" />
+        </property>
+        <property name="sptcCalculosn" type="string">
+            <column name="SPTC_CALCULOSN" length="1" />
+        </property>
+        <property name="sptcValoroperando" type="java.lang.Integer">
+            <column name="SPTC_VALOROPERANDO" precision="6" scale="0" />
+        </property>
+    </class>
+</hibernate-mapping>

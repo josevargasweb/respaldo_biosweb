@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 17-10-2022 22:44:36 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.grupobios.bioslis.entity.LdvTiposcondicion" table="LDV_TIPOSCONDICION" schema="BIOSLIS" optimistic-lock="version">
+        <id name="ldvtcondIdtipocondicion" type="byte">
+            <column name="LDVTCOND_IDTIPOCONDICION" precision="2" scale="0" />
+            <generator class="assigned" />
+        </id>
+        <property name="ldvtcondDescripcion" type="string">
+            <column name="LDVTCOND_DESCRIPCION" length="25" />
+        </property>
+        <set name="sigmaProcesotestconversions" table="SIGMA_PROCESOTESTCONVERSION" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="SPTC_IDTIPOCONDICION" precision="2" scale="0" />
+            </key>
+            <one-to-many class="com.grupobios.bioslis.entity.SigmaProcesotestconversion" />
+        </set>
+    </class>
+</hibernate-mapping>

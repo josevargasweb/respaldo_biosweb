@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 16-08-2021 14:22:23 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.grupobios.bioslis.bs.LdvEstadosmuestras" table="LDV_ESTADOSMUESTRAS" schema="BIOSLIS" optimistic-lock="version">
+        <id name="ldvemCodigo" type="string">
+            <column name="LDVEM_CODIGO" length="1" />
+            <generator class="assigned" />
+        </id>
+        <property name="ldvemDescripcion" type="string">
+            <column name="LDVEM_DESCRIPCION" length="15" />
+        </property>
+    </class>
+</hibernate-mapping>

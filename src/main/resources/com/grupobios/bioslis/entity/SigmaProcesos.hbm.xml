@@ -1,0 +1,108 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 08-11-2022 1:16:05 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.grupobios.bioslis.entity.SigmaProcesos" table="SIGMA_PROCESOS" schema="BIOSLIS" optimistic-lock="version">
+        <id name="spCodigoproceso" type="string">
+            <column name="SP_CODIGOPROCESO" length="12" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="ldvTipocomunicacion" class="com.grupobios.bioslis.entity.LdvTipocomunicacion" fetch="select">
+            <column name="SP_IDTIPOCOMUNICACION" precision="2" scale="0" />
+        </many-to-one>
+        <property name="spIdproceso" type="short">
+            <column name="SP_IDPROCESO" precision="4" scale="0" not-null="true" unique="true" />
+        </property>
+        <property name="spDescripcion" type="string">
+            <column name="SP_DESCRIPCION" length="50" />
+        </property>
+        <property name="spEstacionsigma" type="java.lang.Short">
+            <column name="SP_ESTACIONSIGMA" precision="3" scale="0" />
+        </property>
+        <property name="spParametros" type="string">
+            <column name="SP_PARAMETROS" length="25" />
+        </property>
+        <property name="spCargatemporal" type="string">
+            <column name="SP_CARGATEMPORAL" length="1" />
+        </property>
+        <property name="spTiempocargatemporalseg" type="java.lang.Short">
+            <column name="SP_TIEMPOCARGATEMPORALSEG" precision="3" scale="0" />
+        </property>
+        <property name="spCargaproceso" type="string">
+            <column name="SP_CARGAPROCESO" length="1" />
+        </property>
+        <property name="spTiempocargaprocesoseg" type="java.lang.Short">
+            <column name="SP_TIEMPOCARGAPROCESOSEG" precision="3" scale="0" />
+        </property>
+        <property name="spActivo" type="string">
+            <column name="SP_ACTIVO" length="1" />
+        </property>
+        <property name="spCodigohost" type="string">
+            <column name="SP_CODIGOHOST" length="20" />
+        </property>
+        <property name="spCodigobarras" type="string">
+            <column name="SP_CODIGOBARRAS" length="20" not-null="true" />
+        </property>
+        <property name="spResultadostemporales" type="string">
+            <column name="SP_RESULTADOSTEMPORALES" length="1" />
+        </property>
+        <property name="spNmuestralargo12" type="string">
+            <column name="SP_NMUESTRALARGO12" length="1" />
+        </property>
+        <property name="spMuestrarecepcionada" type="string">
+            <column name="SP_MUESTRARECEPCIONADA" length="1" />
+        </property>
+        <property name="spControlalarmas" type="string">
+            <column name="SP_CONTROLALARMAS" length="1" />
+        </property>
+        <property name="spSort" type="short">
+            <column name="SP_SORT" precision="4" scale="0" not-null="true" />
+        </property>
+        <property name="spCodigoqc" type="string">
+            <column name="SP_CODIGOQC" length="50" />
+        </property>
+        <property name="spQc" type="string">
+            <column name="SP_QC" length="1" />
+        </property>
+        <property name="spFirmaexamenes" type="string">
+            <column name="SP_FIRMAEXAMENES" length="1" />
+        </property>
+        <property name="spAutorizaexamenes" type="string">
+            <column name="SP_AUTORIZAEXAMENES" length="1" />
+        </property>
+        <property name="spStdfechadesde" type="date">
+            <column name="SP_STDFECHADESDE" length="7" />
+        </property>
+        <property name="spStdfechahasta" type="date">
+            <column name="SP_STDFECHAHASTA" length="7" />
+        </property>
+        <property name="spStdfechaprocesoactual" type="date">
+            <column name="SP_STDFECHAPROCESOACTUAL" length="7" />
+        </property>
+        <property name="spSenderid" type="string">
+            <column name="SP_SENDERID" length="50" />
+        </property>
+        <property name="spReceiverid" type="string">
+            <column name="SP_RECEIVERID" length="50" />
+        </property>
+        <property name="spIdseccion" type="java.lang.Short">
+            <column name="SP_IDSECCION" precision="4" scale="0" />
+        </property>
+        <property name="spIdcentrodesalud" type="java.lang.Byte">
+            <column name="SP_IDCENTRODESALUD" precision="2" scale="0" />
+        </property>
+        <set name="sigmaProcesostests" table="SIGMA_PROCESOSTEST" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="SPT_CODIGOPROCESO" length="12" not-null="true" />
+            </key>
+            <one-to-many class="com.grupobios.bioslis.entity.SigmaProcesostest" />
+        </set>
+        <set name="sigmaProcesosalarmases" table="SIGMA_PROCESOSALARMAS" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="SPA_CODIGOPROCESO" length="12" not-null="true" />
+            </key>
+            <one-to-many class="com.grupobios.bioslis.entity.SigmaProcesosalarmas" />
+        </set>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 08-11-2022 1:16:05 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.grupobios.bioslis.entity.SigmaProcesosalarmas" table="SIGMA_PROCESOSALARMAS" schema="BIOSLIS" optimistic-lock="version">
+        <id name="spaIdprocesoalarma" type="short">
+            <column name="SPA_IDPROCESOALARMA" precision="4" scale="0" />
+            <generator class="sequence" >
+                <param name="sequence">
+                    BIOSLIS.SEQ_SIGMA_PROCESOSALARMAS
+                </param>
+            </generator>
+        </id>
+        <many-to-one name="sigmaProcesos" class="com.grupobios.bioslis.entity.SigmaProcesos" fetch="select">
+            <column name="SPA_CODIGOPROCESO" length="48" not-null="true" />
+        </many-to-one>
+        <property name="spaCodigoalarma" type="string">
+            <column name="SPA_CODIGOALARMA" length="60" />
+        </property>
+        <property name="spaAlarmadescripcion" type="string">
+            <column name="SPA_ALARMADESCRIPCION" length="400" />
+        </property>
+        <property name="spaActivo" type="string">
+            <column name="SPA_ACTIVO" length="1" />
+        </property>
+        <property name="spaBloquear" type="string">
+            <column name="SPA_BLOQUEAR" length="1" />
+        </property>
+    </class>
+</hibernate-mapping>

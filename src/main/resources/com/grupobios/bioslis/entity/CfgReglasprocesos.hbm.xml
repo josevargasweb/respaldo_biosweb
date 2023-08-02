@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 16-08-2021 14:22:23 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.grupobios.bioslis.entity.CfgReglasprocesos" table="CFG_REGLASPROCESOS" schema="BIOSLIS">
+        <id name="crpIdreglaproceso" type="short">
+            <column name="CRP_IDREGLAPROCESO" precision="3" scale="0" />
+            <generator class="assigned"></generator>
+        </id>
+        <many-to-one name="cfgReglasprocesosejecutanen" class="com.grupobios.bioslis.entity.CfgReglasprocesosejecutanen" fetch="select">
+            <column name="CRP_IDEJECUTAEN" precision="2" scale="0" not-null="true" />
+        </many-to-one>
+        <property name="crpNombreregla" type="string">
+            <column name="CRP_NOMBREREGLA" length="120" />
+        </property>
+        <property name="crpModulo" type="string">
+            <column name="CRP_MODULO" length="100" />
+        </property>
+        <property name="crpActivo" type="string">
+            <column name="CRP_ACTIVO" length="1" />
+        </property>
+        <property name="crpCondicion" type="string">
+            <column name="CRP_CONDICION" length="320" />
+        </property>
+        <property name="crpAccion" type="string">
+            <column name="CRP_ACCION" length="2400" />
+        </property>
+        <property name="crpSort" type="java.lang.Short">
+            <column name="CRP_SORT" precision="3" scale="0" />
+        </property>
+    </class>
+</hibernate-mapping>

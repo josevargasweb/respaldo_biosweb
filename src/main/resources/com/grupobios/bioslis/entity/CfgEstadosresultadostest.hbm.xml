@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 16-08-2021 14:22:23 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.grupobios.bioslis.entity.CfgEstadosresultadostest" table="CFG_ESTADOSRESULTADOSTEST" schema="BIOSLIS">
+        <id name="certIdestadoresultadotest" type="byte">
+            <column name="CERT_IDESTADORESULTADOTEST" precision="2" scale="0" />
+            <generator class="assigned"></generator>
+        </id>
+        <property name="certEstadoresultadotest" type="string">
+            <column name="CERT_ESTADORESULTADOTEST" length="1" />
+        </property>
+        <property name="certDescripcionestadotest" type="string">
+            <column name="CERT_DESCRIPCIONESTADOTEST" length="100" />
+        </property>
+        <property name="certActivo" type="string">
+            <column name="CERT_ACTIVO" length="1" />
+        </property>
+    </class>
+</hibernate-mapping>

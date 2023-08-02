@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 16-08-2021 14:22:23 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.grupobios.bioslis.entity.CfgEventos" table="CFG_EVENTOS" schema="BIOSLIS">
+        <id name="cevenIdevento" type="short">
+            <column name="CEVEN_IDEVENTO" precision="3" scale="0" />
+            <generator class="assigned"></generator>
+        </id>
+        <property name="cevenDescripcion" type="string">
+            <column name="CEVEN_DESCRIPCION" length="120" />
+        </property>
+        <set name="logEventosfichases" table="LOG_EVENTOSFICHAS" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="LEF_IDEVENTO" precision="2" scale="0" />
+            </key>
+            <one-to-many class="com.grupobios.bioslis.entity.LogEventosfichas" />
+        </set>
+        <set name="logEventosusuarioses" table="LOG_EVENTOSUSUARIOS" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="LEU_IDEVENTO" precision="2" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="com.grupobios.bioslis.entity.LogEventosusuarios" />
+        </set>
+    </class>
+</hibernate-mapping>

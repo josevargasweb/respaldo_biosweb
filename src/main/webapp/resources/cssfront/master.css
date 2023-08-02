@@ -1,0 +1,285 @@
+/* css master de la app colores de template y componentes frontend */
+
+.color-uno{ 
+    color: #09425A;
+}
+.color-dos{ 
+    color: #007C92;
+}
+.color-tres{ 
+    color: #009ABB;
+}
+.color-cuatro{ 
+    color: #AABEC6;
+}
+.color-cinco{ 
+    color: #D0D8DA;
+}
+.color-uno-b{ 
+    background: #09425A;
+}
+.color-dos-b{ 
+    background: #007C92;
+}
+.color-tres-b{ 
+    background: #009ABB;
+}
+.color-cuatro-b{ 
+    background: #AABEC6;
+}
+.color-cinco-b{ 
+    background: #D0D8DA;
+}
+.color-alert{ 
+    background: #F0F4F5;
+}
+
+.text-dark-tabs{
+    color: #343a40;
+}
+
+
+.background-general{
+    background-color: #FBFBFB;
+}
+.background-img-g{
+  background-image: url("../img/vector/Sidebar/Group.png");
+  height: 500px;
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+
+.background-sidebar{
+  height: 152px;
+  background-image: url("../img/vector/Sidebar/nube.png");
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+.background-icon{
+    background-color: #009ABB!important;
+}
+
+.background-red{
+    background: linear-gradient(214.51deg, #D10015 13.77%, #FF4369 83.58%);
+}
+
+.color-firma{
+    color: #3f48c7;
+}
+
+.none .ocultar{
+    display: none!important;
+}
+.sipo{
+    display: block!important;
+}
+
+/*logo bioslist*/
+.logo-c{
+    max-width: 4em;
+    align-items: center;
+    margin-bottom: 0.5em;
+}
+.logo{
+    max-width: 12em;
+    margin-bottom: 2em;
+    align-items: center;
+    padding-left: 0.5em; 
+}
+
+/* margen icon menu*/
+.degrade-menu{
+    background: rgb(98,98,99);
+    background: linear-gradient(180deg, rgba(98,98,99,1) 0%, rgba(2,0,36,0) 70%);
+}
+
+.background-menu{
+    background:linear-gradient(141.08deg, #009ABB 32.24%, #007C92 164.9%);
+    border-radius: 12px;
+}
+.lead{
+    color: white!important;
+}
+
+.margen-icon{
+   margin-right: 0.3em!important;
+}
+.margen-icon-ayuda{
+    font-size: 1.5em!important;
+ }
+.porte-icono-menu{
+    font-size: 2em!important;
+}
+.sidebar {
+    height: fit-content!important;
+    margin-top: 2em!important;
+    margin-left: 2em!important;
+}
+
+.nav-h{
+    background-color: #FBFBFB;
+}
+
+/* menu sidebar */
+
+.sidebar-vertical{
+height: 709px;
+width: 240px;
+left: 40px;
+top: 34px;
+border-radius: 0px;}
+
+/* menu sidebar */
+
+.accordion .card {
+    border-radius: 12px;
+    margin-bottom: 5px;
+    padding-bottom: 3px;
+}
+.accordion .card-header {
+    background: #ececec;
+    padding: .4rem 1rem;
+    border-radius: 12px;
+    margin-bottom: -2px;
+    box-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+    margin: 0 3px 3px 0;
+}
+.accordion .card-header:hover {
+    background: #e0e0e0;
+}
+.accordion .card-header .btn {
+    font-size: 1.04rem;
+    font-weight: 500;
+    width: 100%;
+    text-align: left;
+    position: relative;
+    top: -2px;
+}
+.accordion .card-header i {
+    float: right;
+    font-size: 1.3rem;
+    font-weight: bold;
+    position: relative;
+    top: 5px;
+}
+.accordion .card-header button:hover {
+    color: #23384e;
+}
+.accordion .card-header.highlight {
+    color: #fff;
+    background: #09425A;
+}
+.accordion .card-body {
+    border-radius: 12px!important;
+    text-align: justify;
+}
+
+.borde-curvo{
+        border-radius: 12px!important;
+}
+
+.boton-general{
+    width: 10em!important;
+    border-radius: 3em!important;
+}
+
+/* boton menu */
+.boton-menu{
+    height: 50px;
+    width: 172px;
+    left: 23px;
+    top: 102px;
+    border-radius: 0px;
+}
+.boton-ayuda{
+    background: #F3F5FA;
+    border-radius: 180px;
+}
+
+/*header foto*/
+.header-foto{
+position: absolute;
+width: 1400px;
+height: 431px;
+left: 0px;
+top: 0px;}
+
+/*tipografia titulo*/
+.titulo-cuerpo{
+font-family: Open Sans;
+font-size: 20px;
+font-style: normal;
+font-weight: 700;
+line-height: 28px;
+letter-spacing: 0em;
+text-align: left;}
+
+
+/* botón general */
+.detalle-titulo{
+    margin-left: 1em!important; 
+    width: 97%!important; 
+}
+
+/*_ tabla con scroll_*/
+.my-custom-scrollbar {
+    position: relative;
+    max-height: 200px!important;
+    min-height: 60px;
+    overflow-y: scroll!important;
+    }
+    
+.table-wrapper-scroll-y {
+    display: block;
+    }
+    
+    #thIdentificador{
+        width: 17em!important;
+    }
+    
+    .id-t{
+        width: 3em!important;
+    }
+    
+
+
+.scrollbar{
+	background: #F5F5F5;
+	overflow-y: scroll!important;
+	margin-bottom: 25px;
+}
+
+.force-overflow{
+	min-height: 450px;
+}
+
+
+.scrollbar::-webkit-scrollbar-track{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #F5F5F5;
+	border-radius: 10px;
+}
+
+.scrollbar::-webkit-scrollbar{
+	width: 10px;
+	background-color: #F5F5F5;
+}
+
+.scrollbar::-webkit-scrollbar-thumb{
+	border-radius: 10px;
+	background-image: -webkit-gradient(linear,
+	left bottom,
+	left top,
+	color-stop(0.44, rgb(122,153,217)),
+	color-stop(0.72, rgb(73,125,189)),
+	color-stop(0.86, rgb(28,58,148)));
+}
+
+.nav-link.active{
+    color: #FFFFFF!important;
+}

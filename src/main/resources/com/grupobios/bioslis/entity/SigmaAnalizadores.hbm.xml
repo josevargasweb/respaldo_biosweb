@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 04-11-2022 0:44:49 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.grupobios.bioslis.entity.SigmaAnalizadores" table="SIGMA_ANALIZADORES" schema="BIOSLIS" optimistic-lock="version">
+        <id name="saIdanalizador" type="short">
+            <column name="SA_IDANALIZADOR" precision="4" scale="0" />
+            <generator class="sequence" >
+                <param name="sequence">
+                    BIOSLIS.SEQ_SIGMA_ANALIZADORES
+                </param>
+            </generator>
+        </id>
+        <property name="saCodigoanalizador" type="string">
+            <column name="SA_CODIGOANALIZADOR" length="60" />
+        </property>
+        <property name="saDescripcion" type="string">
+            <column name="SA_DESCRIPCION" length="200" />
+        </property>
+        <property name="saIdimagen" type="java.lang.Short">
+            <column name="SA_IDIMAGEN" precision="4" scale="0" />
+        </property>
+        <property name="saModelo" type="string">
+            <column name="SA_MODELO" length="120" />
+        </property>
+        <property name="saEmpresa" type="string">
+            <column name="SA_EMPRESA" length="120" />
+        </property>
+        <property name="saCodigoproceso1" type="string">
+            <column name="SA_CODIGOPROCESO1" length="48" />
+        </property>
+        <property name="saCodigoproceso2" type="string">
+            <column name="SA_CODIGOPROCESO2" length="48" />
+        </property>
+        <property name="saCodigoproceso3" type="string">
+            <column name="SA_CODIGOPROCESO3" length="48" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 17-10-2022 22:44:36 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.grupobios.bioslis.entity.SigmaTiposmuestras" table="SIGMA_TIPOSMUESTRAS" schema="BIOSLIS" optimistic-lock="version">
+        <id name="stmIdsigmatipomuestra" type="byte">
+            <column name="STM_IDSIGMATIPOMUESTRA" precision="2" scale="0" />
+            <generator class="assigned" />
+        </id>
+        <property name="stmCodigo" type="string">
+            <column name="STM_CODIGO" length="20" />
+        </property>
+        <property name="stmDescripcion" type="string">
+            <column name="STM_DESCRIPCION" length="40" />
+        </property>
+        <property name="stmSort" type="byte">
+            <column name="STM_SORT" precision="2" scale="0" not-null="true" />
+        </property>
+        <property name="stmActivo" type="string">
+            <column name="STM_ACTIVO" length="1" />
+        </property>
+        <set name="sigmaProcesostests" table="SIGMA_PROCESOSTEST" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="SPT_IDSIGMATIPOMUESTRA" precision="2" scale="0" />
+            </key>
+            <one-to-many class="com.grupobios.bioslis.entity.SigmaProcesostest" />
+        </set>
+    </class>
+</hibernate-mapping>

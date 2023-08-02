@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 16-08-2021 14:22:23 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.grupobios.bioslis.bs.CfgBacantibioticoshalo" table="CFG_BACANTIBIOTICOSHALO" schema="BIOSLIS" optimistic-lock="version">
+        <id name="cbahIdantibioticohalo" type="short">
+            <column name="CBAH_IDANTIBIOTICOHALO" precision="3" scale="0" />
+        	<generator class="sequence">
+        		<param name="sequence">BIOSLIS.SEQ_CFG_BACANTIBIOTICOSHALO</param>
+        	</generator>
+        </id>
+        <property name="cbahIdbacmicroorganismo" type="java.lang.Short">
+            <column name="CBAH_IDBACMICROORGANISMO" precision="4" scale="0" />
+        </property>
+        <property name="cbahIdbacantibiotico" type="java.lang.Short">
+            <column name="CBAH_IDBACANTIBIOTICO" precision="3" scale="0" />
+        </property>
+        <property name="cbahSensiblevalor" type="java.lang.Short">
+            <column name="CBAH_SENSIBLEVALOR" precision="3" scale="0" />
+        </property>
+        <property name="cbahSensibleintermediosigno" type="string">
+            <column name="CBAH_SENSIBLEINTERMEDIOSIGNO" length="2" />
+        </property>
+        <property name="cbahResistentevalor" type="java.lang.Short">
+            <column name="CBAH_RESISTENTEVALOR" precision="3" scale="0" />
+        </property>
+        <property name="cbahIntermedioresistentesigno" type="string">
+            <column name="CBAH_INTERMEDIORESISTENTESIGNO" length="2" />
+        </property>
+        <property name="cbahIdmetodoevaluacionr" type="java.lang.Boolean">
+            <column name="CBAH_IDMETODOEVALUACIONR" precision="1" scale="0" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 17-10-2022 22:44:36 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.grupobios.bioslis.entity.CfgSigmaimagenes" table="CFG_SIGMAIMAGENES" schema="BIOSLIS" optimistic-lock="version">
+        <id name="csiIdimagen" type="short">
+            <column name="CSI_IDIMAGEN" precision="4" scale="0" />
+            <generator class="sequence" >
+                <param name="sequence">
+                    BIOSLIS.SEQ_CFG_SIGMAIMAGENES
+                </param>
+            </generator>
+        </id>
+        <property name="csiDescripcion" type="string">
+            <column name="CSI_DESCRIPCION" length="200" />
+        </property>
+        <property name="csiImagen" type="blob">
+            <column name="CSI_IMAGEN" />
+        </property>
+        <set name="sigmaAnalizadoreses" table="SIGMA_ANALIZADORES" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="SA_IDIMAGEN" precision="4" scale="0" />
+            </key>
+            <one-to-many class="com.grupobios.bioslis.entity.SigmaAnalizadores" />
+        </set>
+    </class>
+</hibernate-mapping>

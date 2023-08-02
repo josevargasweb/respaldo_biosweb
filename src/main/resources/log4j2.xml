@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+    <Properties>
+        <Property name="filename">/temp/biolis6.log</Property>
+    </Properties>
+  <Appenders>
+    <Console name="Console" target="SYSTEM_OUT">
+      <PatternLayout pattern="BiosLIS %d{HH:mm:ss.SSS} %L [%t] %-5level %logger{36} - %msg%n"/>
+    </Console>
+<!-- 
+    <File name="BiolisLogFile" fileName="${sys:catalina.home}/logs/bioslis.log">
+    <File name="BiolisLogFile" fileName="${catalina.home}/logs/bioslis.log">
+    <File name="BiolisLogFile" fileName="${com.sun.aas.instanceRoot}}/logs/bioslis.log">
+/logs/
+    -->
+    <File name="BiolisLogFile" fileName="${filename}">
+        
+      <PatternLayout>
+        <Pattern>%d %p %c{1.} [%t] %m%n</Pattern>
+      </PatternLayout>
+    </File>
+    
+  </Appenders>
+  <Loggers>
+    <Root level="debug">
+      <AppenderRef ref="Console"/>
+      <AppenderRef ref="BiolisLogFile"/>
+    </Root>
+  </Loggers>
+</Configuration>

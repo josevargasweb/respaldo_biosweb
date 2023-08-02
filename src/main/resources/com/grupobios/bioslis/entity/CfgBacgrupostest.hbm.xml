@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 14-07-2022 0:17:31 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.grupobios.bioslis.entity.CfgBacgrupostest" table="CFG_BACGRUPOSTEST" schema="BIOSLIS" optimistic-lock="version">
+        <id name="cbgtIdbacgrupotest" type="byte">
+            <column name="CBGT_IDBACGRUPOTEST" precision="2" scale="0" />
+            <generator class="assigned" />
+        </id>
+        <property name="cbgtDescripcion" type="string">
+            <column name="CBGT_DESCRIPCION" length="60" not-null="true" />
+        </property>
+        <property name="cbgtActivo" type="string">
+            <column name="CBGT_ACTIVO" length="1" not-null="true" />
+        </property>
+        <property name="cbgtSort" type="byte">
+            <column name="CBGT_SORT" precision="2" scale="0" not-null="true" />
+        </property>
+        <set name="cfgTests" table="CFG_TEST" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="CT_IDBACGRUPOTEST" precision="2" scale="0" />
+            </key>
+            <one-to-many class="com.grupobios.bioslis.entity.CfgTest" />
+        </set>
+    </class>
+</hibernate-mapping>

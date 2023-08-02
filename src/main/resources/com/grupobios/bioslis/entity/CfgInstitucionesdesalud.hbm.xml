@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 16-08-2021 14:22:23 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.grupobios.bioslis.entity.CfgInstitucionesdesalud" table="CFG_INSTITUCIONESDESALUD" schema="BIOSLIS">
+        <id name="cidsIdinstituciondesalud" type="int">
+            <column name="CIDS_IDINSTITUCIONDESALUD" precision="4" scale="0" />
+            <generator class="assigned"></generator>
+        </id>
+        <property name="cidsCodigo" type="string">
+            <column name="CIDS_CODIGO" length="80" />
+        </property>
+        <property name="cidsDescripcion" type="string">
+            <column name="CIDS_DESCRIPCION" length="200" />
+        </property>
+        <property name="cidsDireccion" type="string">
+            <column name="CIDS_DIRECCION" length="200" />
+        </property>
+        <property name="cidsTelefono" type="string">
+            <column name="CIDS_TELEFONO" length="80" />
+        </property>
+        <property name="cidsActiva" type="string">
+            <column name="CIDS_ACTIVA" length="1" />
+        </property>
+    </class>
+</hibernate-mapping>

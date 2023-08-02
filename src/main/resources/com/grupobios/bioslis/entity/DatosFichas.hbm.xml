@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 16-08-2021 14:22:23 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.grupobios.bioslis.entity.DatosFichas" table="DATOS_FICHAS" schema="BIOSLIS">
+        <id name="dfNorden" type="int">
+            <column name="DF_NORDEN" precision="10" scale="0" />
+        	<generator class="sequence">
+        		<param name="sequence">BIOSLIS.SEQ_DATOS_FICHAS</param>
+        	</generator>
+        </id>
+        <property name="datosPacientes" type="int">
+            <column name="DF_IDPACIENTE" precision="8" scale="0" />
+        </property>
+        <!--        <many-to-one name="cfgServicios" class="carmelo.spring.mavenproject5.CfgServicios" fetch="select">
+            <column name="DF_IDLOCALIZACION" precision="3" scale="0" not-null="true" />
+        </many-to-one>-->
+        <property name="cfgLocalizaciones" type="integer">
+            <column name="DF_IDLOCALIZACION" precision="3" scale="0" />
+        </property>
+        <property name="cfgServicios" type="integer">
+            <column name="DF_IDSERVICIO" precision="4" scale="0" />
+        </property>
+        <property name="cfgDiagnosticos" type="int">
+            <column name="DF_IDDIAGNOSTICO" precision="8" scale="0" />
+        </property>
+        <property name="cfgConvenios" type="int">
+            <column name="DF_IDCONVENIO" precision="8" scale="0" />
+        </property>
+        <property name="cfgProcedencias" type="int">
+            <column name="DF_IDPROCEDENCIA" precision="8" scale="0" />
+        </property>
+        <property name="ldvFichasestadostm" type="int">
+            <column name="DF_IDFICHAESTADOTM" precision="8" scale="0" />
+        </property>
+        <property name="cfgPrioridadatencion" type="int">
+            <column name="DF_IDPRIORIDADATENCION" precision="8" scale="0" />
+        </property>
+        <property name="cfgTipoatencion" type="integer">
+            <column name="DF_IDTIPOATENCION" precision="8" scale="0" />
+        </property>
+        <property name="cfgInstitucionesdesalud" type="int">
+            <column name="DF_IDCENTRODESALUD" precision="8" scale="0" />
+        </property>
+        <property name="dfFechaorden" type="timestamp">
+            <column name="DF_FECHAORDEN" not-null="true" />
+        </property>
+        <property name="dfIdprevision" type="java.lang.Short">
+            <column name="DF_IDPREVISION" precision="4" scale="0" />
+        </property>
+        <property name="dfIdmedico" type="int">
+            <column name="DF_IDMEDICO" precision="8" scale="0"/>
+        </property>
+        <property name="dfCodigolocalizacion" type="string">
+            <column name="DF_CODIGOLOCALIZACION" length="60" />
+        </property>
+        <property name="dfObservacion" type="string">
+            <column name="DF_OBSERVACION" length="250" />
+        </property>
+        <property name="dfHost" type="string">
+            <column name="DF_HOST" length="80" />
+        </property>
+        <property name="dfEnviarresultadosemail" type="string">
+            <column name="DF_ENVIARRESULTADOSEMAIL" length="1" />
+        </property>
+        <property name="dfTmclick" type="string">
+            <column name="DF_TMCLICK" length="25" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

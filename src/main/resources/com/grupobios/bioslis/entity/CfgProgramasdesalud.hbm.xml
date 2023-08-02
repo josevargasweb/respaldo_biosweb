@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 16-08-2021 14:22:23 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.grupobios.bioslis.entity.CfgProgramasdesalud" table="CFG_PROGRAMASDESALUD" schema="BIOSLIS">
+        <id name="cpdsIdprogramasalud" type="int">
+            <column name="CPDS_IDPROGRAMASALUD" precision="5" scale="0" />
+            <generator class="assigned"></generator>
+        </id>
+        <many-to-one name="cfgProcedencias" class="com.grupobios.bioslis.entity.CfgProcedencias" fetch="select">
+            <column name="CPDS_IDPROCEDENCIA" precision="5" scale="0" not-null="true" />
+        </many-to-one>
+        <many-to-one name="cfgInstitucionesdesalud" class="com.grupobios.bioslis.entity.CfgInstitucionesdesalud" fetch="select">
+            <column name="CPDS_IDINSTITUCIONDESALUD" precision="4" scale="0" not-null="true" />
+        </many-to-one>
+        <property name="cpdsCodigo" type="string">
+            <column name="CPDS_CODIGO" length="60" />
+        </property>
+        <property name="cpdsDescripcion" type="string">
+            <column name="CPDS_DESCRIPCION" length="200" />
+        </property>
+        <property name="cpdsActivo" type="string">
+            <column name="CPDS_ACTIVO" length="1" />
+        </property>
+        <property name="cpdsSort" type="java.lang.Integer">
+            <column name="CPDS_SORT" precision="5" scale="0" />
+        </property>
+        <property name="cpdsActivacuposcitas" type="string">
+            <column name="CPDS_ACTIVACUPOSCITAS" length="1" />
+        </property>
+        <property name="cpdsCitascuposlunes" type="java.lang.Short">
+            <column name="CPDS_CITASCUPOSLUNES" precision="3" scale="0" />
+        </property>
+        <property name="cpdsCitascuposmartes" type="java.lang.Short">
+            <column name="CPDS_CITASCUPOSMARTES" precision="3" scale="0" />
+        </property>
+        <property name="cpdsCitascuposmiercoles" type="java.lang.Short">
+            <column name="CPDS_CITASCUPOSMIERCOLES" precision="3" scale="0" />
+        </property>
+        <property name="cpdsCitascuposjueves" type="java.lang.Short">
+            <column name="CPDS_CITASCUPOSJUEVES" precision="3" scale="0" />
+        </property>
+        <property name="cpdsCitascuposviernes" type="java.lang.Short">
+            <column name="CPDS_CITASCUPOSVIERNES" precision="3" scale="0" />
+        </property>
+        <property name="cpdsCitascupossabado" type="java.lang.Short">
+            <column name="CPDS_CITASCUPOSSABADO" precision="3" scale="0" />
+        </property>
+        <property name="cpdsCitascuposdomingo" type="java.lang.Short">
+            <column name="CPDS_CITASCUPOSDOMINGO" precision="3" scale="0" />
+        </property>
+    </class>
+</hibernate-mapping>

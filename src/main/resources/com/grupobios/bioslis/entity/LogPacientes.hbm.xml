@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 22-04-2020 16:13:30 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.grupobios.bioslis.entity.LogPacientes" table="LOG_PACIENTES" schema="BIOSLIS" optimistic-lock="version">
+        <!--
+        <composite-id name="id" class="com.grupobios.bioslis.entity.LogPacientesId">
+            <key-property name="lpIdpaciente" type="int">
+                <column name="LP_IDPACIENTE" precision="10" scale="0" />
+            </key-property>
+            <key-property name="lpIdlogpacientes" type="long">
+                <column name="LP_IDLOGPACIENTES" precision="10" scale="0" />
+            </key-property>
+        </composite-id>
+                -->
+        <id name="lpId" type="int">
+            <column name="LP_IDLOGPACIENTES" precision="10" scale="0" />
+        	<generator class="sequence">
+        		<param name="sequence">BIOSLIS.SEQ_LOG_PACIENTES</param>
+        	</generator>
+        </id>
+        <many-to-one name="datosPacientes" class="com.grupobios.bioslis.entity.DatosPacientes" fetch="select">
+            <column name="LP_IDPACIENTE" precision="10" scale="0"/>
+        </many-to-one>
+        <property name="lpIdusuario" type="int">
+            <column name="LP_IDUSUARIO" precision="10" scale="0" />
+        </property>
+        <property name="lpFechamodificacion" type="timestamp">
+            <column name="LP_FECHAMODIFICACION" length="7" />
+        </property>
+        <property name="lpIdacciondato" type="int">
+            <column name="LP_IDACCIONDATO" precision="1" scale="0" />
+        </property>
+        <property name="lpValoranterior" type="string">
+            <column name="LP_VALORANTERIOR" length="1000" />
+        </property>
+        <property name="lpValornuevo" type="string">
+            <column name="LP_VALORNUEVO" length="1000" />
+        </property>
+        <property name="lpCampomodificado" type="string">
+            <column name="LP_CAMPOMODIFICADO" length="120" />
+        </property>
+        <property name="lpIpusuario" type="string">
+            <column name="LP_IPUSUARIO" length="20" />
+        </property>
+        <property name="lpNombreequipo" type="string">
+            <column name="LP_NOMBREEQUIPO" length="25" />
+        </property>
+    </class>
+</hibernate-mapping>

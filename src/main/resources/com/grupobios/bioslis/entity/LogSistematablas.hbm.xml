@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 16-08-2021 14:22:23 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.grupobios.bioslis.entity.LogSistematablas" table="LOG_SISTEMATABLAS" schema="BIOSLIS">
+        <id name="lstIdlogsistema" type="long">
+            <column name="LST_IDLOGSISTEMA" precision="10" scale="0" />
+            <generator class="assigned"></generator>
+        </id>
+        <many-to-one name="cfgAccionesdatos" class="com.grupobios.bioslis.entity.CfgAccionesdatos" fetch="select">
+            <column name="LST_IDACCIONDATO" precision="1" scale="0" />
+        </many-to-one>
+        <property name="lstNombretabla" type="string">
+            <column name="LST_NOMBRETABLA" length="120" />
+        </property>
+        <property name="lstNombrecampo" type="string">
+            <column name="LST_NOMBRECAMPO" length="120" />
+        </property>
+        <property name="lstValoranterior" type="string">
+            <column name="LST_VALORANTERIOR" length="1000" />
+        </property>
+        <property name="lstValornuevo" type="string">
+            <column name="LST_VALORNUEVO" length="1000" />
+        </property>
+        <property name="lstIdusuario" type="java.lang.Long">
+            <column name="LST_IDUSUARIO" precision="10" scale="0" />
+        </property>
+        <property name="lstFechamodificacion" type="timestamp">
+            <column name="LST_FECHAMODIFICACION" length="7" />
+        </property>
+        <property name="lstIpusuario" type="string">
+            <column name="LST_IPUSUARIO" length="20" />
+        </property>
+        <property name="lstNombreequipo" type="string">
+            <column name="LST_NOMBREEQUIPO" length="100" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,177 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 16-08-2021 14:22:23 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.grupobios.bioslis.entity.SistemaConfiguracionestacion" table="SISTEMA_CONFIGURACIONESTACION" schema="BIOSLIS">
+        <id name="sceIdestacion" type="short">
+            <column name="SCE_IDESTACION" precision="4" scale="0" />
+            <generator class="assigned"></generator>
+        </id>
+        <property name="sceNumeroestacion" type="string">
+            <column name="SCE_NUMEROESTACION" length="40" />
+        </property>
+        <property name="sceDescripcion" type="string">
+            <column name="SCE_DESCRIPCION" length="200" />
+        </property>
+        <property name="sceIdprocedencia" type="java.lang.Integer">
+            <column name="SCE_IDPROCEDENCIA" precision="5" scale="0" />
+        </property>
+        <property name="sceUbicacion" type="string">
+            <column name="SCE_UBICACION" length="200" />
+        </property>
+        <property name="sceIdtipoatencion" type="java.lang.Byte">
+            <column name="SCE_IDTIPOATENCION" precision="2" scale="0" />
+        </property>
+        <property name="sceIdconvenio" type="java.lang.Short">
+            <column name="SCE_IDCONVENIO" precision="4" scale="0" />
+        </property>
+        <property name="sceImpresorainformeresul" type="string">
+            <column name="SCE_IMPRESORAINFORMERESUL" length="400" />
+        </property>
+        <property name="sceImpresoralistatrabajo" type="string">
+            <column name="SCE_IMPRESORALISTATRABAJO" length="400" />
+        </property>
+        <property name="sceImpresoracomprobantes" type="string">
+            <column name="SCE_IMPRESORACOMPROBANTES" length="400" />
+        </property>
+        <property name="sceImpresoralistaestadisticas" type="string">
+            <column name="SCE_IMPRESORALISTAESTADISTICAS" length="400" />
+        </property>
+        <property name="sceImpresoracodigobarras" type="string">
+            <column name="SCE_IMPRESORACODIGOBARRAS" length="200" />
+        </property>
+        <property name="sceRordenimprimecodigobarras" type="string">
+            <column name="SCE_RORDENIMPRIMECODIGOBARRAS" length="1" />
+        </property>
+        <property name="sceRordenimprimecomprobante" type="string">
+            <column name="SCE_RORDENIMPRIMECOMPROBANTE" length="1" />
+        </property>
+        <property name="sceRordenimprimeordentrabajo" type="string">
+            <column name="SCE_RORDENIMPRIMEORDENTRABAJO" length="1" />
+        </property>
+        <property name="sceDirectorioreportes" type="string">
+            <column name="SCE_DIRECTORIOREPORTES" length="400" />
+        </property>
+        <property name="sceDirectorioreportesservidor" type="string">
+            <column name="SCE_DIRECTORIOREPORTESSERVIDOR" length="400" />
+        </property>
+        <property name="sceCheckcriticos" type="string">
+            <column name="SCE_CHECKCRITICOS" length="1" />
+        </property>
+        <property name="sceCheckcriticosseg" type="java.lang.Short">
+            <column name="SCE_CHECKCRITICOSSEG" precision="3" scale="0" />
+        </property>
+        <property name="sceChecknormales" type="string">
+            <column name="SCE_CHECKNORMALES" length="1" />
+        </property>
+        <property name="sceChecknormalesseg" type="java.lang.Short">
+            <column name="SCE_CHECKNORMALESSEG" precision="3" scale="0" />
+        </property>
+        <property name="sceCheckexpirados" type="string">
+            <column name="SCE_CHECKEXPIRADOS" length="1" />
+        </property>
+        <property name="sceCheckexpiradosseg" type="java.lang.Short">
+            <column name="SCE_CHECKEXPIRADOSSEG" precision="3" scale="0" />
+        </property>
+        <property name="sceActualizahora" type="string">
+            <column name="SCE_ACTUALIZAHORA" length="1" />
+        </property>
+        <property name="sceHostregorden" type="string">
+            <column name="SCE_HOSTREGORDEN" length="1" />
+        </property>
+        <property name="sceHostrecepcionmuestra" type="string">
+            <column name="SCE_HOSTRECEPCIONMUESTRA" length="1" />
+        </property>
+        <property name="sceActualizareportes" type="string">
+            <column name="SCE_ACTUALIZAREPORTES" length="1" />
+        </property>
+        <property name="sceFechaultimaactualizacion" type="date">
+            <column name="SCE_FECHAULTIMAACTUALIZACION" length="7" />
+        </property>
+        <property name="sceMensajeria" type="string">
+            <column name="SCE_MENSAJERIA" length="1" />
+        </property>
+        <property name="sceMensajeriacheckeseg" type="java.lang.Short">
+            <column name="SCE_MENSAJERIACHECKESEG" precision="3" scale="0" />
+        </property>
+        <property name="sceInactividad" type="string">
+            <column name="SCE_INACTIVIDAD" length="1" />
+        </property>
+        <property name="sceInactividadmin" type="java.lang.Byte">
+            <column name="SCE_INACTIVIDADMIN" precision="2" scale="0" />
+        </property>
+        <property name="sceInactividadfoto" type="java.lang.Byte">
+            <column name="SCE_INACTIVIDADFOTO" precision="2" scale="0" />
+        </property>
+        <property name="sceIdservicio" type="java.lang.Short">
+            <column name="SCE_IDSERVICIO" precision="4" scale="0" />
+        </property>
+        <property name="sceFijarservicio" type="string">
+            <column name="SCE_FIJARSERVICIO" length="1" />
+        </property>
+        <property name="sceBiometria" type="string">
+            <column name="SCE_BIOMETRIA" length="1" />
+        </property>
+        <property name="sceScanner" type="string">
+            <column name="SCE_SCANNER" length="200" />
+        </property>
+        <property name="sceScannerrutaimagen" type="string">
+            <column name="SCE_SCANNERRUTAIMAGEN" length="1000" />
+        </property>
+        <property name="sceHosttomamuestra" type="string">
+            <column name="SCE_HOSTTOMAMUESTRA" length="1" />
+        </property>
+        <property name="sceComprobantevoucher" type="string">
+            <column name="SCE_COMPROBANTEVOUCHER" length="1" />
+        </property>
+        <property name="sceImpresoravoucher" type="string">
+            <column name="SCE_IMPRESORAVOUCHER" length="200" />
+        </property>
+        <property name="sceRordenimprimecomprobemail" type="string">
+            <column name="SCE_RORDENIMPRIMECOMPROBEMAIL" length="1" />
+        </property>
+        <property name="sceRordenimprimecomprobcopia" type="java.lang.Boolean">
+            <column name="SCE_RORDENIMPRIMECOMPROBCOPIA" precision="1" scale="0" />
+        </property>
+        <property name="sceRordenimprimecomprobgarant" type="string">
+            <column name="SCE_RORDENIMPRIMECOMPROBGARANT" length="1" />
+        </property>
+        <property name="sceRordenimpcomprgarantcopias" type="java.lang.Boolean">
+            <column name="SCE_RORDENIMPCOMPRGARANTCOPIAS" precision="1" scale="0" />
+        </property>
+        <property name="sceRordenimprime" type="java.lang.Long">
+            <column name="SCE_RORDENIMPRIME" precision="18" scale="0" />
+        </property>
+        <property name="sceTmactualizacion" type="string">
+            <column name="SCE_TMACTUALIZACION" length="1" />
+        </property>
+        <property name="sceTmactualizacionseg" type="java.lang.Short">
+            <column name="SCE_TMACTUALIZACIONSEG" precision="3" scale="0" />
+        </property>
+        <property name="sceEtiquetaordenmedica" type="string">
+            <column name="SCE_ETIQUETAORDENMEDICA" length="1" />
+        </property>
+        <property name="sceScannertiempocreacionseg" type="java.lang.Byte">
+            <column name="SCE_SCANNERTIEMPOCREACIONSEG" precision="2" scale="0" />
+        </property>
+        <property name="sceEtiquetadocumento" type="string">
+            <column name="SCE_ETIQUETADOCUMENTO" length="1" />
+        </property>
+        <property name="sceLicenciapersonaautoriza" type="string">
+            <column name="SCE_LICENCIAPERSONAAUTORIZA" length="200" />
+        </property>
+        <property name="sceLicenciamodo" type="string">
+            <column name="SCE_LICENCIAMODO" length="1" />
+        </property>
+        <property name="sceLicencianumero" type="java.lang.Integer">
+            <column name="SCE_LICENCIANUMERO" precision="5" scale="0" />
+        </property>
+        <property name="sceLicenciafecha" type="date">
+            <column name="SCE_LICENCIAFECHA" length="7" />
+        </property>
+        <property name="sceTicketbox" type="java.lang.Short">
+            <column name="SCE_TICKETBOX" precision="3" scale="0" />
+        </property>
+    </class>
+</hibernate-mapping>

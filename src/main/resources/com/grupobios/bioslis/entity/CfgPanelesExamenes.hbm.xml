@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 16-08-2021 14:22:23 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.grupobios.bioslis.entity.CfgPanelesExamenes" table="CFG_PANELESEXAMENES" schema="BIOSLIS">
+        <id name="cpeIdpanelexamenes" type="short">
+            <column name="CPE_IDPANELEXAMENES" precision="3" scale="0" />
+            <generator class="sequence">
+                <param name="sequence">
+                    BIOSLIS.SEQ_CFG_PANELESEXAMENES
+                </param>
+            </generator>
+        </id>
+        <property name="cpeNombrepanelexamen" type="string">
+            <column name="CPE_NOMBREPANELEXAMEN" length="50" />
+        </property>
+        <property name="cpeActivo" type="string">
+            <column name="CPE_ACTIVO" length="1" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,148 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 16-08-2021 14:22:23 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.grupobios.bioslis.entity.CfgTest" table="CFG_TEST" schema="BIOSLIS">
+
+        <id name="ctIdtest" type="int">
+            <column name="CT_IDTEST" precision="10" scale="0" />
+            <generator class="sequence" >
+                <param name="sequence">
+                    BIOSLIS.SEQ_CFG_TEST
+                </param>
+            </generator>
+        </id>
+        <many-to-one name="cfgBacgrupostest" class="com.grupobios.bioslis.entity.CfgBacgrupostest" fetch="select">
+            <column name="CT_IDBACGRUPOTEST" precision="2" scale="0" />
+        </many-to-one>
+        <many-to-one name="cfgMuestras" class="com.grupobios.bioslis.entity.CfgMuestras" fetch="select">
+            <column name="CT_IDTIPOMUESTRA" precision="4" scale="0" not-null="true" />
+        </many-to-one>
+        <many-to-one name="cfgTiposderesultado" class="com.grupobios.bioslis.entity.CfgTiposderesultado" fetch="select">
+            <column name="CT_IDTIPORESULTADO" precision="2" scale="0" />
+        </many-to-one>
+        <many-to-one name="cfgUnidadesdemedida" class="com.grupobios.bioslis.entity.CfgUnidadesdemedida" fetch="select">
+            <column name="CT_IDUNIDADMEDIDA" precision="4" scale="0" />
+        </many-to-one>
+        <many-to-one name="cfgEnvases" class="com.grupobios.bioslis.entity.CfgEnvases" fetch="select">
+            <column name="CT_IDENVASE" precision="3" scale="0" not-null="true" />
+        </many-to-one>
+        
+        <set name="cfgExamenestests" table="CFG_EXAMENESTEST" inverse="true" lazy="false" fetch="select">
+            <key>
+                <column name="CET_IDTEST" precision="10" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="com.grupobios.bioslis.entity.CfgExamenestest" />
+        </set>
+        <!--
+        <many-to-one name="cfgSecciones" class="com.grupobios.bioslis.entity.CfgSecciones" fetch="select">
+            <column name="CT_IDSECCION" precision="4" scale="0" />
+        </many-to-one>
+        <set name="cfgSeccionestests" table="CFG_SECCIONESTEST" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="CST_IDTEST" precision="10" scale="0" />
+            </key>
+            <one-to-many class="com.grupobios.bioslis.entity.CfgSeccionestest" />
+        </set>
+        <set name="cfgMetodostests" table="CFG_METODOSTEST" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="CMT_IDTEST" precision="10" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="com.grupobios.bioslis.entity.CfgMetodostest" />
+        </set>
+                -->
+        <property name="cfgSecciones" type="integer">
+            <column name="CT_IDSECCION" precision="4" scale="0" />
+        </property>
+        <property name="ctCodigo" type="string">
+            <column name="CT_CODIGO" length="60" not-null="true" />
+        </property>
+        <property name="ctDescripcion" type="string">
+            <column name="CT_DESCRIPCION" length="240" />
+        </property>
+        <property name="ctAbreviado" type="string">
+            <column name="CT_ABREVIADO" length="200" />
+        </property>
+        <property name="ctResultadoobligado" type="string">
+            <column name="CT_RESULTADOOBLIGADO" length="1" />
+        </property>
+        <property name="ctResultadoomision" type="string">
+            <column name="CT_RESULTADOOMISION" length="600" />
+        </property>
+        <property name="ctDecimales" type="int">
+            <column name="CT_DECIMALES" precision="1" scale="0" />
+        </property>
+        <property name="ctFormula" type="string">
+            <column name="CT_FORMULA" length="800" />
+        </property>
+        <property name="ctFormulaexamendependiente" type="string">
+            <column name="CT_FORMULAEXAMENDEPENDIENTE" length="50">
+                <comment>es el examen que debe estar pedido para realizar el calculo de la formula</comment>
+            </column>
+        </property>
+        <property name="ctCondicion" type="string">
+            <column name="CT_CONDICION" length="2000" />
+        </property>
+        <property name="ctIdgrupoglosas" type="int">
+            <column name="CT_IDGRUPOGLOSAS" precision="4" scale="0" />
+        </property>
+        <property name="ctOpcional" type="string">
+            <column name="CT_OPCIONAL" length="1" />
+        </property>
+        <property name="ctTieneantecedentes" type="string">
+            <column name="CT_TIENEANTECEDENTES" length="1" not-null="true" />
+        </property>
+        <property name="ctTestreporte" type="java.lang.Short">
+            <column name="CT_TESTREPORTE" precision="3" scale="0" />
+        </property>
+        <property name="ctHost" type="string">
+            <column name="CT_HOST" length="20" />
+        </property>
+        <property name="ctHostmicro" type="string">
+            <column name="CT_HOSTMICRO" length="20" />
+        </property>
+        <property name="ctSort" type="int">
+            <column name="CT_SORT" precision="3" scale="0" />
+        </property>
+        <property name="ctActivo" type="string">
+            <column name="CT_ACTIVO" length="1" />
+        </property>
+        <property name="ctSeparadormil" type="string">
+            <column name="CT_SEPARADORMIL" length="1" />
+        </property>
+        <property name="ctTesthojatrabajo" type="string">
+            <column name="CT_TESTHOJATRABAJO" length="1" />
+        </property>
+        <property name="ctCodigoloinc" type="string">
+            <column name="CT_CODIGOLOINC" length="20" />
+        </property>
+        <property name="ctPlanillahistorica" type="string">
+            <column name="CT_PLANILLAHISTORICA" length="1" />
+        </property>
+        <property name="ctVolumenmuestra" type="float">
+            <column name="CT_VOLUMENMUESTRA" precision="5" scale="0" />
+        </property>
+        <property name="ctIdgrupoexamenesfonasa" type="int">
+            <column name="CT_IDGRUPOEXAMENESFONASA" precision="2" scale="0" />
+        </property>
+        <property name="ctValorinferior" type="float">
+            <column name="CT_VALORINFERIOR" precision="5" />
+        </property>
+        <property name="ctValorsuperior" type="float">
+            <column name="CT_VALORSUPERIOR" precision="5" />
+        </property>
+        <property name="ctDeltacantidad" type="int">
+            <column name="CT_DELTACANTIDAD" precision="3" scale="0" />
+        </property>
+        <property name="ctDeltaporcentaje" type="int">
+            <column name="CT_DELTAPORCENTAJE" precision="3" scale="0" />
+        </property>
+        <property name="ctDiasevaluables" type="int">
+            <column name="CT_DIASEVALUABLES" precision="3" scale="0" />
+        </property>
+        <property name="ctEscultivo" type="string">
+            <column name="CT_ESCULTIVO" length="1" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

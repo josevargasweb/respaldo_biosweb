@@ -1,0 +1,99 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 17-10-2022 22:44:36 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.grupobios.bioslis.entity.SigmaTablahost" table="SIGMA_TABLAHOST" schema="BIOSLIS" optimistic-lock="version">
+        <id name="sthIdsigmatablahost" type="long">
+            <column name="STH_IDSIGMATABLAHOST" precision="10" scale="0" />
+            <generator class="assigned" />
+        </id>
+        <property name="sthHostdate" type="date">
+            <column name="STH_HOSTDATE" length="7" />
+        </property>
+        <property name="sthNorden" type="string">
+            <column name="STH_NORDEN" length="10" />
+        </property>
+        <property name="sthMuestra" type="string">
+            <column name="STH_MUESTRA" length="50" />
+        </property>
+        <property name="sthRut" type="string">
+            <column name="STH_RUT" length="12" />
+        </property>
+        <property name="sthNombre" type="string">
+            <column name="STH_NOMBRE" length="50" />
+        </property>
+        <property name="sthApellidopaterno" type="string">
+            <column name="STH_APELLIDOPATERNO" length="30" />
+        </property>
+        <property name="sthApellidomaterno" type="string">
+            <column name="STH_APELLIDOMATERNO" length="50" />
+        </property>
+        <property name="sthSexo" type="string">
+            <column name="STH_SEXO" length="15" />
+        </property>
+        <property name="sthFechanacimiento" type="date">
+            <column name="STH_FECHANACIMIENTO" length="7" />
+        </property>
+        <property name="sthTelefono" type="string">
+            <column name="STH_TELEFONO" length="50" />
+        </property>
+        <property name="sthMail" type="string">
+            <column name="STH_MAIL" length="30" />
+        </property>
+        <property name="sthDireccion" type="string">
+            <column name="STH_DIRECCION" length="50" />
+        </property>
+        <property name="sthObservacionpaciente" type="string">
+            <column name="STH_OBSERVACIONPACIENTE" length="50" />
+        </property>
+        <property name="sthPrioridadatencion" type="string">
+            <column name="STH_PRIORIDADATENCION" length="50" />
+        </property>
+        <property name="sthTipoatencion" type="string">
+            <column name="STH_TIPOATENCION" length="20" />
+        </property>
+        <property name="sthProcedencia" type="string">
+            <column name="STH_PROCEDENCIA" length="50" />
+        </property>
+        <property name="sthServicio" type="string">
+            <column name="STH_SERVICIO" length="50" />
+        </property>
+        <property name="sthPrevision" type="string">
+            <column name="STH_PREVISION" length="50" />
+        </property>
+        <property name="sthMedico" type="string">
+            <column name="STH_MEDICO" length="50" />
+        </property>
+        <property name="sthNficha1" type="string">
+            <column name="STH_NFICHA1" length="50" />
+        </property>
+        <property name="sthNficha2" type="string">
+            <column name="STH_NFICHA2" length="50" />
+        </property>
+        <property name="sthNficha3" type="string">
+            <column name="STH_NFICHA3" length="50" />
+        </property>
+        <property name="sthNficha4" type="string">
+            <column name="STH_NFICHA4" length="50" />
+        </property>
+        <property name="sthLocalizacion" type="string">
+            <column name="STH_LOCALIZACION" length="50" />
+        </property>
+        <property name="sthDiagnostico" type="string">
+            <column name="STH_DIAGNOSTICO" length="50" />
+        </property>
+        <property name="sthObservacionficha" type="string">
+            <column name="STH_OBSERVACIONFICHA" length="50" />
+        </property>
+        <property name="sthExamen" type="string">
+            <column name="STH_EXAMEN" length="50" />
+        </property>
+        <property name="sthBusqueda" type="string">
+            <column name="STH_BUSQUEDA" length="50" />
+        </property>
+        <property name="sthEstado" type="string">
+            <column name="STH_ESTADO" length="50" />
+        </property>
+    </class>
+</hibernate-mapping>

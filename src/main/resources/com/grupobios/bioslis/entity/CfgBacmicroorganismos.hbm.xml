@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 16-08-2021 14:22:23 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.grupobios.bioslis.entity.CfgBacmicroorganismos" table="CFG_BACMICROORGANISMOS" schema="BIOSLIS">
+        <id name="cboIdbacmicroorganismo" type="short">
+            <column name="CBO_IDBACMICROORGANISMO" precision="4" scale="0" />
+            <generator class="assigned"></generator>
+        </id>
+        <property name="cboCodigo" type="string">
+            <column name="CBO_CODIGO" length="120" />
+        </property>
+        <property name="cboDescripcion" type="string">
+            <column name="CBO_DESCRIPCION" length="400" />
+        </property>
+        <property name="cboIdbacgram" type="java.lang.Boolean">
+            <column name="CBO_IDBACGRAM" precision="1" scale="0" />
+        </property>
+        <property name="cboIdbacmorfologia" type="java.lang.Byte">
+            <column name="CBO_IDBACMORFOLOGIA" precision="2" scale="0" />
+        </property>
+        <property name="cboIdbacespecie" type="java.lang.Byte">
+            <column name="CBO_IDBACESPECIE" precision="2" scale="0" />
+        </property>
+        <property name="cboActivo" type="string">
+            <column name="CBO_ACTIVO" length="1" />
+        </property>
+        <property name="cboHost" type="string">
+            <column name="CBO_HOST" length="80" />
+        </property>
+        <property name="cboNota" type="string">
+            <column name="CBO_NOTA" length="1000" />
+        </property>
+        <property name="cboImagenespecie" type="blob">
+            <column name="CBO_IMAGENESPECIE" />
+        </property>
+        <!-- 
+        <set name="datosFichasexamenesmicroorgs" table="DATOS_FICHASEXAMENESMICROORG" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="DFEMO_IDBACMICROORGANISMO" precision="2" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="com.grupobios.bioslis.entity.DatosFichasexamenesmicroorg" />
+        </set>
+         -->
+    </class>
+</hibernate-mapping>

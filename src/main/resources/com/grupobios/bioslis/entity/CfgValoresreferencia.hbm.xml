@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 16-08-2021 14:22:23 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.grupobios.bioslis.entity.CfgValoresreferencia" table="CFG_VALORESREFERENCIA" schema="BIOSLIS">
+        <id name="cvrIdvalorreferencia" type="int">
+            <column name="CVR_IDVALORREFERENCIA" precision="5" scale="0" />
+            <generator class="sequence">
+                <param name="sequence">BIOSLIS.SEQ_CFG_VALORESREFERENCIA</param>
+            </generator>
+        </id>
+        <many-to-one name="cfgMetodos" class="com.grupobios.bioslis.entity.CfgMetodos" fetch="select">
+            <column name="CVR_IDMETODO" precision="4" scale="0" />
+        </many-to-one>
+        <property name="cvrIdtest" type="long">
+            <column name="CVR_IDTEST" precision="10" scale="0" not-null="true" />
+        </property>
+        <property name="cvrSexo" type="string">
+            <column name="CVR_SEXO" length="1" />
+        </property>
+        <property name="cvrAnosdesde" type="int">
+            <column name="CVR_ANOSDESDE" precision="2" scale="0" />
+        </property>
+        <property name="cvrMesesdesde" type="int">
+            <column name="CVR_MESESDESDE" precision="2" scale="0" />
+        </property>
+        <property name="cvrDiasdesde" type="int">
+            <column name="CVR_DIASDESDE" precision="2" scale="0" />
+        </property>
+        <property name="cvrAnoshasta" type="int">
+            <column name="CVR_ANOSHASTA" precision="3" scale="0" />
+        </property>
+        <property name="cvrMeseshasta" type="int">
+            <column name="CVR_MESESHASTA" precision="2" scale="0" />
+        </property>
+        <property name="cvrDiashasta" type="int">
+            <column name="CVR_DIASHASTA" precision="2" scale="0" />
+        </property>
+        <property name="cvrValorcriticobajo" type="big_decimal">
+            <column name="CVR_VALORCRITICOBAJO" precision="7" scale="3" />
+        </property>
+        <property name="cvrValorbajo" type="big_decimal">
+            <column name="CVR_VALORBAJO" precision="7" scale="3" />
+        </property>
+        <property name="cvrValoralto" type="big_decimal">
+            <column name="CVR_VALORALTO" precision="7" scale="3" />
+        </property>
+        <property name="cvrValorcriticoalto" type="big_decimal">
+            <column name="CVR_VALORCRITICOALTO" precision="7" scale="3" />
+        </property>
+        <property name="cvrValortexto" type="string">
+            <column name="CVR_VALORTEXTO" length="400" />
+        </property>
+    </class>
+</hibernate-mapping>

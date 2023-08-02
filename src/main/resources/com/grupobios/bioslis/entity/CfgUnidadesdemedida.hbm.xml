@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 16-08-2021 14:22:23 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.grupobios.bioslis.entity.CfgUnidadesdemedida" table="CFG_UNIDADESDEMEDIDA" schema="BIOSLIS">
+        <id name="cumIdunidadmedida" type="int">
+            <column name="CUM_IDUNIDADMEDIDA" precision="4" scale="0" />
+            <generator class="sequence">
+                <param name="sequence">
+                    BIOSLIS.SEQ_CFG_UNIDADESDEMEDIDA
+                </param>
+            </generator>
+        </id>
+        <property name="cumCodigo" type="string">
+            <column name="CUM_CODIGO" length="100" not-null="true" />
+        </property>
+        <property name="cumDescripcion" type="string">
+            <column name="CUM_DESCRIPCION" length="200" />
+        </property>
+        <property name="cumActivo" type="string">
+            <column name="CUM_ACTIVO" length="1" not-null="true" />
+        </property>
+        <property name="cumSort" type="string">
+            <column name="CUM_SORT" precision="4" scale="0" />
+        </property>
+        <set name="cfgTests" table="CFG_TEST" inverse="true" lazy="false" fetch="select">
+            <key>
+                <column name="CT_IDUNIDADMEDIDA" precision="4" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="com.grupobios.bioslis.entity.CfgTest" />
+        </set>
+    </class>
+</hibernate-mapping>

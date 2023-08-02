@@ -1,0 +1,226 @@
+body,html{
+    padding:0;
+    margin:0;
+    height: 100%;
+    /*background-color: #E1F5FF;*/
+    background-color: #EEF0F8;
+    /*
+    background-image: linear-gradient(#0088cd, #FFFFFF);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    */
+}
+
+
+
+.colorRed{
+    color: red;
+}
+
+.border-right2{
+    border-right: 3px solid #ECF0F3 !important;
+}
+
+.border-bottom2{
+    border-bottom: 3px solid #ECF0F3 !important;
+}
+
+hr {
+    -moz-border-bottom-colors: none;
+    -moz-border-image: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-color: #EEEEEE -moz-use-text-color #FFFFFF;
+    border-style: solid none;
+    border-width: 1px 0;
+    margin: 18px 0;
+}
+
+#tbodyFiltro>tr:hover{
+    background-color: #6993FF !important;
+    color: #FFFFFF;
+}
+
+.mt-6{
+    margin-top: 45px !important;
+}
+
+#imgBiosLis{
+    height: 35px;
+    width: 140px;
+}
+
+.bg-edwin{
+    background-color: #19728E !important;
+}
+
+main {
+    padding-left: 300px;
+}
+
+hr{
+    color: #82AAE7;
+    background-color: #82AAE7;
+}
+
+
+@media only screen and (max-width : 992px) {
+    main {
+        padding-left: 0;
+    }
+}
+
+#lblErrorFiltro{
+    color: red !important;
+}
+
+/*.borderTable{
+    border-radius: 7px !important;
+}*/
+
+/* label focus color */
+.input-field input[type=text]:focus + label,
+.input-field textarea :focus + label
+{
+    color: #2196f3 !important;
+}
+/* label underline focus color */
+.input-field input[type=text]:focus,
+.input-field textarea :focus + label{
+    border-bottom: 1px solid #2196f3 !important;
+    box-shadow: 0 1px 0 0 #2196f3 !important;
+}
+
+label {
+    color: #212121  !important;
+}
+
+.titulo{
+    font-size: 25px !important;
+    color: #82AAE7 !important;
+}
+
+#tableFiltro{
+    background-color: transparent !important;
+}
+
+.separacion{
+    border-right: 1px solid #82AAE7 !important;
+    border-right-width: 1px !important;
+    border-right-style: solid !important;
+}
+
+/* valid color */
+input[type=text].valid {
+    border-bottom: 1px solid #212121 !important;
+    box-shadow: 0 1px 0 0 #212121 !important;
+}
+
+.moreOptionsForm{
+    -webkit-box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0), 0 0px 0px 0px rgba(0, 0, 0, 0), 0 0px 0px 0 rgba(0, 0, 0, 0) !important;
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.14), 0 0 0 0 rgba(0, 0, 0, 0), 0 0 0 0 rgba(0, 0, 0, 0) !important;
+    border-top: 0px solid #ddd !important;
+    border-right: 0px solid #ddd !important;
+    border-left: 0px solid #ddd !important;
+    margin: 0.5rem 0 1rem 0 !important;
+}
+
+.dropdown-content li > span{
+    color: #2196f3 !important;
+}
+textarea.materialize-textarea:focus:not([readonly])+label{color:#26a69a}input:not([type]):focus.valid ~ label{
+    color: #2196f3 !important;
+}
+
+
+.select-dropdown li.disabled, .select-dropdown li.disabled > span, .select-dropdown li.optgroup {
+    color: rgba(0, 0, 0, 0.3) !important;
+    background-color: transparent !important;
+}
+
+.collapsible-body{
+    border-bottom: 0px;
+    border-top: 0px;
+}
+
+.collapsible-header{
+    border-bottom: 0px;
+}
+
+.validateEspacio{
+    max-height: 65px !important;
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
+}
+/*
+.estadoMedicLbl{
+   position: absolute;
+   top: 3em;
+   left: 100px;
+   width: 30em;
+   height: 200em;
+
+*/
+
+
+#tablaFiltro{
+    max-height: 400px;
+    overflow: auto;
+}
+
+.collapsible-header{
+    background-color: transparent !important;
+}
+
+
+
+.pointer {
+    cursor: pointer;
+}
+
+table.highlight>tbody>tr:hover {
+    background-color: #82AAE7 !important;
+}
+
+
+.alwaysMayus{
+    text-transform: uppercase;
+}
+
+
+#logoGB{
+    height: 60px !important;
+    width: 200px !important;
+}
+
+#diagnosticosPacienteOrden{
+    max-height: 150px;
+    overflow: auto;
+}
+
+#sexoPacienteOrden{width: 100%}
+/* This is to remove the arrow of select element in IE */
+#sexoPacienteOrden::-ms-expand {	display: none; }
+#sexoPacienteOrden{
+    -webkit-appearance: none;
+    appearance: none;
+}
+.padinTop{
+    padding-top: 20px;
+}
+
+#picker { width: 200px; height: 200px }
+#slide { width: 30px; height: 200px }
+
+/*
+Cambios 11-06-21 Marco C.
+scroll de tablas */
+.my-custom-scrollbar {
+    position: relative;
+    height: 300px;
+    overflow-y: scroll!important;
+}
+.table-wrapper-scroll-y {
+    display: block;
+}

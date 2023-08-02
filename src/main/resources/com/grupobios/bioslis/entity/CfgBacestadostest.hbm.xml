@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 16-08-2021 14:22:23 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.grupobios.bioslis.bs.CfgBacestadostest" table="CFG_BACESTADOSTEST" schema="BIOSLIS" optimistic-lock="version">
+        <id name="cbetIdbacestadotest" type="boolean">
+            <column name="CBET_IDBACESTADOTEST" precision="1" scale="0" />
+        	<generator class="sequence">
+        		<param name="sequence">BIOSLIS.SEQ_CFG_BACESTADOSTEST</param>
+        	</generator>
+        </id>
+        <property name="cbetBacestadotest" type="string">
+            <column name="CBET_BACESTADOTEST" length="3" />
+        </property>
+        <property name="cbetDescripcion" type="string">
+            <column name="CBET_DESCRIPCION" length="60" />
+        </property>
+    </class>
+</hibernate-mapping>

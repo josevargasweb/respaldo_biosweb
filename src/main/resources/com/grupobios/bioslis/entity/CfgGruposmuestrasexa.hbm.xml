@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 01-10-2022 1:06:55 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.grupobios.bioslis.entity.CfgGruposmuestrasexa" table="CFG_GRUPOSMUESTRASEXA" schema="BIOSLIS" optimistic-lock="version">
+        <composite-id name="id" class="com.grupobios.bioslis.entity.CfgGruposmuestrasexaId">
+            <key-property name="cgmeIdexamen" type="long">
+                <column name="CGME_IDEXAMEN" precision="10" scale="0" />
+            </key-property>
+            <key-property name="cgmeIdtipomuestra" type="short">
+                <column name="CGME_IDTIPOMUESTRA" precision="4" scale="0" />
+            </key-property>
+        </composite-id>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 16-08-2021 14:22:23 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.grupobios.bioslis.entity.DatosFichasdocumentos" table="DATOS_FICHASDOCUMENTOS" schema="BIOSLIS">
+        <id name="dfdIddocumentoficha" type="long">
+            <column name="DFD_IDDOCUMENTOFICHA" precision="10" scale="0" />
+            <generator class="sequence">
+                <param name="sequence">
+                    BIOSLIS.SEQ_DATOS_FICHASDOCUMENTOS
+                </param>
+            </generator>
+        </id>
+        <many-to-one name="datosFichas" class="com.grupobios.bioslis.entity.DatosFichas" fetch="select">
+            <column name="DFD_NORDEN" precision="10" scale="0" not-null="true" />
+        </many-to-one>
+        <many-to-one name="ldvTiposdocumentosanexos" class="com.grupobios.bioslis.entity.LdvTiposdocumentosanexos" fetch="select">
+            <column name="DFD_IDTIPODOCUMENTOANEXO" precision="1" scale="0" />
+        </many-to-one>
+        <many-to-one name="ldvTiposarchivos" class="com.grupobios.bioslis.entity.LdvTiposarchivos" fetch="select">
+            <column name="DFD_IDTIPOARCHIVO" precision="2" scale="0" />
+        </many-to-one>
+        <property name="dfdNota" type="string">
+            <column name="DFD_NOTA" length="200" />
+        </property>
+        <property name="dfdDocumento" type="blob">
+            <column name="DFD_DOCUMENTO" />
+        </property>
+    </class>
+</hibernate-mapping>

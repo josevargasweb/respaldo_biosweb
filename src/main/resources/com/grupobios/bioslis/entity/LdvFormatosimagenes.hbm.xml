@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 16-08-2021 14:22:23 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.grupobios.bioslis.entity.LdvFormatosimagenes" table="LDV_FORMATOSIMAGENES" schema="BIOSLIS">
+        <id name="ldvfiIdformatoimagen" type="byte">
+            <column name="LDVFI_IDFORMATOIMAGEN" precision="2" scale="0" />
+            <generator class="assigned"></generator>
+        </id>
+        <property name="ldvfiDescripcion" type="string">
+            <column name="LDVFI_DESCRIPCION" length="120" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

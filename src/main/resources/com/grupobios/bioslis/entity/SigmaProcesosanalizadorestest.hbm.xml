@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 16-08-2021 14:22:23 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.grupobios.bioslis.entity.SigmaProcesosanalizadorestest" table="SIGMA_PROCESOSANALIZADORESTEST" schema="BIOSLIS">
+        <composite-id name="id" class="com.grupobios.bioslis.entity.SigmaProcesosanalizadorestestId">
+            <key-property name="spatIdanalizador" type="short">
+                <column name="SPAT_IDANALIZADOR" precision="4" scale="0" />
+            </key-property>
+            <key-property name="spatIdtest" type="long">
+                <column name="SPAT_IDTEST" precision="10" scale="0" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="sigmaPrefijostest" class="com.grupobios.bioslis.entity.SigmaPrefijostest" fetch="select">
+            <column name="SPAT_IDPREFIJOTEST" precision="5" scale="0" not-null="true" />
+        </many-to-one>
+        <many-to-one name="sigmaTiposmuestras" class="com.grupobios.bioslis.entity.SigmaTiposmuestras" fetch="select">
+            <column name="SPAT_IDSIGMATIPOMUESTRA" precision="2" scale="0" not-null="true" />
+        </many-to-one>
+        <many-to-one name="sigmaProcesosanalizadores" class="com.grupobios.bioslis.entity.SigmaProcesosanalizadores" update="false" insert="false" fetch="select">
+            <column name="SPAT_IDANALIZADOR" precision="4" scale="0" not-null="true" />
+        </many-to-one>
+        <many-to-one name="cfgTiposderesultado" class="com.grupobios.bioslis.entity.CfgTiposderesultado" fetch="select">
+            <column name="SPAT_IDTIPORESULTADO" precision="2" scale="0" not-null="true" />
+        </many-to-one>
+        <property name="spatCodigorecepcion" type="string">
+            <column name="SPAT_CODIGORECEPCION" length="140" />
+        </property>
+        <property name="spatCodigoenvio" type="string">
+            <column name="SPAT_CODIGOENVIO" length="140" />
+        </property>
+        <property name="spatActivo" type="string">
+            <column name="SPAT_ACTIVO" length="1" />
+        </property>
+        <property name="spatConversion" type="string">
+            <column name="SPAT_CONVERSION" length="1" />
+        </property>
+        <property name="spatConversiondatos" type="string">
+            <column name="SPAT_CONVERSIONDATOS" length="1600" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<jdbcDataAdapter class="net.sf.jasperreports.data.jdbc.JdbcDataAdapterImpl"><name>OraBioLisDB</name><driver>oracle.jdbc.driver.OracleDriver</driver><username>bioslisdesa</username><password>desaBL21</password><savePassword>true</savePassword><url>jdbc:oracle:thin:@192.168.5.3:1521:BIOSLIS</url><database></database><serverAddress></serverAddress><classpath>C:\Users\eric.nichols\.m2\repository\com\oracle\database\jdbc\ojdbc6\11.2.0.4\ojdbc6-11.2.0.4.jar</classpath></jdbcDataAdapter>

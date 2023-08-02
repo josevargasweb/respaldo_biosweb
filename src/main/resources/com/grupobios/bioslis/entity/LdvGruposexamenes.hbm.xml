@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 16-08-2021 14:22:23 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+	<class name="com.grupobios.bioslis.entity.LdvGruposexamenes"
+		table="LDV_GRUPOSEXAMENES" schema="BIOSLIS">
+		<id name="ldvgeIdgrupoexamen" type="java.lang.Long">
+			<column name="LDVGE_IDGRUPOEXAMEN" precision="2" scale="0" />
+			<generator class="assigned"></generator>
+		</id>
+		<property name="ldvgeDescripcion" type="string">
+			<column name="LDVGE_DESCRIPCION" length="200" />
+		</property>
+		<set name="cfgExameneses" table="CFG_EXAMENES" inverse="true"
+			lazy="true" fetch="select">
+			<key>
+				<column name="CE_IDGRUPOEXAMEN" precision="2" scale="0"
+					not-null="true" />
+			</key>
+			<one-to-many
+				class="com.grupobios.bioslis.entity.CfgExamenes" />
+		</set>
+	</class>
+</hibernate-mapping>

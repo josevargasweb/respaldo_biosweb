@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 16-08-2021 14:22:23 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.grupobios.bioslis.entity.CfgBacmarcadoresresistencia" table="CFG_BACMARCADORESRESISTENCIA" schema="BIOSLIS">
+        <id name="cbmrIdmarcadorresistencia" type="short">
+            <column name="CBMR_IDMARCADORRESISTENCIA" precision="3" scale="0" />
+            <generator class="assigned"></generator>
+        </id>
+        <property name="cbmrCodigo" type="string">
+            <column name="CBMR_CODIGO" length="80" />
+        </property>
+        <property name="cbmrDescripcion" type="string">
+            <column name="CBMR_DESCRIPCION" length="50" />
+        </property>
+        <property name="cbmrActivo" type="string">
+            <column name="CBMR_ACTIVO" length="1" />
+        </property>
+        <property name="cbmrSort" type="java.lang.Short">
+            <column name="CBMR_SORT" precision="3" scale="0" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 16-08-2021 14:22:23 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.grupobios.bioslis.entity.CfgReglasprocesosejecutanen" table="CFG_REGLASPROCESOSEJECUTANEN" schema="BIOSLIS">
+        <id name="crpeeIdejecutaen" type="byte">
+            <column name="CRPEE_IDEJECUTAEN" precision="2" scale="0" />
+            <generator class="assigned"></generator>
+        </id>
+        <property name="crpeeCodigo" type="string">
+            <column name="CRPEE_CODIGO" length="40" />
+        </property>
+        <property name="crpeeDescripcion" type="string">
+            <column name="CRPEE_DESCRIPCION" length="200" />
+        </property>
+        <property name="crpeeSort" type="java.lang.Byte">
+            <column name="CRPEE_SORT" precision="2" scale="0" />
+        </property>
+        <set name="cfgReglasprocesoses" table="CFG_REGLASPROCESOS" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="CRP_IDEJECUTAEN" precision="2" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="com.grupobios.bioslis.entity.CfgReglasprocesos" />
+        </set>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 16-08-2021 14:22:23 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.grupobios.bioslis.entity.CfgCellcounter" table="CFG_CELLCOUNTER" schema="BIOSLIS">
+        <id name="cccIdcellcounter" type="byte">
+            <column name="CCC_IDCELLCOUNTER" precision="2" scale="0" />
+            <generator class="assigned"></generator>
+        </id>
+        <property name="cccTeclabas" type="string">
+            <column name="CCC_TECLABAS" length="2" />
+        </property>
+        <property name="cccTestbas" type="java.lang.Short">
+            <column name="CCC_TESTBAS" precision="3" scale="0" />
+        </property>
+        <property name="cccTeclaeos" type="string">
+            <column name="CCC_TECLAEOS" length="2" />
+        </property>
+        <property name="cccTesteos" type="java.lang.Short">
+            <column name="CCC_TESTEOS" precision="3" scale="0" />
+        </property>
+        <property name="cccTeclamie" type="string">
+            <column name="CCC_TECLAMIE" length="2" />
+        </property>
+        <property name="cccTestmie" type="java.lang.Short">
+            <column name="CCC_TESTMIE" precision="3" scale="0" />
+        </property>
+        <property name="cccTeclajuv" type="string">
+            <column name="CCC_TECLAJUV" length="2" />
+        </property>
+        <property name="cccTestjuv" type="java.lang.Short">
+            <column name="CCC_TESTJUV" precision="3" scale="0" />
+        </property>
+        <property name="cccTeclabac" type="string">
+            <column name="CCC_TECLABAC" length="2" />
+        </property>
+        <property name="cccTestbac" type="java.lang.Short">
+            <column name="CCC_TESTBAC" precision="3" scale="0" />
+        </property>
+        <property name="cccTeclaseg" type="string">
+            <column name="CCC_TECLASEG" length="2" />
+        </property>
+        <property name="cccTestseg" type="java.lang.Short">
+            <column name="CCC_TESTSEG" precision="3" scale="0" />
+        </property>
+        <property name="cccTeclalin" type="string">
+            <column name="CCC_TECLALIN" length="2" />
+        </property>
+        <property name="cccTestlin" type="java.lang.Short">
+            <column name="CCC_TESTLIN" precision="3" scale="0" />
+        </property>
+        <property name="cccTeclamon" type="string">
+            <column name="CCC_TECLAMON" length="2" />
+        </property>
+        <property name="cccTestmon" type="java.lang.Short">
+            <column name="CCC_TESTMON" precision="3" scale="0" />
+        </property>
+        <property name="cccTeclapro" type="string">
+            <column name="CCC_TECLAPRO" length="2" />
+        </property>
+        <property name="cccTestpro" type="java.lang.Short">
+            <column name="CCC_TESTPRO" precision="3" scale="0" />
+        </property>
+        <property name="cccTeclabla" type="string">
+            <column name="CCC_TECLABLA" length="2" />
+        </property>
+        <property name="cccTestbla" type="java.lang.Short">
+            <column name="CCC_TESTBLA" precision="3" scale="0" />
+        </property>
+        <property name="cccSonidocelulas" type="string">
+            <column name="CCC_SONIDOCELULAS" length="80" />
+        </property>
+        <property name="cccSonidototal" type="string">
+            <column name="CCC_SONIDOTOTAL" length="80" />
+        </property>
+        <property name="cccSonidograbar" type="string">
+            <column name="CCC_SONIDOGRABAR" length="80" />
+        </property>
+        <property name="cccSonidosalir" type="string">
+            <column name="CCC_SONIDOSALIR" length="80" />
+        </property>
+        <property name="cccSonidoerror" type="string">
+            <column name="CCC_SONIDOERROR" length="80" />
+        </property>
+    </class>
+</hibernate-mapping>

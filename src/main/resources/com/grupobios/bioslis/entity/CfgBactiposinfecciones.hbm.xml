@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 16-08-2021 14:22:23 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.grupobios.bioslis.entity.CfgBactiposinfecciones" table="CFG_BACTIPOSINFECCIONES" schema="BIOSLIS">
+        <id name="cbtiIdbactipoinfeccion" type="byte">
+            <column name="CBTI_IDBACTIPOINFECCION" precision="2" scale="0" />
+            <generator class="assigned"></generator>
+        </id>
+        <property name="cbtiCodigo" type="string">
+            <column name="CBTI_CODIGO" length="40" />
+        </property>
+        <property name="cbtiDescripcion" type="string">
+            <column name="CBTI_DESCRIPCION" length="120" />
+        </property>
+        <property name="cbtiActivo" type="string">
+            <column name="CBTI_ACTIVO" length="1" />
+        </property>
+        <property name="cbtiSort" type="java.lang.Byte">
+            <column name="CBTI_SORT" precision="2" scale="0" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<!-- DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER. Copyright (c) 
+	2008, 2016 Oracle and/or its affiliates. All rights reserved. Oracle and 
+	Java are registered trademarks of Oracle and/or its affiliates. Other names 
+	may be trademarks of their respective owners. The contents of this file are 
+	subject to the terms of either the GNU General Public License Version 2 only 
+	("GPL") or the Common Development and Distribution License("CDDL") (collectively, 
+	the "License"). You may not use this file except in compliance with the License. 
+	You can obtain a copy of the License at http://www.netbeans.org/cddl-gplv2.html 
+	or nbbuild/licenses/CDDL-GPL-2-CP. See the License for the specific language 
+	governing permissions and limitations under the License. When distributing 
+	the software, include this License Header Notice in each file and include 
+	the License file at nbbuild/licenses/CDDL-GPL-2-CP. Oracle designates this 
+	particular file as subject to the "Classpath" exception as provided by Oracle 
+	in the GPL Version 2 section of the License file that accompanied this code. 
+	If applicable, add the following below the License Header, with the fields 
+	enclosed by brackets [] replaced by your own identifying information: "Portions 
+	Copyrighted [year] [name of copyright owner]" If you wish your version of 
+	this file to be governed by only the CDDL or only the GPL Version 2, indicate 
+	your decision by adding "[Contributor] elects to include this software in 
+	this distribution under the [CDDL or GPL Version 2] license." If you do not 
+	indicate a single choice of license, a recipient has the option to distribute 
+	your version of this file under either the CDDL, the GPL Version 2 or to 
+	extend the choice of license to its licensees as provided above. However, 
+	if you add GPL Version 2 code and therefore, elected the GPL Version 2 license, 
+	then the option applies only if the new code is made subject to such option 
+	by the copyright holder. Contributor(s): -->
+<hibernate-configuration>
+	<session-factory>
+	
+
+	 <!--
+		<property name="hibernate.dialect">org.hibernate.dialect.Oracle10gDialect</property>
+		<property name="hibernate.connection.driver_class">oracle.jdbc.OracleDriver</property>
+		<property name="hibernate.connection.url">jdbc:oracle:thin:@10.0.1.34:1521/LIS2.sub12261912341.redbioslis.oraclevcn.com</property>
+		<property name="hibernate.connection.username">BIOSLISDESA</property>
+		<property name="hibernate.connection.password">desa$$BL21</property>
+		<property name="hibernate.connection.defaultNChar">true</property>
+		<property name="hibernate.hbm2ddl.halt_on_error">true</property>
+-->
+	<property name="hibernate.dialect">org.hibernate.dialect.Oracle10gDialect</property>
+		<property name="hibernate.connection.driver_class">oracle.jdbc.OracleDriver</property>
+		<property name="hibernate.connection.url">jdbc:oracle:thin:@192.168.5.4:1521:BIOSLIS</property>
+		<property name="hibernate.connection.username">bioslisdesa</property>
+		<property name="hibernate.connection.password">desaBL21</property>
+		<property name="hibernate.connection.defaultNChar">true</property>
+		 
+	<!-- 	
+    <property name="hibernate.connection.autoReconnect">true</property>
+    <property name="hibernate.connection.autoReconnectForPools">true</property>
+ -->
+		<property name="hibernate.show_sql">true</property>
+
+    <property name="hibernate.current_session_context_class">thread</property>
+		<property name="hibernate.c3p0.acquire_increment">1</property>
+		<property name="hibernate.c3p0.min_size">1</property>
+		<property name="hibernate.c3p0.max_size">8</property>
+		<property name="hibernate.c3p0.timeout">300</property>
+    <property name="hibernate.generate_statistics">true</property>
+    <!-- 
+    <property name="hibernate.cache.use_structured_entries">true</property>
+    <property name="hibernate.cache.use_second_level_cache">true</property>
+    <property name="hibernate.cache.use_query_cache">true</property> 
+    <property name="net.sf.ehcache.configurationResourceName">/ehcache.xml</property>
+    <property name="hibernate.cache.region.factory_class">org.hibernate.cache.ehcache.EhCacheRegionFactory</property>
+     -->
+    		
+		
+		<mapping
+			resource="com/grupobios/bioslis/entity/CfgLocalizaciones.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/CfgCondicionesformulas.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/CfgCitascupos.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/LdvEstadosciviles.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/CfgNotas.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/CfgTiposnotas.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/CfgPesquisas.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/LdvIndicacionestm.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/LogCfgbactablas.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/CfgAntecedentestest.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/LdvIndicacionesexamenes.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/DatosFichasantecedentes.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/CfgEnvases.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/CfgGlosastest.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/CfgExamenestablasanexas.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/CfgBactiposinfecciones.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/LdvFichasestadostm.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/LdvCargosusuarios.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/CfgTiposderesultado.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/DatosPacientes.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/CfgExamenestest.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/CfgPesquisasformatos.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/CfgBacestados.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/CfgMetodostest.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/CfgValoresreferencia.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/LdvTiposdocumentosanexos.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/CfgGlosas.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/LdvTipocomunicacion.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/LdvFormatos.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/LdvContactospacientesrelacion.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/CfgEventos.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/LogEventosusuarios.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/CfgBacantibiogramasantibiot.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/SigmaProcesos.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/LdvProfesionesusuarios.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/DatosUsuarios.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/LdvComunas.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/CfgExamenesconjuntodetalle.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/LogContactospacientes.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/CfgMuestras.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/LdvFormatosimagenes.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/CfgSeccionesexamenes.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/CfgReglasprocesosejecutanen.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/CfgBacmicroorganismos.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/CfgEstacionestrabajo.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/CfgSeccionestest.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/LdvCie10.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/LogSistematablas.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/CfgBacrecuentocolonias.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/LdvLoinc.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/CfgCamassalas.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/CfgExamenes.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/CfgGruposmuestras.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/CfgEstadosexamenes.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/CfgBaczonacuerpo.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/CfgGruposexamenesfonasa.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/DatosFichasexamenespesquisas.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/LdvTiposarchivos.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/LogCfgtablas.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/CfgProcedencias.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/DatosFichasexamenesantibiog.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/CfgEstadosresultadostest.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/DatosContactos.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/DatosFichasexamenestest.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/CfgFeriados.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/CfgReglasprocesos.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/CfgPerfilesusuarios.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/CfgServicios.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/LdvTiposexamenes.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/CfgAccionesdatos.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/CfgBacantibioticos.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/CfgExamenesconjuntos.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/LogPacientes.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/LogEventosfichas.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/LdvPatologias.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/LdvTiposdatospesquisas.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/SistemaConfiguracionestacion.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/CfgSalasservicios.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/CfgPesquisasinfo.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/CfgLaboratorios.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/CfgAntecedentes.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/DatosFichas.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/CfgMedicos.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/CfgUnidadesdemedida.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/SigmaTiposmuestras.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/DatosFichasmuestras.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/CfgTablasreferenciasexamenes.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/DatosFichasexamenesarchivos.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/LogPacientespatologias.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/CfgPrioridadatencion.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/CfgSecciones.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/DatosMuestrasrechazadas.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/CfgBacantibiogramas.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/CfgCellcounter.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/CfgTipoatencion.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/LdvSexo.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/DatosFichasexamenes.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/CfgExamenesindicacionestm.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/DatosFichasdocumentos.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/CfgInstitucionesdesalud.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/CfgBacmarcadoresresistencia.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/CfgMetodos.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/LdvRegiones.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/DatosPacientespatologias.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/CfgFormularioexamenes.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/SistemaConfiguraciondiseno.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/LdvGruposexamenes.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/LdvTiposdocumentos.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/CfgNivelesaccesos.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/CfgConvenios.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/CfgTest.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/CfgCausasrechazosmuestras.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/CfgDiagnosticos.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/LdvPaises.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/CfgProgramasdesalud.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/LdvEspecialidadesmedicas.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/CfgDerivadores.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/CfgComunasregiones.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/Microbiologia.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/CfgCentrosdesalud.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/CfgExamenesPaneles.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/CfgPanelesExamenes.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/SistemaConfiguraciones.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/CfgBioslismodulos.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/CfgCargosmodulosbl.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/CfgUsuariosmodulos.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/LdvTiposreceptores.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/LdvViasnotificaciones.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/DatosFichasTestNotificaciones.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/CfgGruposmuestrasexa.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/SigmaProcesostest.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/SigmaTablahost.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/CfgBacgrupostest.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/SigmaProcesotestconversion.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/LdvTiposcondicion.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/CfgSigmaimagenes.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/SigmaAnalizadores.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/LdvOperacionesmath.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/CfgMuestrasprefijos.hbm.xml" />
+		<mapping
+			resource="com/grupobios/bioslis/entity/SigmaProcesosalarmas.hbm.xml" />
+
+		<mapping
+			resource="com/grupobios/bioslis/entity/CfgEtiquetacodigobarras.hbm.xml" />
+
+	</session-factory>
+</hibernate-configuration>
+

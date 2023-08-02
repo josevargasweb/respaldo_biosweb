@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 16-08-2021 14:22:23 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.grupobios.bioslis.entity.CfgLocalizaciones" table="CFG_LOCALIZACIONES" schema="BIOSLIS">
+        <id name="clIdlocalizacion" type="int">
+            <column name="CL_IDLOCALIZACION" precision="3" scale="0" />
+            <generator class="sequence">
+                <param name="sequence">
+                    BIOSLIS.SEQ_CFG_LOCALIZACIONES
+                </param>
+            </generator>
+        </id>
+        <property name="clCodigolocalizacion" type="string">
+            <column name="CL_CODIGOLOCALIZACION" length="60" />
+        </property>
+        <property name="clIdservicio" type="integer">
+            <column name="CL_IDSERVICIO" precision="4" scale="0" not-null="true" />
+        </property>
+        <property name="clIdsala" type="integer">
+            <column name="CL_IDSALASERVICIO" precision="4" scale="0" />
+        </property>
+        <property name="clIdcama" type="integer">
+            <column name="CL_IDCAMASALA" precision="3" scale="0" />
+        </property>
+        <property name="clIdcentrodesalud" type="integer">
+            <column name="CL_IDCENTRODESALUD" precision="2" scale="0" not-null="true" />
+        </property>
+        <set name="datosFichases" table="DATOS_FICHAS" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="DF_IDLOCALIZACION" precision="3" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="com.grupobios.bioslis.entity.DatosFichas" />
+        </set>
+    </class>
+</hibernate-mapping>

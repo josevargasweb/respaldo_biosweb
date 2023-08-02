@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 16-08-2021 14:22:23 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.grupobios.bioslis.entity.DatosFichasexamenesantibiog" table="DATOS_FICHASEXAMENESANTIBIOG" schema="BIOSLIS">
+        <composite-id name="id" class="com.grupobios.bioslis.entity.DatosFichasexamenesantibiogId">
+            <key-property name="dfeaNorden" type="long">
+                <column name="DFEA_NORDEN" precision="10" scale="0" />
+            </key-property>
+            <key-property name="dfeaIdexamen" type="long">
+                <column name="DFEA_IDEXAMEN" precision="10" scale="0" />
+            </key-property>
+        </composite-id>
+        <property name="dfeaIdpaciente" type="long">
+            <column name="DFEA_IDPACIENTE" precision="10" scale="0" not-null="true" />
+        </property>
+        <property name="dfeaNromicroorganismo" type="java.lang.Byte">
+            <column name="DFEA_NROMICROORGANISMO" precision="2" scale="0" />
+        </property>
+        <property name="dfeaIdmicroorganismo" type="java.lang.Byte">
+            <column name="DFEA_IDMICROORGANISMO" precision="2" scale="0" />
+        </property>
+        <property name="dfeaIdantibiograma" type="java.lang.Byte">
+            <column name="DFEA_IDANTIBIOGRAMA" precision="2" scale="0" />
+        </property>
+        <property name="dfeaIdantibiotico" type="java.lang.Short">
+            <column name="DFEA_IDANTIBIOTICO" precision="3" scale="0" />
+        </property>
+        <property name="dfeaCmi" type="string">
+            <column name="DFEA_CMI" length="80" />
+        </property>
+        <property name="dfeaDiametromilimetros" type="java.lang.Short">
+            <column name="DFEA_DIAMETROMILIMETROS" precision="4" scale="0" />
+        </property>
+        <property name="dfeaInterpretacion" type="string">
+            <column name="DFEA_INTERPRETACION" length="1" />
+        </property>
+    </class>
+</hibernate-mapping>

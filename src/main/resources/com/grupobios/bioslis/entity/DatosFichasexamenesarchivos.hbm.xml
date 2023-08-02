@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 16-08-2021 14:22:23 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.grupobios.bioslis.entity.DatosFichasexamenesarchivos" table="DATOS_FICHASEXAMENESARCHIVOS" schema="BIOSLIS">
+        <id name="dfeaIdfichaexamenarchivo" type="long">
+             <column name="DFEA_IDFICHAEXAMENARCHIVO" precision="10" scale="0" />
+            <generator class="sequence">
+                <param name="sequence">
+                    BIOSLIS.SEQ_CFG_GLOSASTEST
+                </param>
+            </generator>
+       </id>
+        <many-to-one name="datosFichasexamenes" class="com.grupobios.bioslis.entity.DatosFichasexamenes" fetch="select">
+            <column name="DFEA_NORDEN" precision="10" scale="0" not-null="true" />
+            <column name="DFEA_IDEXAMEN" precision="10" scale="0" not-null="true" />
+        </many-to-one>
+        <many-to-one name="ldvTiposarchivos" class="com.grupobios.bioslis.entity.LdvTiposarchivos" fetch="select">
+            <column name="DFEA_IDTIPOARCHIVO" precision="2" scale="0" not-null="true" />
+        </many-to-one>
+        <property name="dfeaIdpaciente" type="long">
+            <column name="DFEA_IDPACIENTE" precision="10" scale="0" not-null="true" />
+        </property>
+        <property name="dfeaDocumento" type="blob">
+            <column name="DFEA_DOCUMENTO" />
+        </property>
+        <property name="dfeaDescripcion" type="string">
+            <column name="DFEA_DESCRIPCION" length="800" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,365 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 09-07-2020 11:38:15 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.grupobios.bioslis.entity.CfgEtiquetacodigobarras" table="CFG_ETIQUETACODIGOBARRAS" schema="BIOSLIS" optimistic-lock="version" >
+        <id name="cecbCodigo"  type="string">
+            <column name="CECB_CODIGO" length="20" />
+            <generator class="assigned" />
+        </id>
+        <property name="cecbDescripcion" type="string">
+            <column  name="CECB_DESCRIPCION" length="30" />
+        </property>
+         <property name="cecbFontcodigobarra" type="string">
+            <column name="CECB_FONTCODIGOBARRA" length="30" />
+        </property>
+        <property name="cecbTamanofontcodigobarras" type="big_decimal">
+            <column name="CECB_TAMANOFONTCODIGOBARRAS"   />
+        </property>
+                
+         <property name="cecbFilacodigobarras" type="big_decimal">
+            <column name="CECB_FILACODIGOBARRAS"  />
+        </property>
+         <property name="cecbColumnacodigobarras" type="big_decimal">
+            <column name="CECB_COLUMNACODIGOBARRAS"  />
+        </property>
+        <property name="cecbActivocodigobarras" type="string">
+            <column name="CECB_ACTIVOCODIGOBARRAS" length="1" />
+        </property>
+         <property name="cecbTexto0fila" type="big_decimal">
+            <column name="CECB_TEXTO0FILA"  />
+        </property>
+         <property name="cecbTexto0columna" type="big_decimal">
+            <column name="CECB_TEXTO0COLUMNA"  />
+        </property>
+        <property name="cecbActivotexto0" type="string">
+            <column name="CECB_ACTIVOTEXTO0" length="1" />
+        </property>
+        <property name="cecbNegrita0" type="string">
+            <column name="CECB_NEGRITA0" length="1" />
+        </property>
+        <property name="cecbtamano0" type="string">
+            <column name="CECB_TAMANO0" length="2" />
+        </property>
+        <property name="cecbTexto1fila" type="big_decimal">
+            <column name="CECB_TEXTO1FILA"  />
+        </property>
+         <property name="cecbTexto1columna" type="big_decimal">
+            <column name="CECB_TEXTO1COLUMNA"  />
+        </property>
+        <property name="cecbTexto1largo" type="big_decimal">
+            <column name="CECB_TEXTO1LARGO"  />
+        </property>
+         <property name="cecbTexto1tamano" type="big_decimal">
+            <column name="CECB_TEXTO1TAMANO"  />
+        </property>
+         <property name="cecbActivotexto1" type="string">
+            <column name="CECB_ACTIVOTEXTO1" length="1" />
+        </property>
+        <property name="cecbNegrita1" type="string">
+            <column name="CECB_NEGRITA1" length="1" />
+        </property>
+        <property name="cecbTexto2fila" type="big_decimal">
+            <column name="CECB_TEXTO2FILA"  />
+        </property>
+         <property name="cecbTexto2columna" type="big_decimal">
+            <column name="CECB_TEXTO2COLUMNA"  />
+        </property>
+        <property name="cecbTexto2largo" type="big_decimal">
+            <column name="CECB_TEXTO2LARGO"  />
+        </property>
+         <property name="cecbTexto2tamano" type="big_decimal">
+            <column name="CECB_TEXTO2TAMANO"  />
+        </property>
+         <property name="cecbActivotexto2" type="string">
+            <column name="CECB_ACTIVOTEXTO2" length="1" />
+        </property>
+        <property name="cecbNegrita2" type="string">
+            <column name="CECB_NEGRITA2" length="1" />
+        </property>
+        <property name="cecbTexto3fila" type="big_decimal">
+            <column name="CECB_TEXTO3FILA"  />
+        </property>
+         <property name="cecbTexto3columna" type="big_decimal">
+            <column name="CECB_TEXTO3COLUMNA"  />
+        </property>
+        <property name="cecbTexto3largo" type="big_decimal">
+            <column name="CECB_TEXTO3LARGO"  />
+        </property>
+         <property name="cecbTexto3tamano" type="big_decimal">
+            <column name="CECB_TEXTO3TAMANO"  />
+        </property>
+         <property name="cecbActivotexto3" type="string">
+            <column name="CECB_ACTIVOTEXTO3" length="1" />
+        </property>
+        <property name="cecbNegrita3" type="string">
+            <column name="CECB_NEGRITA3" length="1" />
+        </property>
+        <property name="cecbTexto4fila" type="big_decimal">
+            <column name="CECB_TEXTO4FILA"  />
+        </property>
+         <property name="cecbTexto4columna" type="big_decimal">
+            <column name="CECB_TEXTO4COLUMNA"  />
+        </property>
+        <property name="cecbTexto4largo" type="big_decimal">
+            <column name="CECB_TEXTO4LARGO"  />
+        </property>
+         <property name="cecbTexto4tamano" type="big_decimal">
+            <column name="CECB_TEXTO4TAMANO"  />
+        </property>
+         <property name="cecbActivotexto4" type="string">
+            <column name="CECB_ACTIVOTEXTO4" length="1" />
+        </property>
+        <property name="cecbNegrita4" type="string">
+            <column name="CECB_NEGRITA4" length="1" />
+        </property>
+        <property name="cecbTexto5fila" type="big_decimal">
+            <column name="CECB_TEXTO5FILA"  />
+        </property>
+         <property name="cecbTexto5columna" type="big_decimal">
+            <column name="CECB_TEXTO5COLUMNA"  />
+        </property>
+        <property name="cecbTexto5largo" type="big_decimal">
+            <column name="CECB_TEXTO5LARGO"  />
+        </property>
+         <property name="cecbTexto5tamano" type="big_decimal">
+            <column name="CECB_TEXTO5TAMANO"  />
+        </property>
+         <property name="cecbActivotexto5" type="string">
+            <column name="CECB_ACTIVOTEXTO5" length="1" />
+        </property>
+        <property name="cecbNegrita5" type="string">
+            <column name="CECB_NEGRITA5" length="1" />
+        </property>
+        <property name="cecbTexto6fila" type="big_decimal">
+            <column name="CECB_TEXTO6FILA"  />
+        </property>
+         <property name="cecbTexto6columna" type="big_decimal">
+            <column name="CECB_TEXTO6COLUMNA"  />
+        </property>
+        <property name="cecbTexto6largo" type="big_decimal">
+            <column name="CECB_TEXTO6LARGO"  />
+        </property>
+         <property name="cecbTexto6tamano" type="big_decimal">
+            <column name="CECB_TEXTO6TAMANO"  />
+        </property>
+         <property name="cecbActivotexto6" type="string">
+            <column name="CECB_ACTIVOTEXTO6" length="1" />
+        </property>
+        <property name="cecbNegrita6" type="string">
+            <column name="CECB_NEGRITA6" length="1" />
+        </property>
+        <property name="cecbTexto7fila" type="big_decimal">
+            <column name="CECB_TEXTO7FILA"  />
+        </property>
+         <property name="cecbTexto7columna" type="big_decimal">
+            <column name="CECB_TEXTO7COLUMNA"  />
+        </property>
+        <property name="cecbTexto7largo" type="big_decimal">
+            <column name="CECB_TEXTO7LARGO"  />
+        </property>
+         <property name="cecbTexto7tamano" type="big_decimal">
+            <column name="CECB_TEXTO7TAMANO"  />
+        </property>
+         <property name="cecbActivotexto7" type="string">
+            <column name="CECB_ACTIVOTEXTO7" length="1" />
+        </property>
+        <property name="cecbNegrita7" type="string">
+            <column name="CECB_NEGRITA7" length="1" />
+        </property>
+        <property name="cecbTexto8fila" type="big_decimal">
+            <column name="CECB_TEXTO8FILA"  />
+        </property>
+         <property name="cecbTexto8columna" type="big_decimal">
+            <column name="CECB_TEXTO8COLUMNA"  />
+        </property>
+        <property name="cecbTexto8largo" type="big_decimal">
+            <column name="CECB_TEXTO8LARGO"  />
+        </property>
+         <property name="cecbTexto8tamano" type="big_decimal">
+            <column name="CECB_TEXTO8TAMANO"  />
+        </property>
+         <property name="cecbActivotexto8" type="string">
+            <column name="CECB_ACTIVOTEXTO8" length="1" />
+        </property>
+        <property name="cecbNegrita8" type="string">
+            <column name="CECB_NEGRITA8" length="1" />
+        </property>
+        <property name="cecbTexto9fila" type="big_decimal">
+            <column name="CECB_TEXTO9FILA"  />
+        </property>
+         <property name="cecbTexto9columna" type="big_decimal">
+            <column name="CECB_TEXTO9COLUMNA"  />
+        </property>
+        <property name="cecbTexto9largo" type="big_decimal">
+            <column name="CECB_TEXTO9LARGO"  />
+        </property>
+         <property name="cecbTexto9tamano" type="big_decimal">
+            <column name="CECB_TEXTO9TAMANO"  />
+        </property>
+         <property name="cecbActivotexto9" type="string">
+            <column name="CECB_ACTIVOTEXTO9" length="1" />
+        </property>
+        <property name="cecbNegrita9" type="string">
+            <column name="CECB_NEGRITA9" length="1" />
+        </property>
+        <property name="cecbTexto10fila" type="big_decimal">
+            <column name="CECB_TEXTO10FILA"  />
+        </property>
+         <property name="cecbTexto10columna" type="big_decimal">
+            <column name="CECB_TEXTO10COLUMNA"  />
+        </property>
+        <property name="cecbTexto10largo" type="big_decimal">
+            <column name="CECB_TEXTO10LARGO"  />
+        </property>
+         <property name="cecbTexto10tamano" type="big_decimal">
+            <column name="CECB_TEXTO10TAMANO"  />
+        </property>
+         <property name="cecbActivotexto10" type="string">
+            <column name="CECB_ACTIVOTEXTO10" length="1" />
+        </property>
+        <property name="cecbNegrita10" type="string">
+            <column name="CECB_NEGRITA10" length="1" />
+        </property>
+        <property name="cecbTexto11fila" type="big_decimal">
+            <column name="CECB_TEXTO11FILA"  />
+        </property>
+         <property name="cecbTexto11columna" type="big_decimal">
+            <column name="CECB_TEXTO11COLUMNA"  />
+        </property>
+        <property name="cecbTexto11largo" type="big_decimal">
+            <column name="CECB_TEXTO11LARGO"  />
+        </property>
+         <property name="cecbTexto11tamano" type="big_decimal">
+            <column name="CECB_TEXTO11TAMANO"  />
+        </property>
+         <property name="cecbActivotexto11" type="string">
+            <column name="CECB_ACTIVOTEXTO11" length="1" />
+        </property>
+        <property name="cecbNegrita11" type="string">
+            <column name="CECB_NEGRITA11" length="1" />
+        </property>
+        <property name="cecbTexto12fila" type="big_decimal">
+            <column name="CECB_TEXTO12FILA"  />
+        </property>
+         <property name="cecbTexto12columna" type="big_decimal">
+            <column name="CECB_TEXTO12COLUMNA"  />
+        </property>
+        <property name="cecbTexto12largo" type="big_decimal">
+            <column name="CECB_TEXTO12LARGO"  />
+        </property>
+         <property name="cecbTexto12tamano" type="big_decimal">
+            <column name="CECB_TEXTO12TAMANO"  />
+        </property>
+         <property name="cecbActivotexto12" type="string">
+            <column name="CECB_ACTIVOTEXTO12" length="1" />
+        </property>
+        <property name="cecbNegrita12" type="string">
+            <column name="CECB_NEGRITA12" length="1" />
+        </property>
+         <property name="cecbSort" type="big_decimal">
+            <column name="CECB_SORT"  />
+        </property>
+        <property name="cecbNota" type="string">
+            <column name="CECB_NOTA" length="200" />
+        </property>
+         <property name="cecbUsuarioregistro" type="string">
+            <column name="CECB_USUARIOREGISTRO" length="20" />
+        </property>
+         <property name="cecbFecharegistro" type="timestamp">
+            <column name="CECB_FECHAREGISTRO" length="7" />
+        </property>
+        <property name="cecbProcedencia" type="string">
+            <column name="CECB_PROCEDENCIA" length="1" />
+        </property>
+         <property name="cecbServicio" type="string">
+            <column name="CECB_SERVICIO" length="1" />
+        </property>
+        <property name="cecbTipopacprefijo" type="string">
+            <column name="CECB_TIPOPACPREFIJO" length="25" />
+        </property>
+        <property name="cecbTipopacsufijo" type="string">
+            <column name="CECB_TIPOPACSUFIJO" length="25" />
+        </property>
+        <property name="cecbProceprefijo" type="string">
+            <column name="CECB_PROCEPREFIJO" length="25" />
+        </property>
+          <property name="cecbProcesufijo" type="string">
+            <column name="CECB_PROCESUFIJO" length="25" />
+        </property>
+         <property name="cecbServprefijo" type="string">
+            <column name="CECB_SERVPREFIJO" length="25" />
+        </property>
+        <property name="cecbServsufijo" type="string">
+            <column name="CECB_SERVSUFIJO" length="25" />
+        </property>
+         <property name="cecbNombprefijo" type="string">
+            <column name="CECB_NOMBPREFIJO" length="25" />
+        </property>
+         <property name="cecbNombsufijo" type="string">
+            <column name="CECB_NOMBSUFIJO" length="25" />
+        </property>
+         <property name="cecbSexoprefijo" type="string">
+            <column name="CECB_SEXOPREFIJO" length="25" />
+        </property>
+         <property name="cecbSexosufijo" type="string">
+            <column name="CECB_SEXOSUFIJO" length="25" />
+        </property>
+         <property name="cecbEdadprefijo" type="string">
+            <column name="CECB_EDADPREFIJO" length="25" />
+        </property>
+         <property name="cecbEdadsufijo" type="string">
+            <column name="CECB_EDADSUFIJO" length="25" />
+        </property>
+         <property name="cecbTipmueprefijo" type="string">
+            <column name="CECB_TIPMUEPREFIJO" length="25" />
+        </property>
+        <property name="cecbTipmuesufijo" type="string">
+            <column name="CECB_TIPMUESUFIJO" length="25" />
+        </property>
+         <property name="cecbEnvaprefijo" type="string">
+            <column name="CECB_ENVAPREFIJO" length="25" />
+        </property>
+        <property name="cecbEnvasufijo" type="string">
+            <column name="CECB_ENVASUFIJO" length="25" />
+        </property>
+        <property name="cecbFechaprefijo" type="string">
+            <column name="CECB_FECHAPREFIJO" length="20" />
+        </property>
+         <property name="cecbFechasufijo" type="string">
+            <column name="CECB_FECHASUFIJO" length="20" />
+        </property>
+         <property name="cecbParametrizada" type="string">
+            <column name="CECB_PARAMETRIZADA" length="1" />
+        </property>
+         <property name="cecbRutprefijo" type="string"  >
+            <column name="CECB_RUTPREFIJO" length="20"  />
+        </property>
+         <property name="cecbRutsufijo" type="string">
+            <column name="CECB_RUTSUFIJO" length="20" />
+        </property>
+        <property name="cecbFilaNorden" type="big_decimal">
+            <column name="CECB_FILANORDEN"  />
+        </property>
+         <property name="cecbColumnaNorden" type="big_decimal">
+            <column name="CECB_COLUMNANORDEN"  />
+        </property>
+        <property name="cecbTextoNorden" type="big_decimal">
+            <column name="CECB_TEXTONORDEN"  />
+        </property>
+         <property name="cecbTamanoNorden" type="big_decimal">
+            <column name="CECB_TAMANONORDEN"  />
+        </property>
+         <property name="cecbActivoNorden" type="string">
+            <column name="CECB_ACTIVONORDEN" length="1" />
+        </property>
+        <property name="cecbNegritaNorden" type="string">
+            <column name="CECB_NEGRITANORDEN" length="1" />
+        </property>
+        
+        
+        
+        
+    </class>
+</hibernate-mapping>

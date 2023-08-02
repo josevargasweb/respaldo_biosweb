@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 16-08-2021 14:22:23 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.grupobios.bioslis.entity.LdvTiposdocumentosanexos" table="LDV_TIPOSDOCUMENTOSANEXOS" schema="BIOSLIS">
+        <id name="ldvtdaIdtipodocumentoanexo" type="byte">
+            <column name="LDVTDA_IDTIPODOCUMENTOANEXO" precision="1" scale="0" />
+            <generator class="assigned"></generator>
+        </id>
+        <property name="ldvtdaDescripcion" type="string">
+            <column name="LDVTDA_DESCRIPCION" length="120" />
+        </property>
+        <set name="datosFichasdocumentoses" table="DATOS_FICHASDOCUMENTOS" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="DFD_IDTIPODOCUMENTOANEXO" precision="1" scale="0" />
+            </key>
+            <one-to-many class="com.grupobios.bioslis.entity.DatosFichasdocumentos" />
+        </set>
+    </class>
+</hibernate-mapping>
