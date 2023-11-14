@@ -18,6 +18,7 @@
   </properties>
   <dependencies>
     <!-- https://mvnrepository.com/artifact/org.imgscalr/imgscalr-lib -->
+	  <!--
     <dependency>
       <groupId>org.imgscalr</groupId>
       <artifactId>imgscalr-lib</artifactId>
@@ -109,7 +110,7 @@
       <groupId>org.springframework</groupId>
       <artifactId>spring-tx</artifactId>
       <version>${spring.version}</version>
-    </dependency>
+    </dependency> -->
     <!-- https://mvnrepository.com/artifact/org.springframework/spring-web -->
     <dependency>
       <groupId>org.springframework</groupId>
