@@ -284,11 +284,11 @@
       <artifactId>javax.mail</artifactId>
       <version>1.6.2</version>
     </dependency>
-    <dependency>
+    <!-- <dependency>
       <groupId>org.json</groupId>
       <artifactId>json</artifactId>
       <version>20210307</version>
-    </dependency>
+    </dependency> -->
     <!-- dependencia para la codificaciÃƒÆ’Ã‚Â³n MD5 -->
     <dependency>
       <groupId>commons-codec</groupId>
